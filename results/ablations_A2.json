@@ -1,0 +1,2251 @@
+{
+ "meta": {
+  "n_unique": 9741,
+  "n_infra_excluded": 28,
+  "n": 1863,
+  "models": [
+   "gpt-6-luna",
+   "qwen3.8-flash"
+  ],
+  "archs": [
+   "A2",
+   "A2-noschema",
+   "A2-nores"
+  ],
+  "items": 157,
+  "langs": [
+   "en",
+   "es"
+  ],
+  "reps": 1,
+  "cost_total": 4.25259098
+ },
+ "main": [
+  {
+   "model": "gpt-6-luna",
+   "arch": "A2",
+   "n": 314,
+   "success": 0.9617834394904459,
+   "ci_lo": 0.9363057324840764,
+   "ci_hi": 0.9840764331210191,
+   "tolerant": 0.9617834394904459,
+   "plan_ok": 0.9490445859872612,
+   "protocol_acc": 0.964968152866242,
+   "coord_ok": 0.9803921568627451,
+   "coord_med_as": 0.0,
+   "irrelevance": 0.9666666666666667,
+   "false_abstain": 0.007042253521126761,
+   "hallucinated": 0.0,
+   "tool_validity": 0.9783989834815756,
+   "cost_per_100": 0.10223114649681529,
+   "cost_per_success": 0.0010629331125827815,
+   "wall_med": 7.840110778808594,
+   "llm_med": 5.295675873756409,
+   "tool_med": 2.0578655004501343,
+   "tok_in_mean": 8384.149681528663,
+   "tok_out_mean": 367.7929936305732,
+   "tok_reason_mean": 120.35031847133757,
+   "llm_calls": 3.286624203821656,
+   "tool_calls": 2.5063694267515926,
+   "steps_success": 3.2218543046357615,
+   "pareto": true
+  },
+  {
+   "model": "gpt-6-luna",
+   "arch": "A2-nores",
+   "n": 309,
+   "success": 0.7313915857605178,
+   "ci_lo": 0.6718949044585987,
+   "ci_hi": 0.7930732484076429,
+   "tolerant": 0.8932038834951457,
+   "plan_ok": 0.9288025889967637,
+   "protocol_acc": 0.9644012944983819,
+   "coord_ok": 0.888235294117647,
+   "coord_med_as": 0.6148188783602517,
+   "irrelevance": 0.9666666666666667,
+   "false_abstain": 0.0035842293906810036,
+   "hallucinated": 0.003236245954692557,
+   "tool_validity": 0.9339853300733496,
+   "cost_per_100": 0.0669973786407767,
+   "cost_per_success": 0.0009160261061946903,
+   "wall_med": 5.694161415100098,
+   "llm_med": 3.974550247192383,
+   "tool_med": 1.3358304500579834,
+   "tok_in_mean": 5039.818770226537,
+   "tok_out_mean": 331.98381877022655,
+   "tok_reason_mean": 122.76051779935275,
+   "llm_calls": 2.1877022653721685,
+   "tool_calls": 1.3236245954692556,
+   "steps_success": 2.0353982300884956,
+   "pareto": true
+  },
+  {
+   "model": "gpt-6-luna",
+   "arch": "A2-noschema",
+   "n": 314,
+   "success": 0.8694267515923567,
+   "ci_lo": 0.821656050955414,
+   "ci_hi": 0.9140127388535032,
+   "tolerant": 0.8694267515923567,
+   "plan_ok": 0.8694267515923567,
+   "protocol_acc": 0.9299363057324841,
+   "coord_ok": 0.9855072463768116,
+   "coord_med_as": 0.0,
+   "irrelevance": 0.9666666666666667,
+   "false_abstain": 0.09154929577464789,
+   "hallucinated": 0.0,
+   "tool_validity": 0.8426966292134832,
+   "cost_per_100": 0.08815595541401275,
+   "cost_per_success": 0.0010139549450549452,
+   "wall_med": 4.859650731086731,
+   "llm_med": 4.621076703071594,
+   "tool_med": 0.001340031623840332,
+   "tok_in_mean": 6948.700636942675,
+   "tok_out_mean": 373.3789808917197,
+   "tok_reason_mean": 120.94585987261146,
+   "llm_calls": 3.4012738853503186,
+   "tool_calls": 2.550955414012739,
+   "steps_success": 3.087912087912088,
+   "pareto": true
+  },
+  {
+   "model": "qwen3.8-flash",
+   "arch": "A2",
+   "n": 314,
+   "success": 0.9299363057324841,
+   "ci_lo": 0.8949044585987261,
+   "ci_hi": 0.9617834394904459,
+   "tolerant": 0.9299363057324841,
+   "plan_ok": 0.9713375796178344,
+   "protocol_acc": 0.9840764331210191,
+   "coord_ok": 0.9731800766283525,
+   "coord_med_as": 0.0,
+   "irrelevance": 1.0,
+   "false_abstain": 0.0,
+   "hallucinated": 0.0,
+   "tool_validity": 0.905123339658444,
+   "cost_per_100": 0.31783623248407644,
+   "cost_per_success": 0.0034178279794520546,
+   "wall_med": 20.462257027626038,
+   "llm_med": 13.64574909210205,
+   "tool_med": 4.079414486885071,
+   "tok_in_mean": 15712.608280254777,
+   "tok_out_mean": 1413.5,
+   "tok_reason_mean": 572.9617834394904,
+   "llm_calls": 3.8152866242038215,
+   "tool_calls": 3.356687898089172,
+   "steps_success": 3.613013698630137,
+   "pareto": false
+  },
+  {
+   "model": "qwen3.8-flash",
+   "arch": "A2-nores",
+   "n": 298,
+   "success": 0.5570469798657718,
+   "ci_lo": 0.4869281045751634,
+   "ci_hi": 0.6242647058823525,
+   "tolerant": 0.7181208053691275,
+   "plan_ok": 0.7684563758389261,
+   "protocol_acc": 0.9697986577181208,
+   "coord_ok": 0.5269709543568465,
+   "coord_med_as": 35.873362742211015,
+   "irrelevance": 1.0,
+   "false_abstain": 0.014925373134328358,
+   "hallucinated": 0.0,
+   "tool_validity": 0.8530954879328436,
+   "cost_per_100": 0.43349158389261744,
+   "cost_per_success": 0.00778195734939759,
+   "wall_med": 37.676451683044434,
+   "llm_med": 18.77026927471161,
+   "tool_med": 13.246251940727234,
+   "tok_in_mean": 20709.701342281878,
+   "tok_out_mean": 2173.1140939597317,
+   "tok_reason_mean": 1204.6241610738255,
+   "llm_calls": 3.335570469798658,
+   "tool_calls": 3.197986577181208,
+   "steps_success": 2.5843373493975905,
+   "pareto": false
+  },
+  {
+   "model": "qwen3.8-flash",
+   "arch": "A2-noschema",
+   "n": 314,
+   "success": 0.8598726114649682,
+   "ci_lo": 0.8152866242038217,
+   "ci_hi": 0.9044585987261147,
+   "tolerant": 0.8630573248407644,
+   "plan_ok": 0.9012738853503185,
+   "protocol_acc": 0.910828025477707,
+   "coord_ok": 0.9830508474576272,
+   "coord_med_as": 0.0,
+   "irrelevance": 1.0,
+   "false_abstain": 0.06338028169014084,
+   "hallucinated": 0.0031847133757961785,
+   "tool_validity": 0.7203456402199528,
+   "cost_per_100": 0.36877162101910826,
+   "cost_per_success": 0.00428867737037037,
+   "wall_med": 19.021577954292297,
+   "llm_med": 14.208196759223938,
+   "tool_med": 2.501712679862976,
+   "tok_in_mean": 18682.025477707008,
+   "tok_out_mean": 1486.3662420382166,
+   "tok_reason_mean": 630.6433121019109,
+   "llm_calls": 4.490445859872612,
+   "tool_calls": 4.054140127388535,
+   "steps_success": 3.6666666666666665,
+   "pareto": false
+  }
+ ],
+ "by_arch": [
+  {
+   "arch": "A2",
+   "n": 628,
+   "success": 0.945859872611465,
+   "ci_lo": 0.9219745222929936,
+   "ci_hi": 0.9681528662420382,
+   "tolerant": 0.945859872611465,
+   "plan_ok": 0.9601910828025477
+  },
+  {
+   "arch": "A2-nores",
+   "n": 607,
+   "success": 0.6457990115321252,
+   "ci_lo": 0.5934049893842888,
+   "ci_hi": 0.7080679405520169,
+   "tolerant": 0.8072487644151565,
+   "plan_ok": 0.8500823723228995
+  },
+  {
+   "arch": "A2-noschema",
+   "n": 628,
+   "success": 0.8646496815286624,
+   "ci_lo": 0.8248009554140128,
+   "ci_hi": 0.9012738853503185,
+   "tolerant": 0.8662420382165605,
+   "plan_ok": 0.8853503184713376
+  }
+ ],
+ "by_protocol": [
+  {
+   "protocol": "none",
+   "arch": "A2",
+   "n": 60,
+   "success": 0.9833333333333333,
+   "ci_lo": 0.95,
+   "ci_hi": 1.0,
+   "tolerant": 0.9833333333333333,
+   "plan_ok": 0.9833333333333333
+  },
+  {
+   "protocol": "none",
+   "arch": "A2-nores",
+   "n": 60,
+   "success": 0.9833333333333333,
+   "ci_lo": 0.95,
+   "ci_hi": 1.0,
+   "tolerant": 0.9833333333333333,
+   "plan_ok": 0.9833333333333333
+  },
+  {
+   "protocol": "none",
+   "arch": "A2-noschema",
+   "n": 60,
+   "success": 0.9833333333333333,
+   "ci_lo": 0.95,
+   "ci_hi": 1.0,
+   "tolerant": 0.9833333333333333,
+   "plan_ok": 0.9833333333333333
+  },
+  {
+   "protocol": "scs",
+   "arch": "A2",
+   "n": 96,
+   "success": 0.96875,
+   "ci_lo": 0.9166666666666666,
+   "ci_hi": 1.0,
+   "tolerant": 0.96875,
+   "plan_ok": 0.96875
+  },
+  {
+   "protocol": "scs",
+   "arch": "A2-nores",
+   "n": 96,
+   "success": 0.6354166666666666,
+   "ci_lo": 0.4895833333333333,
+   "ci_hi": 0.78125,
+   "tolerant": 0.7083333333333334,
+   "plan_ok": 0.7395833333333334
+  },
+  {
+   "protocol": "scs",
+   "arch": "A2-noschema",
+   "n": 96,
+   "success": 0.9583333333333334,
+   "ci_lo": 0.90625,
+   "ci_hi": 1.0,
+   "tolerant": 0.9583333333333334,
+   "plan_ok": 0.9791666666666666
+  },
+  {
+   "protocol": "sia",
+   "arch": "A2",
+   "n": 220,
+   "success": 0.9681818181818181,
+   "ci_lo": 0.9454545454545454,
+   "ci_hi": 0.9863636363636363,
+   "tolerant": 0.9681818181818181,
+   "plan_ok": 0.9681818181818181
+  },
+  {
+   "protocol": "sia",
+   "arch": "A2-nores",
+   "n": 220,
+   "success": 0.8045454545454546,
+   "ci_lo": 0.7363636363636363,
+   "ci_hi": 0.8636363636363636,
+   "tolerant": 0.8136363636363636,
+   "plan_ok": 0.8681818181818182
+  },
+  {
+   "protocol": "sia",
+   "arch": "A2-noschema",
+   "n": 220,
+   "success": 0.9590909090909091,
+   "ci_lo": 0.9227272727272727,
+   "ci_hi": 0.9863636363636363,
+   "tolerant": 0.9590909090909091,
+   "plan_ok": 0.9818181818181818
+  },
+  {
+   "protocol": "ssa",
+   "arch": "A2",
+   "n": 52,
+   "success": 1.0,
+   "ci_lo": 1.0,
+   "ci_hi": 1.0,
+   "tolerant": 1.0,
+   "plan_ok": 1.0
+  },
+  {
+   "protocol": "ssa",
+   "arch": "A2-nores",
+   "n": 31,
+   "success": 0.8064516129032258,
+   "ci_lo": 0.6153846153846154,
+   "ci_hi": 0.9487179487179487,
+   "tolerant": 0.8064516129032258,
+   "plan_ok": 0.8064516129032258
+  },
+  {
+   "protocol": "ssa",
+   "arch": "A2-noschema",
+   "n": 52,
+   "success": 0.9807692307692307,
+   "ci_lo": 0.9423076923076923,
+   "ci_hi": 1.0,
+   "tolerant": 1.0,
+   "plan_ok": 1.0
+  },
+  {
+   "protocol": "tap",
+   "arch": "A2",
+   "n": 200,
+   "success": 0.885,
+   "ci_lo": 0.82,
+   "ci_hi": 0.945,
+   "tolerant": 0.885,
+   "plan_ok": 0.93
+  },
+  {
+   "protocol": "tap",
+   "arch": "A2-nores",
+   "n": 200,
+   "success": 0.35,
+   "ci_lo": 0.259875,
+   "ci_hi": 0.45,
+   "tolerant": 0.795,
+   "plan_ok": 0.85
+  },
+  {
+   "protocol": "tap",
+   "arch": "A2-noschema",
+   "n": 200,
+   "success": 0.65,
+   "ci_lo": 0.565,
+   "ci_hi": 0.74,
+   "tolerant": 0.65,
+   "plan_ok": 0.675
+  }
+ ],
+ "by_difficulty": [
+  {
+   "difficulty": 1,
+   "arch": "A2",
+   "n": 116,
+   "success": 0.9827586206896551,
+   "ci_lo": 0.9568965517241379,
+   "ci_hi": 1.0,
+   "tolerant": 0.9827586206896551,
+   "plan_ok": 0.9827586206896551
+  },
+  {
+   "difficulty": 1,
+   "arch": "A2-nores",
+   "n": 116,
+   "success": 0.7672413793103449,
+   "ci_lo": 0.6551724137931034,
+   "ci_hi": 0.8706896551724138,
+   "tolerant": 0.8017241379310345,
+   "plan_ok": 0.7844827586206896
+  },
+  {
+   "difficulty": 1,
+   "arch": "A2-noschema",
+   "n": 116,
+   "success": 0.9741379310344828,
+   "ci_lo": 0.9396551724137931,
+   "ci_hi": 1.0,
+   "tolerant": 0.9741379310344828,
+   "plan_ok": 0.9913793103448276
+  },
+  {
+   "difficulty": 2,
+   "arch": "A2",
+   "n": 392,
+   "success": 0.951530612244898,
+   "ci_lo": 0.9209183673469388,
+   "ci_hi": 0.9770408163265306,
+   "tolerant": 0.951530612244898,
+   "plan_ok": 0.9591836734693877
+  },
+  {
+   "difficulty": 2,
+   "arch": "A2-nores",
+   "n": 371,
+   "success": 0.6900269541778976,
+   "ci_lo": 0.6241284013605441,
+   "ci_hi": 0.7644770408163265,
+   "tolerant": 0.8355795148247979,
+   "plan_ok": 0.8571428571428571
+  },
+  {
+   "difficulty": 2,
+   "arch": "A2-noschema",
+   "n": 392,
+   "success": 0.8724489795918368,
+   "ci_lo": 0.8188775510204082,
+   "ci_hi": 0.9184311224489793,
+   "tolerant": 0.875,
+   "plan_ok": 0.8826530612244898
+  },
+  {
+   "difficulty": 3,
+   "arch": "A2",
+   "n": 120,
+   "success": 0.8916666666666667,
+   "ci_lo": 0.8083333333333333,
+   "ci_hi": 0.9666666666666667,
+   "tolerant": 0.8916666666666667,
+   "plan_ok": 0.9416666666666667
+  },
+  {
+   "difficulty": 3,
+   "arch": "A2-nores",
+   "n": 120,
+   "success": 0.39166666666666666,
+   "ci_lo": 0.26666666666666666,
+   "ci_hi": 0.5166666666666667,
+   "tolerant": 0.725,
+   "plan_ok": 0.8916666666666667
+  },
+  {
+   "difficulty": 3,
+   "arch": "A2-noschema",
+   "n": 120,
+   "success": 0.7333333333333333,
+   "ci_lo": 0.625,
+   "ci_hi": 0.8333333333333334,
+   "tolerant": 0.7333333333333333,
+   "plan_ok": 0.7916666666666666
+  }
+ ],
+ "by_lang": [
+  {
+   "lang": "en",
+   "arch": "A2",
+   "n": 314,
+   "success": 0.9554140127388535,
+   "ci_lo": 0.9331210191082803,
+   "ci_hi": 0.974601910828025,
+   "tolerant": 0.9554140127388535,
+   "plan_ok": 0.9617834394904459
+  },
+  {
+   "lang": "en",
+   "arch": "A2-nores",
+   "n": 304,
+   "success": 0.6447368421052632,
+   "ci_lo": 0.5833333333333334,
+   "ci_hi": 0.7115384615384616,
+   "tolerant": 0.7993421052631579,
+   "plan_ok": 0.8453947368421053
+  },
+  {
+   "lang": "en",
+   "arch": "A2-noschema",
+   "n": 314,
+   "success": 0.8503184713375797,
+   "ci_lo": 0.8088375796178344,
+   "ci_hi": 0.8949044585987261,
+   "tolerant": 0.8535031847133758,
+   "plan_ok": 0.8630573248407644
+  },
+  {
+   "lang": "es",
+   "arch": "A2",
+   "n": 314,
+   "success": 0.9363057324840764,
+   "ci_lo": 0.9044585987261147,
+   "ci_hi": 0.964968152866242,
+   "tolerant": 0.9363057324840764,
+   "plan_ok": 0.9585987261146497
+  },
+  {
+   "lang": "es",
+   "arch": "A2-nores",
+   "n": 303,
+   "success": 0.6468646864686468,
+   "ci_lo": 0.5833333333333334,
+   "ci_hi": 0.7147435897435898,
+   "tolerant": 0.8151815181518152,
+   "plan_ok": 0.8547854785478548
+  },
+  {
+   "lang": "es",
+   "arch": "A2-noschema",
+   "n": 314,
+   "success": 0.8789808917197452,
+   "ci_lo": 0.8312101910828026,
+   "ci_hi": 0.9203821656050956,
+   "tolerant": 0.8789808917197452,
+   "plan_ok": 0.9076433121019108
+  }
+ ],
+ "by_model": [
+  {
+   "model": "gpt-6-luna",
+   "n": 937,
+   "success": 0.8548559231590181,
+   "ci_lo": 0.8225053078556263,
+   "ci_hi": 0.8861995753715498,
+   "tolerant": 0.9082177161152615,
+   "plan_ok": 0.9156883671291356
+  },
+  {
+   "model": "qwen3.8-flash",
+   "n": 926,
+   "success": 0.7861771058315334,
+   "ci_lo": 0.7507430997876858,
+   "ci_hi": 0.8242038216560508,
+   "tolerant": 0.8390928725701944,
+   "plan_ok": 0.8822894168466523
+  }
+ ],
+ "secondary": [
+  {
+   "arch": "A2",
+   "protocol_acc": 0.9745222929936306,
+   "plan_ok": 0.9601910828025477,
+   "hallucinated": 0.0,
+   "coord_med_as": 0.0,
+   "coord_iqr_as": [
+    0.0,
+    0.0
+   ],
+   "coord_ok_1arcmin": 0.9763440860215054,
+   "tool_validity": 0.9364475828354155,
+   "steps_success": 3.414141414141414,
+   "jaccard_scs": 0.9718364197530865
+  },
+  {
+   "arch": "A2-noschema",
+   "protocol_acc": 0.9203821656050956,
+   "plan_ok": 0.8853503184713376,
+   "hallucinated": 0.0015923566878980893,
+   "coord_med_as": 0.0,
+   "coord_iqr_as": [
+    0.0,
+    0.0
+   ],
+   "coord_ok_1arcmin": 0.9841986455981941,
+   "tool_validity": 0.7675988428158149,
+   "steps_success": 3.3756906077348066,
+   "jaccard_scs": 0.989247311827957
+  },
+  {
+   "arch": "A2-nores",
+   "protocol_acc": 0.9670510708401977,
+   "plan_ok": 0.8500823723228995,
+   "hallucinated": 0.0016474464579901153,
+   "coord_med_as": 2.846295698396136,
+   "coord_iqr_as": [
+    0.32492996706084043,
+    225.10535042497355
+   ],
+   "coord_ok_1arcmin": 0.6763990267639902,
+   "tool_validity": 0.8773861967694567,
+   "steps_success": 2.267857142857143,
+   "jaccard_scs": 0.7449705208897246
+  }
+ ],
+ "abstention": [
+  {
+   "arch": "A2",
+   "irrelevance": 0.9833333333333333,
+   "false_abstain": 0.0035211267605633804
+  },
+  {
+   "arch": "A2-noschema",
+   "irrelevance": 0.9833333333333333,
+   "false_abstain": 0.07746478873239436
+  },
+  {
+   "arch": "A2-nores",
+   "irrelevance": 0.9833333333333333,
+   "false_abstain": 0.009140767824497258
+  }
+ ],
+ "arch_tests": [
+  {
+   "model": "(todos)",
+   "A": "A2",
+   "B": "A2-noschema",
+   "items": 157,
+   "succ_A": 0.945859872611465,
+   "succ_B": 0.8646496815286624,
+   "delta": -0.08121019108280254,
+   "lo": -0.11624203821656051,
+   "hi": -0.04936305732484077,
+   "items_B_better": 7,
+   "items_A_better": 37,
+   "p": 4.999750012499375e-05,
+   "p_holm": 0.00044997750112494374
+  },
+  {
+   "model": "gpt-6-luna",
+   "A": "A2",
+   "B": "A2-noschema",
+   "items": 157,
+   "succ_A": 0.9617834394904459,
+   "succ_B": 0.8694267515923567,
+   "delta": -0.09235668789808917,
+   "lo": -0.13694267515923567,
+   "hi": -0.050955414012738856,
+   "items_B_better": 4,
+   "items_A_better": 26,
+   "p": 0.00014999250037498125,
+   "p_holm": 0.00044997750112494374
+  },
+  {
+   "model": "qwen3.8-flash",
+   "A": "A2",
+   "B": "A2-noschema",
+   "items": 157,
+   "succ_A": 0.9299363057324841,
+   "succ_B": 0.8598726114649682,
+   "delta": -0.07006369426751592,
+   "lo": -0.11146496815286625,
+   "hi": -0.03503184713375796,
+   "items_B_better": 5,
+   "items_A_better": 22,
+   "p": 0.0006499675016249188,
+   "p_holm": 0.0006499675016249188
+  },
+  {
+   "model": "(todos)",
+   "A": "A2",
+   "B": "A2-nores",
+   "items": 157,
+   "succ_A": 0.945859872611465,
+   "succ_B": 0.6502123142250531,
+   "delta": -0.29564755838641193,
+   "lo": -0.3545647558386412,
+   "hi": -0.23885350318471338,
+   "items_B_better": 4,
+   "items_A_better": 81,
+   "p": 4.999750012499375e-05,
+   "p_holm": 0.00044997750112494374
+  },
+  {
+   "model": "gpt-6-luna",
+   "A": "A2",
+   "B": "A2-nores",
+   "items": 157,
+   "succ_A": 0.9617834394904459,
+   "succ_B": 0.732484076433121,
+   "delta": -0.22929936305732485,
+   "lo": -0.2961783439490446,
+   "hi": -0.1624203821656051,
+   "items_B_better": 6,
+   "items_A_better": 49,
+   "p": 4.999750012499375e-05,
+   "p_holm": 0.00044997750112494374
+  },
+  {
+   "model": "qwen3.8-flash",
+   "A": "A2",
+   "B": "A2-nores",
+   "items": 153,
+   "succ_A": 0.9281045751633987,
+   "succ_B": 0.5555555555555556,
+   "delta": -0.37254901960784315,
+   "lo": -0.4477124183006536,
+   "hi": -0.30392156862745096,
+   "items_B_better": 5,
+   "items_A_better": 76,
+   "p": 4.999750012499375e-05,
+   "p_holm": 0.00044997750112494374
+  },
+  {
+   "model": "(todos)",
+   "A": "A2-noschema",
+   "B": "A2-nores",
+   "items": 157,
+   "succ_A": 0.8646496815286624,
+   "succ_B": 0.6502123142250531,
+   "delta": -0.21443736730360938,
+   "lo": -0.2664543524416136,
+   "hi": -0.1624203821656051,
+   "items_B_better": 11,
+   "items_A_better": 76,
+   "p": 4.999750012499375e-05,
+   "p_holm": 0.00044997750112494374
+  },
+  {
+   "model": "gpt-6-luna",
+   "A": "A2-noschema",
+   "B": "A2-nores",
+   "items": 157,
+   "succ_A": 0.8694267515923567,
+   "succ_B": 0.732484076433121,
+   "delta": -0.13694267515923567,
+   "lo": -0.19745222929936307,
+   "hi": -0.07643312101910828,
+   "items_B_better": 13,
+   "items_A_better": 40,
+   "p": 4.999750012499375e-05,
+   "p_holm": 0.00044997750112494374
+  },
+  {
+   "model": "qwen3.8-flash",
+   "A": "A2-noschema",
+   "B": "A2-nores",
+   "items": 153,
+   "succ_A": 0.8562091503267973,
+   "succ_B": 0.5555555555555556,
+   "delta": -0.3006535947712418,
+   "lo": -0.37254901960784315,
+   "hi": -0.22875816993464052,
+   "items_B_better": 6,
+   "items_A_better": 69,
+   "p": 4.999750012499375e-05,
+   "p_holm": 0.00044997750112494374
+  }
+ ],
+ "model_tests": [],
+ "lang_tests": [
+  {
+   "arch": "(todas)",
+   "items": 157,
+   "en": 0.8199575371549895,
+   "es": 0.8244161358811041,
+   "delta": 0.0044585987261146496,
+   "lo": -0.01910828025477707,
+   "hi": 0.02888004246284503,
+   "p": 0.7333633318334083,
+   "p_holm": 1.0
+  },
+  {
+   "arch": "A2",
+   "items": 157,
+   "en": 0.9554140127388535,
+   "es": 0.9363057324840764,
+   "delta": -0.01910828025477707,
+   "lo": -0.041401273885350316,
+   "hi": 0.0031847133757961785,
+   "p": 0.17904104794760262,
+   "p_holm": 0.7161641917904105
+  },
+  {
+   "arch": "A2-noschema",
+   "items": 157,
+   "en": 0.8503184713375797,
+   "es": 0.8789808917197452,
+   "delta": 0.028662420382165606,
+   "lo": -0.009554140127388535,
+   "hi": 0.07006369426751592,
+   "p": 0.2136893155342233,
+   "p_holm": 0.7161641917904105
+  },
+  {
+   "arch": "A2-nores",
+   "items": 155,
+   "en": 0.6451612903225806,
+   "es": 0.6483870967741936,
+   "delta": 0.0032258064516129032,
+   "lo": -0.04838709677419355,
+   "hi": 0.05161290322580645,
+   "p": 1.0,
+   "p_holm": 1.0
+  }
+ ],
+ "sensitivity": [
+  {
+   "arch": "A2",
+   "strict": 0.945859872611465,
+   "tolerant": 0.945859872611465,
+   "flipped": 0,
+   "n": 628
+  },
+  {
+   "arch": "A2-noschema",
+   "strict": 0.8646496815286624,
+   "tolerant": 0.8662420382165605,
+   "flipped": 1,
+   "n": 628
+  },
+  {
+   "arch": "A2-nores",
+   "strict": 0.6457990115321252,
+   "tolerant": 0.8072487644151565,
+   "flipped": 98,
+   "n": 607
+  }
+ ],
+ "gee": {
+  "formula": "y ~ C(arch, Treatment('A2')) + C(model, Treatment('gpt-6-luna')) + C(lang, Treatment('en')) + C(protocol, Treatment('sia')) + C(difficulty, Treatment(1))",
+  "ref_model": "gpt-6-luna",
+  "coefs": [
+   {
+    "term": "arch: A2-nores (ref. A2)",
+    "factor": "arch",
+    "OR": 0.06420581200159423,
+    "lo": 0.035723736236260246,
+    "hi": 0.11539628071152769,
+    "p": 4.3546881309833594e-20
+   },
+   {
+    "term": "arch: A2-noschema (ref. A2)",
+    "factor": "arch",
+    "OR": 0.3166562276084496,
+    "lo": 0.2059275629100333,
+    "hi": 0.48692445569814863,
+    "p": 1.6239292841554184e-07
+   },
+   {
+    "term": "model: qwen3.8-flash (ref. gpt-6-luna)",
+    "factor": "model",
+    "OR": 0.49576726295204404,
+    "lo": 0.38013058069260414,
+    "hi": 0.6465809158714265,
+    "p": 2.2440387662194816e-07
+   },
+   {
+    "term": "lang: es (ref. en)",
+    "factor": "lang",
+    "OR": 1.009311573619463,
+    "lo": 0.8031032685418187,
+    "hi": 1.268466824312459,
+    "p": 0.9366455928898471
+   },
+   {
+    "term": "protocol: scs (ref. sia)",
+    "factor": "protocol",
+    "OR": 0.34695172916232725,
+    "lo": 0.1679717607065572,
+    "hi": 0.7166413084102995,
+    "p": 0.004233767511268908
+   },
+   {
+    "term": "protocol: ssa (ref. sia)",
+    "factor": "protocol",
+    "OR": 0.925839861499893,
+    "lo": 0.3092316131374233,
+    "hi": 2.7719657781599722,
+    "p": 0.8904632796653758
+   },
+   {
+    "term": "protocol: tap (ref. sia)",
+    "factor": "protocol",
+    "OR": 0.12265317363667233,
+    "lo": 0.06854467056258275,
+    "hi": 0.21947440814399102,
+    "p": 1.5701626277583425e-12
+   },
+   {
+    "term": "difficulty: 2 (ref. 1)",
+    "factor": "difficulty",
+    "OR": 0.7008631561945703,
+    "lo": 0.3390733858570839,
+    "hi": 1.4486809764481323,
+    "p": 0.3373308189768415
+   },
+   {
+    "term": "difficulty: 3 (ref. 1)",
+    "factor": "difficulty",
+    "OR": 0.3739296857972206,
+    "lo": 0.1607133574938976,
+    "hi": 0.8700173532602438,
+    "p": 0.02242177099713103
+   }
+  ],
+  "n": 1683
+ },
+ "pareto": [
+  {
+   "model": "gpt-6-luna",
+   "arch": "A2-nores",
+   "cost": 0.0669973786407767,
+   "success": 0.7313915857605178,
+   "ci_lo": 0.6718949044585987,
+   "ci_hi": 0.7930732484076429,
+   "wall": 5.694161415100098,
+   "pareto": true
+  },
+  {
+   "model": "gpt-6-luna",
+   "arch": "A2-noschema",
+   "cost": 0.08815595541401275,
+   "success": 0.8694267515923567,
+   "ci_lo": 0.821656050955414,
+   "ci_hi": 0.9140127388535032,
+   "wall": 4.859650731086731,
+   "pareto": true
+  },
+  {
+   "model": "gpt-6-luna",
+   "arch": "A2",
+   "cost": 0.10223114649681529,
+   "success": 0.9617834394904459,
+   "ci_lo": 0.9363057324840764,
+   "ci_hi": 0.9840764331210191,
+   "wall": 7.840110778808594,
+   "pareto": true
+  },
+  {
+   "model": "qwen3.8-flash",
+   "arch": "A2",
+   "cost": 0.31783623248407644,
+   "success": 0.9299363057324841,
+   "ci_lo": 0.8949044585987261,
+   "ci_hi": 0.9617834394904459,
+   "wall": 20.462257027626038,
+   "pareto": false
+  },
+  {
+   "model": "qwen3.8-flash",
+   "arch": "A2-noschema",
+   "cost": 0.36877162101910826,
+   "success": 0.8598726114649682,
+   "ci_lo": 0.8152866242038217,
+   "ci_hi": 0.9044585987261147,
+   "wall": 19.021577954292297,
+   "pareto": false
+  },
+  {
+   "model": "qwen3.8-flash",
+   "arch": "A2-nores",
+   "cost": 0.43349158389261744,
+   "success": 0.5570469798657718,
+   "ci_lo": 0.4869281045751634,
+   "ci_hi": 0.6242647058823525,
+   "wall": 37.676451683044434,
+   "pareto": false
+  }
+ ],
+ "passk": [],
+ "rep_variation": [],
+ "taxonomy": [
+  {
+   "arch": "A2",
+   "cause": "abstenci\u00f3n indebida",
+   "n": 2,
+   "share": 0.0031847133757961785
+  },
+  {
+   "arch": "A2",
+   "cause": "banda o recurso incorrecto",
+   "n": 4,
+   "share": 0.006369426751592357
+  },
+  {
+   "arch": "A2",
+   "cause": "no encontr\u00f3 recurso",
+   "n": 1,
+   "share": 0.0015923566878980893
+  },
+  {
+   "arch": "A2",
+   "cause": "no se abstuvo (fuera de alcance)",
+   "n": 1,
+   "share": 0.0015923566878980893
+  },
+  {
+   "arch": "A2",
+   "cause": "objetivo/coordenadas incorrectas",
+   "n": 5,
+   "share": 0.007961783439490446
+  },
+  {
+   "arch": "A2",
+   "cause": "resultado de consulta incorrecto",
+   "n": 18,
+   "share": 0.028662420382165606
+  },
+  {
+   "arch": "A2",
+   "cause": "sin respuesta / formato inv\u00e1lido",
+   "n": 3,
+   "share": 0.004777070063694267
+  },
+  {
+   "arch": "A2-nores",
+   "cause": "ADQL no ejecuta",
+   "n": 1,
+   "share": 0.0016474464579901153
+  },
+  {
+   "arch": "A2-nores",
+   "cause": "URL alucinada",
+   "n": 1,
+   "share": 0.0016474464579901153
+  },
+  {
+   "arch": "A2-nores",
+   "cause": "abstenci\u00f3n indebida",
+   "n": 5,
+   "share": 0.008237232289950576
+  },
+  {
+   "arch": "A2-nores",
+   "cause": "banda o recurso incorrecto",
+   "n": 42,
+   "share": 0.06919275123558484
+  },
+  {
+   "arch": "A2-nores",
+   "cause": "centro distinto (v\u00e1lido solo con tolerancia)",
+   "n": 98,
+   "share": 0.1614497528830313
+  },
+  {
+   "arch": "A2-nores",
+   "cause": "no se abstuvo (fuera de alcance)",
+   "n": 1,
+   "share": 0.0016474464579901153
+  },
+  {
+   "arch": "A2-nores",
+   "cause": "objetivo/coordenadas incorrectas",
+   "n": 38,
+   "share": 0.06260296540362438
+  },
+  {
+   "arch": "A2-nores",
+   "cause": "resultado de consulta incorrecto",
+   "n": 26,
+   "share": 0.042833607907743
+  },
+  {
+   "arch": "A2-nores",
+   "cause": "sin respuesta / formato inv\u00e1lido",
+   "n": 3,
+   "share": 0.004942339373970346
+  },
+  {
+   "arch": "A2-noschema",
+   "cause": "ADQL no ejecuta",
+   "n": 6,
+   "share": 0.009554140127388535
+  },
+  {
+   "arch": "A2-noschema",
+   "cause": "URL alucinada",
+   "n": 1,
+   "share": 0.0015923566878980893
+  },
+  {
+   "arch": "A2-noschema",
+   "cause": "abstenci\u00f3n indebida",
+   "n": 44,
+   "share": 0.07006369426751592
+  },
+  {
+   "arch": "A2-noschema",
+   "cause": "banda o recurso incorrecto",
+   "n": 7,
+   "share": 0.011146496815286623
+  },
+  {
+   "arch": "A2-noschema",
+   "cause": "centro distinto (v\u00e1lido solo con tolerancia)",
+   "n": 1,
+   "share": 0.0015923566878980893
+  },
+  {
+   "arch": "A2-noschema",
+   "cause": "no se abstuvo (fuera de alcance)",
+   "n": 1,
+   "share": 0.0015923566878980893
+  },
+  {
+   "arch": "A2-noschema",
+   "cause": "objetivo/coordenadas incorrectas",
+   "n": 4,
+   "share": 0.006369426751592357
+  },
+  {
+   "arch": "A2-noschema",
+   "cause": "resultado de consulta incorrecto",
+   "n": 11,
+   "share": 0.01751592356687898
+  },
+  {
+   "arch": "A2-noschema",
+   "cause": "sin respuesta / formato inv\u00e1lido",
+   "n": 10,
+   "share": 0.01592356687898089
+  }
+ ],
+ "items": [
+  {
+   "item": "VT16",
+   "protocol": "tap",
+   "success": 0.25,
+   "tolerant": 0.5833333333333334,
+   "n": 12
+  },
+  {
+   "item": "VT36",
+   "protocol": "tap",
+   "success": 0.25,
+   "tolerant": 0.25,
+   "n": 12
+  },
+  {
+   "item": "VT49",
+   "protocol": "tap",
+   "success": 0.25,
+   "tolerant": 0.25,
+   "n": 12
+  },
+  {
+   "item": "VT04",
+   "protocol": "tap",
+   "success": 0.3333333333333333,
+   "tolerant": 0.5833333333333334,
+   "n": 12
+  },
+  {
+   "item": "VT37",
+   "protocol": "tap",
+   "success": 0.3333333333333333,
+   "tolerant": 0.3333333333333333,
+   "n": 12
+  },
+  {
+   "item": "VT50",
+   "protocol": "tap",
+   "success": 0.3333333333333333,
+   "tolerant": 0.3333333333333333,
+   "n": 12
+  },
+  {
+   "item": "VT15",
+   "protocol": "tap",
+   "success": 0.3333333333333333,
+   "tolerant": 0.3333333333333333,
+   "n": 12
+  },
+  {
+   "item": "VT13",
+   "protocol": "tap",
+   "success": 0.4166666666666667,
+   "tolerant": 0.4166666666666667,
+   "n": 12
+  },
+  {
+   "item": "VT33",
+   "protocol": "tap",
+   "success": 0.4166666666666667,
+   "tolerant": 0.75,
+   "n": 12
+  },
+  {
+   "item": "VT24",
+   "protocol": "tap",
+   "success": 0.4166666666666667,
+   "tolerant": 0.75,
+   "n": 12
+  },
+  {
+   "item": "VT35",
+   "protocol": "tap",
+   "success": 0.4166666666666667,
+   "tolerant": 0.4166666666666667,
+   "n": 12
+  },
+  {
+   "item": "VT32",
+   "protocol": "tap",
+   "success": 0.4166666666666667,
+   "tolerant": 0.75,
+   "n": 12
+  },
+  {
+   "item": "VT39",
+   "protocol": "tap",
+   "success": 0.4166666666666667,
+   "tolerant": 0.5,
+   "n": 12
+  },
+  {
+   "item": "VT48",
+   "protocol": "tap",
+   "success": 0.4166666666666667,
+   "tolerant": 0.4166666666666667,
+   "n": 12
+  },
+  {
+   "item": "VC04",
+   "protocol": "scs",
+   "success": 0.5,
+   "tolerant": 0.6666666666666666,
+   "n": 12
+  },
+  {
+   "item": "VT18",
+   "protocol": "tap",
+   "success": 0.5,
+   "tolerant": 0.75,
+   "n": 12
+  },
+  {
+   "item": "VT25",
+   "protocol": "tap",
+   "success": 0.5,
+   "tolerant": 0.75,
+   "n": 12
+  },
+  {
+   "item": "VT28",
+   "protocol": "tap",
+   "success": 0.5,
+   "tolerant": 0.8333333333333334,
+   "n": 12
+  },
+  {
+   "item": "VT34",
+   "protocol": "tap",
+   "success": 0.5,
+   "tolerant": 0.8333333333333334,
+   "n": 12
+  },
+  {
+   "item": "VT27",
+   "protocol": "tap",
+   "success": 0.5833333333333334,
+   "tolerant": 0.9166666666666666,
+   "n": 12
+  },
+  {
+   "item": "VT06",
+   "protocol": "tap",
+   "success": 0.5833333333333334,
+   "tolerant": 0.8333333333333334,
+   "n": 12
+  },
+  {
+   "item": "VT03",
+   "protocol": "tap",
+   "success": 0.5833333333333334,
+   "tolerant": 0.9166666666666666,
+   "n": 12
+  },
+  {
+   "item": "VC07",
+   "protocol": "scs",
+   "success": 0.5833333333333334,
+   "tolerant": 0.6666666666666666,
+   "n": 12
+  },
+  {
+   "item": "VC05",
+   "protocol": "scs",
+   "success": 0.5833333333333334,
+   "tolerant": 0.9166666666666666,
+   "n": 12
+  },
+  {
+   "item": "VT08",
+   "protocol": "tap",
+   "success": 0.5833333333333334,
+   "tolerant": 0.9166666666666666,
+   "n": 12
+  },
+  {
+   "item": "VT09",
+   "protocol": "tap",
+   "success": 0.5833333333333334,
+   "tolerant": 0.75,
+   "n": 12
+  },
+  {
+   "item": "VT14",
+   "protocol": "tap",
+   "success": 0.5833333333333334,
+   "tolerant": 0.5833333333333334,
+   "n": 12
+  },
+  {
+   "item": "VT17",
+   "protocol": "tap",
+   "success": 0.5833333333333334,
+   "tolerant": 0.9166666666666666,
+   "n": 12
+  },
+  {
+   "item": "VT20",
+   "protocol": "tap",
+   "success": 0.5833333333333334,
+   "tolerant": 0.9166666666666666,
+   "n": 12
+  },
+  {
+   "item": "VT19",
+   "protocol": "tap",
+   "success": 0.6666666666666666,
+   "tolerant": 1.0,
+   "n": 12
+  },
+  {
+   "item": "VT10",
+   "protocol": "tap",
+   "success": 0.6666666666666666,
+   "tolerant": 0.9166666666666666,
+   "n": 12
+  },
+  {
+   "item": "VC08",
+   "protocol": "scs",
+   "success": 0.6666666666666666,
+   "tolerant": 0.6666666666666666,
+   "n": 12
+  },
+  {
+   "item": "VT26",
+   "protocol": "tap",
+   "success": 0.6666666666666666,
+   "tolerant": 1.0,
+   "n": 12
+  },
+  {
+   "item": "VT22",
+   "protocol": "tap",
+   "success": 0.6666666666666666,
+   "tolerant": 0.8333333333333334,
+   "n": 12
+  },
+  {
+   "item": "VS51",
+   "protocol": "sia",
+   "success": 0.6666666666666666,
+   "tolerant": 0.6666666666666666,
+   "n": 12
+  },
+  {
+   "item": "VS30",
+   "protocol": "sia",
+   "success": 0.6666666666666666,
+   "tolerant": 0.75,
+   "n": 12
+  },
+  {
+   "item": "VC16",
+   "protocol": "scs",
+   "success": 0.6666666666666666,
+   "tolerant": 0.6666666666666666,
+   "n": 12
+  },
+  {
+   "item": "VC22",
+   "protocol": "scs",
+   "success": 0.6666666666666666,
+   "tolerant": 0.6666666666666666,
+   "n": 12
+  },
+  {
+   "item": "VS55",
+   "protocol": "sia",
+   "success": 0.6666666666666666,
+   "tolerant": 0.6666666666666666,
+   "n": 12
+  },
+  {
+   "item": "VT43",
+   "protocol": "tap",
+   "success": 0.6666666666666666,
+   "tolerant": 0.9166666666666666,
+   "n": 12
+  },
+  {
+   "item": "VT30",
+   "protocol": "tap",
+   "success": 0.6666666666666666,
+   "tolerant": 0.9166666666666666,
+   "n": 12
+  },
+  {
+   "item": "VP10",
+   "protocol": "ssa",
+   "success": 0.7,
+   "tolerant": 0.8,
+   "n": 10
+  },
+  {
+   "item": "VS05",
+   "protocol": "sia",
+   "success": 0.75,
+   "tolerant": 0.75,
+   "n": 12
+  },
+  {
+   "item": "VS53",
+   "protocol": "sia",
+   "success": 0.75,
+   "tolerant": 0.75,
+   "n": 12
+  },
+  {
+   "item": "VS56",
+   "protocol": "sia",
+   "success": 0.75,
+   "tolerant": 0.75,
+   "n": 12
+  },
+  {
+   "item": "VT23",
+   "protocol": "tap",
+   "success": 0.75,
+   "tolerant": 0.8333333333333334,
+   "n": 12
+  },
+  {
+   "item": "VS48",
+   "protocol": "sia",
+   "success": 0.75,
+   "tolerant": 0.75,
+   "n": 12
+  },
+  {
+   "item": "VT05",
+   "protocol": "tap",
+   "success": 0.75,
+   "tolerant": 1.0,
+   "n": 12
+  },
+  {
+   "item": "VT07",
+   "protocol": "tap",
+   "success": 0.75,
+   "tolerant": 1.0,
+   "n": 12
+  },
+  {
+   "item": "VS52",
+   "protocol": "sia",
+   "success": 0.75,
+   "tolerant": 0.75,
+   "n": 12
+  },
+  {
+   "item": "VS57",
+   "protocol": "sia",
+   "success": 0.75,
+   "tolerant": 0.75,
+   "n": 12
+  },
+  {
+   "item": "VT01",
+   "protocol": "tap",
+   "success": 0.75,
+   "tolerant": 0.8333333333333334,
+   "n": 12
+  },
+  {
+   "item": "VS49",
+   "protocol": "sia",
+   "success": 0.75,
+   "tolerant": 0.75,
+   "n": 12
+  },
+  {
+   "item": "VT02",
+   "protocol": "tap",
+   "success": 0.75,
+   "tolerant": 0.9166666666666666,
+   "n": 12
+  },
+  {
+   "item": "VS29",
+   "protocol": "sia",
+   "success": 0.75,
+   "tolerant": 0.8333333333333334,
+   "n": 12
+  },
+  {
+   "item": "VO15",
+   "protocol": "none",
+   "success": 0.75,
+   "tolerant": 0.75,
+   "n": 12
+  },
+  {
+   "item": "VS21",
+   "protocol": "sia",
+   "success": 0.8333333333333334,
+   "tolerant": 0.8333333333333334,
+   "n": 12
+  },
+  {
+   "item": "VC18",
+   "protocol": "scs",
+   "success": 0.8333333333333334,
+   "tolerant": 0.8333333333333334,
+   "n": 12
+  },
+  {
+   "item": "VC17",
+   "protocol": "scs",
+   "success": 0.8333333333333334,
+   "tolerant": 0.8333333333333334,
+   "n": 12
+  },
+  {
+   "item": "VC03",
+   "protocol": "scs",
+   "success": 0.8333333333333334,
+   "tolerant": 0.8333333333333334,
+   "n": 12
+  },
+  {
+   "item": "VC15",
+   "protocol": "scs",
+   "success": 0.8333333333333334,
+   "tolerant": 0.8333333333333334,
+   "n": 12
+  },
+  {
+   "item": "VS34",
+   "protocol": "sia",
+   "success": 0.8333333333333334,
+   "tolerant": 0.8333333333333334,
+   "n": 12
+  },
+  {
+   "item": "VT21",
+   "protocol": "tap",
+   "success": 0.8333333333333334,
+   "tolerant": 0.8333333333333334,
+   "n": 12
+  },
+  {
+   "item": "VS35",
+   "protocol": "sia",
+   "success": 0.8333333333333334,
+   "tolerant": 0.8333333333333334,
+   "n": 12
+  },
+  {
+   "item": "VT29",
+   "protocol": "tap",
+   "success": 0.8333333333333334,
+   "tolerant": 0.8333333333333334,
+   "n": 12
+  },
+  {
+   "item": "VC19",
+   "protocol": "scs",
+   "success": 0.8333333333333334,
+   "tolerant": 0.8333333333333334,
+   "n": 12
+  },
+  {
+   "item": "VT46",
+   "protocol": "tap",
+   "success": 0.8333333333333334,
+   "tolerant": 0.8333333333333334,
+   "n": 12
+  },
+  {
+   "item": "VT40",
+   "protocol": "tap",
+   "success": 0.8333333333333334,
+   "tolerant": 0.8333333333333334,
+   "n": 12
+  },
+  {
+   "item": "VP01",
+   "protocol": "ssa",
+   "success": 0.9,
+   "tolerant": 0.9,
+   "n": 10
+  },
+  {
+   "item": "VP09",
+   "protocol": "ssa",
+   "success": 0.9,
+   "tolerant": 0.9,
+   "n": 10
+  },
+  {
+   "item": "VP13",
+   "protocol": "ssa",
+   "success": 0.9090909090909091,
+   "tolerant": 0.9090909090909091,
+   "n": 11
+  },
+  {
+   "item": "VP05",
+   "protocol": "ssa",
+   "success": 0.9090909090909091,
+   "tolerant": 0.9090909090909091,
+   "n": 11
+  },
+  {
+   "item": "VT42",
+   "protocol": "tap",
+   "success": 0.9166666666666666,
+   "tolerant": 0.9166666666666666,
+   "n": 12
+  },
+  {
+   "item": "VT31",
+   "protocol": "tap",
+   "success": 0.9166666666666666,
+   "tolerant": 1.0,
+   "n": 12
+  },
+  {
+   "item": "VS24",
+   "protocol": "sia",
+   "success": 0.9166666666666666,
+   "tolerant": 0.9166666666666666,
+   "n": 12
+  },
+  {
+   "item": "VS50",
+   "protocol": "sia",
+   "success": 0.9166666666666666,
+   "tolerant": 0.9166666666666666,
+   "n": 12
+  },
+  {
+   "item": "VT12",
+   "protocol": "tap",
+   "success": 0.9166666666666666,
+   "tolerant": 0.9166666666666666,
+   "n": 12
+  },
+  {
+   "item": "VS43",
+   "protocol": "sia",
+   "success": 0.9166666666666666,
+   "tolerant": 0.9166666666666666,
+   "n": 12
+  },
+  {
+   "item": "VS40",
+   "protocol": "sia",
+   "success": 0.9166666666666666,
+   "tolerant": 0.9166666666666666,
+   "n": 12
+  },
+  {
+   "item": "VS39",
+   "protocol": "sia",
+   "success": 0.9166666666666666,
+   "tolerant": 0.9166666666666666,
+   "n": 12
+  },
+  {
+   "item": "VS15",
+   "protocol": "sia",
+   "success": 0.9166666666666666,
+   "tolerant": 0.9166666666666666,
+   "n": 12
+  },
+  {
+   "item": "VS19",
+   "protocol": "sia",
+   "success": 0.9166666666666666,
+   "tolerant": 0.9166666666666666,
+   "n": 12
+  },
+  {
+   "item": "VS04",
+   "protocol": "sia",
+   "success": 0.9166666666666666,
+   "tolerant": 0.9166666666666666,
+   "n": 12
+  },
+  {
+   "item": "VC20",
+   "protocol": "scs",
+   "success": 0.9166666666666666,
+   "tolerant": 0.9166666666666666,
+   "n": 12
+  },
+  {
+   "item": "VC10",
+   "protocol": "scs",
+   "success": 0.9166666666666666,
+   "tolerant": 0.9166666666666666,
+   "n": 12
+  },
+  {
+   "item": "VS06",
+   "protocol": "sia",
+   "success": 0.9166666666666666,
+   "tolerant": 0.9166666666666666,
+   "n": 12
+  },
+  {
+   "item": "VS02",
+   "protocol": "sia",
+   "success": 0.9166666666666666,
+   "tolerant": 0.9166666666666666,
+   "n": 12
+  },
+  {
+   "item": "VS13",
+   "protocol": "sia",
+   "success": 0.9166666666666666,
+   "tolerant": 0.9166666666666666,
+   "n": 12
+  },
+  {
+   "item": "VC02",
+   "protocol": "scs",
+   "success": 0.9166666666666666,
+   "tolerant": 0.9166666666666666,
+   "n": 12
+  },
+  {
+   "item": "VC01",
+   "protocol": "scs",
+   "success": 0.9166666666666666,
+   "tolerant": 0.9166666666666666,
+   "n": 12
+  },
+  {
+   "item": "VS32",
+   "protocol": "sia",
+   "success": 0.9166666666666666,
+   "tolerant": 0.9166666666666666,
+   "n": 12
+  },
+  {
+   "item": "VS33",
+   "protocol": "sia",
+   "success": 0.9166666666666666,
+   "tolerant": 0.9166666666666666,
+   "n": 12
+  },
+  {
+   "item": "VS31",
+   "protocol": "sia",
+   "success": 0.9166666666666666,
+   "tolerant": 0.9166666666666666,
+   "n": 12
+  },
+  {
+   "item": "VS28",
+   "protocol": "sia",
+   "success": 0.9166666666666666,
+   "tolerant": 0.9166666666666666,
+   "n": 12
+  },
+  {
+   "item": "VS25",
+   "protocol": "sia",
+   "success": 0.9166666666666666,
+   "tolerant": 0.9166666666666666,
+   "n": 12
+  },
+  {
+   "item": "VS41",
+   "protocol": "sia",
+   "success": 0.9166666666666666,
+   "tolerant": 0.9166666666666666,
+   "n": 12
+  },
+  {
+   "item": "VT44",
+   "protocol": "tap",
+   "success": 0.9166666666666666,
+   "tolerant": 0.9166666666666666,
+   "n": 12
+  },
+  {
+   "item": "VC06",
+   "protocol": "scs",
+   "success": 1.0,
+   "tolerant": 1.0,
+   "n": 12
+  },
+  {
+   "item": "VC14",
+   "protocol": "scs",
+   "success": 1.0,
+   "tolerant": 1.0,
+   "n": 12
+  },
+  {
+   "item": "VC11",
+   "protocol": "scs",
+   "success": 1.0,
+   "tolerant": 1.0,
+   "n": 12
+  },
+  {
+   "item": "VC12",
+   "protocol": "scs",
+   "success": 1.0,
+   "tolerant": 1.0,
+   "n": 12
+  },
+  {
+   "item": "VC13",
+   "protocol": "scs",
+   "success": 1.0,
+   "tolerant": 1.0,
+   "n": 12
+  },
+  {
+   "item": "VS01",
+   "protocol": "sia",
+   "success": 1.0,
+   "tolerant": 1.0,
+   "n": 12
+  },
+  {
+   "item": "VC09",
+   "protocol": "scs",
+   "success": 1.0,
+   "tolerant": 1.0,
+   "n": 12
+  },
+  {
+   "item": "VS12",
+   "protocol": "sia",
+   "success": 1.0,
+   "tolerant": 1.0,
+   "n": 12
+  },
+  {
+   "item": "VS11",
+   "protocol": "sia",
+   "success": 1.0,
+   "tolerant": 1.0,
+   "n": 12
+  },
+  {
+   "item": "VS09",
+   "protocol": "sia",
+   "success": 1.0,
+   "tolerant": 1.0,
+   "n": 12
+  },
+  {
+   "item": "VS08",
+   "protocol": "sia",
+   "success": 1.0,
+   "tolerant": 1.0,
+   "n": 12
+  },
+  {
+   "item": "VS07",
+   "protocol": "sia",
+   "success": 1.0,
+   "tolerant": 1.0,
+   "n": 12
+  },
+  {
+   "item": "VP11",
+   "protocol": "ssa",
+   "success": 1.0,
+   "tolerant": 1.0,
+   "n": 9
+  },
+  {
+   "item": "VP07",
+   "protocol": "ssa",
+   "success": 1.0,
+   "tolerant": 1.0,
+   "n": 10
+  },
+  {
+   "item": "VP08",
+   "protocol": "ssa",
+   "success": 1.0,
+   "tolerant": 1.0,
+   "n": 11
+  },
+  {
+   "item": "VO10",
+   "protocol": "none",
+   "success": 1.0,
+   "tolerant": 1.0,
+   "n": 12
+  },
+  {
+   "item": "VO09",
+   "protocol": "none",
+   "success": 1.0,
+   "tolerant": 1.0,
+   "n": 12
+  },
+  {
+   "item": "VO11",
+   "protocol": "none",
+   "success": 1.0,
+   "tolerant": 1.0,
+   "n": 12
+  },
+  {
+   "item": "VO12",
+   "protocol": "none",
+   "success": 1.0,
+   "tolerant": 1.0,
+   "n": 12
+  },
+  {
+   "item": "VO13",
+   "protocol": "none",
+   "success": 1.0,
+   "tolerant": 1.0,
+   "n": 12
+  },
+  {
+   "item": "VC21",
+   "protocol": "scs",
+   "success": 1.0,
+   "tolerant": 1.0,
+   "n": 12
+  },
+  {
+   "item": "VC23",
+   "protocol": "scs",
+   "success": 1.0,
+   "tolerant": 1.0,
+   "n": 12
+  },
+  {
+   "item": "VC24",
+   "protocol": "scs",
+   "success": 1.0,
+   "tolerant": 1.0,
+   "n": 12
+  },
+  {
+   "item": "VO01",
+   "protocol": "none",
+   "success": 1.0,
+   "tolerant": 1.0,
+   "n": 12
+  },
+  {
+   "item": "VO02",
+   "protocol": "none",
+   "success": 1.0,
+   "tolerant": 1.0,
+   "n": 12
+  },
+  {
+   "item": "VO03",
+   "protocol": "none",
+   "success": 1.0,
+   "tolerant": 1.0,
+   "n": 12
+  },
+  {
+   "item": "VO04",
+   "protocol": "none",
+   "success": 1.0,
+   "tolerant": 1.0,
+   "n": 12
+  },
+  {
+   "item": "VO05",
+   "protocol": "none",
+   "success": 1.0,
+   "tolerant": 1.0,
+   "n": 12
+  },
+  {
+   "item": "VO06",
+   "protocol": "none",
+   "success": 1.0,
+   "tolerant": 1.0,
+   "n": 12
+  },
+  {
+   "item": "VO07",
+   "protocol": "none",
+   "success": 1.0,
+   "tolerant": 1.0,
+   "n": 12
+  },
+  {
+   "item": "VO08",
+   "protocol": "none",
+   "success": 1.0,
+   "tolerant": 1.0,
+   "n": 12
+  },
+  {
+   "item": "VT11",
+   "protocol": "tap",
+   "success": 1.0,
+   "tolerant": 1.0,
+   "n": 12
+  },
+  {
+   "item": "VS47",
+   "protocol": "sia",
+   "success": 1.0,
+   "tolerant": 1.0,
+   "n": 12
+  },
+  {
+   "item": "VS54",
+   "protocol": "sia",
+   "success": 1.0,
+   "tolerant": 1.0,
+   "n": 12
+  },
+  {
+   "item": "VS22",
+   "protocol": "sia",
+   "success": 1.0,
+   "tolerant": 1.0,
+   "n": 12
+  },
+  {
+   "item": "VS17",
+   "protocol": "sia",
+   "success": 1.0,
+   "tolerant": 1.0,
+   "n": 12
+  },
+  {
+   "item": "VS16",
+   "protocol": "sia",
+   "success": 1.0,
+   "tolerant": 1.0,
+   "n": 12
+  },
+  {
+   "item": "VS18",
+   "protocol": "sia",
+   "success": 1.0,
+   "tolerant": 1.0,
+   "n": 12
+  },
+  {
+   "item": "VS20",
+   "protocol": "sia",
+   "success": 1.0,
+   "tolerant": 1.0,
+   "n": 12
+  },
+  {
+   "item": "VS14",
+   "protocol": "sia",
+   "success": 1.0,
+   "tolerant": 1.0,
+   "n": 12
+  },
+  {
+   "item": "VS27",
+   "protocol": "sia",
+   "success": 1.0,
+   "tolerant": 1.0,
+   "n": 12
+  },
+  {
+   "item": "VS37",
+   "protocol": "sia",
+   "success": 1.0,
+   "tolerant": 1.0,
+   "n": 12
+  },
+  {
+   "item": "VS36",
+   "protocol": "sia",
+   "success": 1.0,
+   "tolerant": 1.0,
+   "n": 12
+  },
+  {
+   "item": "VS38",
+   "protocol": "sia",
+   "success": 1.0,
+   "tolerant": 1.0,
+   "n": 12
+  },
+  {
+   "item": "VS42",
+   "protocol": "sia",
+   "success": 1.0,
+   "tolerant": 1.0,
+   "n": 12
+  },
+  {
+   "item": "VS45",
+   "protocol": "sia",
+   "success": 1.0,
+   "tolerant": 1.0,
+   "n": 12
+  },
+  {
+   "item": "VS46",
+   "protocol": "sia",
+   "success": 1.0,
+   "tolerant": 1.0,
+   "n": 12
+  },
+  {
+   "item": "VS23",
+   "protocol": "sia",
+   "success": 1.0,
+   "tolerant": 1.0,
+   "n": 12
+  },
+  {
+   "item": "VS26",
+   "protocol": "sia",
+   "success": 1.0,
+   "tolerant": 1.0,
+   "n": 12
+  },
+  {
+   "item": "VP06",
+   "protocol": "ssa",
+   "success": 1.0,
+   "tolerant": 1.0,
+   "n": 9
+  },
+  {
+   "item": "VP04",
+   "protocol": "ssa",
+   "success": 1.0,
+   "tolerant": 1.0,
+   "n": 12
+  },
+  {
+   "item": "VP02",
+   "protocol": "ssa",
+   "success": 1.0,
+   "tolerant": 1.0,
+   "n": 11
+  },
+  {
+   "item": "VP03",
+   "protocol": "ssa",
+   "success": 1.0,
+   "tolerant": 1.0,
+   "n": 10
+  },
+  {
+   "item": "VO14",
+   "protocol": "none",
+   "success": 1.0,
+   "tolerant": 1.0,
+   "n": 12
+  },
+  {
+   "item": "VP12",
+   "protocol": "ssa",
+   "success": 1.0,
+   "tolerant": 1.0,
+   "n": 11
+  },
+  {
+   "item": "VS03",
+   "protocol": "sia",
+   "success": 1.0,
+   "tolerant": 1.0,
+   "n": 12
+  },
+  {
+   "item": "VT45",
+   "protocol": "tap",
+   "success": 1.0,
+   "tolerant": 1.0,
+   "n": 12
+  },
+  {
+   "item": "VT38",
+   "protocol": "tap",
+   "success": 1.0,
+   "tolerant": 1.0,
+   "n": 12
+  },
+  {
+   "item": "VT41",
+   "protocol": "tap",
+   "success": 1.0,
+   "tolerant": 1.0,
+   "n": 12
+  },
+  {
+   "item": "VT47",
+   "protocol": "tap",
+   "success": 1.0,
+   "tolerant": 1.0,
+   "n": 12
+  }
+ ],
+ "power_plan": [
+  {
+   "A": "A2",
+   "B": "A2-noschema",
+   "sd_item_diff": 0.20649812291464284,
+   "items_now": 157,
+   "n_delta_3": 372,
+   "n_delta_5": 134,
+   "n_delta_10": 34
+  },
+  {
+   "A": "A2",
+   "B": "A2-nores",
+   "sd_item_diff": 0.3739236523418667,
+   "items_now": 157,
+   "n_delta_3": 1220,
+   "n_delta_5": 439,
+   "n_delta_10": 110
+  },
+  {
+   "A": "A2-noschema",
+   "B": "A2-nores",
+   "sd_item_diff": 0.3361531135446034,
+   "items_now": 157,
+   "n_delta_3": 986,
+   "n_delta_5": 355,
+   "n_delta_10": 89
+  }
+ ],
+ "ci_halfwidth_mean": 0.04622444076710649
+}

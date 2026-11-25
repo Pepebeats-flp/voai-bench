@@ -1,0 +1,194 @@
+<!doctype html><html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>VOAI-Bench monitor</title>
+<style>
+:root{color-scheme:light;--bg:#f6f7f9;--panel:#fcfcfb;--line:#e3e6ec;--grid:#eceef2;--fg:#0b0b0b;--fg2:#52514e;--mute:#6b6a66;
+ --ok:#1f9d6c;--bad:#d1432f;--acc:#2a78d6;--s1:#2a78d6;--s2:#eb6834;--s3:#1baf7a;--s4:#eda100;--s5:#e87ba4;--seq:#2a78d6;--warnbg:#fff4e0;--warnfg:#7a4b00}
+@media (prefers-color-scheme: dark){:root:where(:not([data-theme="light"])){color-scheme:dark;--bg:#111110;--panel:#1a1a19;--line:#2c2c2a;--grid:#242423;--fg:#f0efec;--fg2:#c3c2b7;--mute:#9a998f;
+ --ok:#3fb68b;--bad:#e66767;--acc:#3987e5;--s1:#3987e5;--s2:#d95926;--s3:#199e70;--s4:#c98500;--s5:#d55181;--seq:#3987e5;--warnbg:#3a2a0a;--warnfg:#f3c46b}}
+:root[data-theme="dark"]{color-scheme:dark;--bg:#111110;--panel:#1a1a19;--line:#2c2c2a;--grid:#242423;--fg:#f0efec;--fg2:#c3c2b7;--mute:#9a998f;
+ --ok:#3fb68b;--bad:#e66767;--acc:#3987e5;--s1:#3987e5;--s2:#d95926;--s3:#199e70;--s4:#c98500;--s5:#d55181;--seq:#3987e5;--warnbg:#3a2a0a;--warnfg:#f3c46b}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--fg);font:14px/1.45 system-ui,-apple-system,"Segoe UI",sans-serif}
+header{display:flex;flex-wrap:wrap;gap:10px;align-items:center;padding:12px 20px;border-bottom:1px solid var(--line);position:sticky;top:0;background:var(--bg);z-index:5}
+h1{font-size:16px;margin:0 8px 0 0;font-weight:650}
+select,button{font:inherit;background:var(--panel);color:var(--fg);border:1px solid var(--line);border-radius:6px;padding:4px 10px}
+.tabs{display:flex;gap:4px}.tabs button{cursor:pointer}.tabs button[aria-selected=true]{border-color:var(--acc);color:var(--acc);font-weight:600}
+.pill{font-size:12px;padding:2px 8px;border-radius:99px;border:1px solid var(--line);color:var(--mute)}.live{color:var(--ok);border-color:var(--ok)}
+main{padding:16px 20px;display:grid;gap:16px;grid-template-columns:repeat(auto-fit,minmax(360px,1fr));max-width:1500px;margin:0 auto}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:14px 16px;min-width:0}.wide{grid-column:1/-1}
+h2{font-size:12px;text-transform:uppercase;letter-spacing:.05em;color:var(--mute);margin:0 0 4px;font-weight:600}
+.sub{color:var(--fg2);font-size:13px;margin:0 0 12px}
+.kpis{display:flex;flex-wrap:wrap;gap:24px}.kpi b{display:block;font-size:22px;font-variant-numeric:tabular-nums;font-weight:600}.kpi span{color:var(--mute);font-size:12px}
+.bar{height:6px;background:var(--grid);border-radius:99px;overflow:hidden;margin-top:10px}.bar i{display:block;height:100%;background:var(--acc)}
+table{border-collapse:collapse;width:100%;font-variant-numeric:tabular-nums;font-size:13px}th,td{padding:5px 8px;text-align:right;border-bottom:1px solid var(--grid);white-space:nowrap}
+th:first-child,td:first-child{text-align:left}th{color:var(--mute);font-weight:500;font-size:12px;position:sticky;top:0;background:var(--panel)}
+.scroll{overflow-x:auto}.ok{color:var(--ok)}.bad{color:var(--bad)}.mute{color:var(--mute)}
+.cell{border-radius:4px;padding:1px 6px;display:inline-block;min-width:48px;text-align:center}
+.banner{grid-column:1/-1;background:var(--warnbg);color:var(--warnfg);border-radius:10px;padding:10px 14px;font-size:13px}
+.legend{display:flex;gap:14px;flex-wrap:wrap;font-size:12px;color:var(--fg2);margin:4px 0 8px}.legend i{display:inline-block;width:10px;height:10px;border-radius:2px;margin-right:5px;vertical-align:-1px}
+svg text{fill:var(--mute);font-size:11px;font-family:inherit}svg .lab{fill:var(--fg2)}
+#tip{position:fixed;pointer-events:none;background:var(--panel);border:1px solid var(--line);border-radius:8px;padding:7px 10px;font-size:12px;box-shadow:0 4px 14px rgba(0,0,0,.18);display:none;z-index:10;max-width:300px}
+.grid-items{display:grid;grid-template-columns:repeat(auto-fill,minmax(64px,1fr));gap:4px}.gi{font-size:11px;text-align:center;border-radius:4px;padding:4px 0}
+.method h3{font-size:14px;margin:14px 0 6px}.method p,.method li{color:var(--fg2);font-size:13.5px}.method code{font-size:12.5px}
+.sig{font-weight:600}.tag{font-size:11px;border:1px solid var(--line);border-radius:4px;padding:0 5px;color:var(--mute)}
+details summary{cursor:pointer;color:var(--fg2);font-size:13px;margin-top:8px}
+</style></head><body>
+<header><h1>VOAI-Bench</h1>
+<div class="tabs" role="tablist"><button data-tab="monitor" aria-selected="true">Monitor</button><button data-tab="analisis">Análisis</button><button data-tab="metodo">Metodología</button></div>
+<select id="run" aria-label="Corrida"></select><span id="status" class="pill">…</span><span id="upd" class="pill"></span></header>
+<main id="app"></main><div id="tip"></div>
+<script>
+const $=s=>document.querySelector(s);let RUN=null,TAB='monitor',AN=null,ANRUN=null,LOADING=false;
+const ARCHC={'A0':'var(--s1)','A1':'var(--s2)','A2':'var(--s3)','A2-noschema':'var(--s4)','A2-noresolve':'var(--s5)'};
+const ARCHN={'A0':'A0 · plan en un paso','A1':'A1 · plan + resolver','A2':'A2 · agente con herramientas','A2-noschema':'A2 sin esquema','A2-noresolve':'A2 sin resolver'};
+const pct=(x,d=0)=>x==null?'–':(100*x).toFixed(d)+'%';const fmt=s=>s==null?'–':s<90?s.toFixed(0)+' s':s<5400?(s/60).toFixed(0)+' min':(s/3600).toFixed(1)+' h';
+const dpp=x=>x==null?'–':(x>0?'+':'')+(100*x).toFixed(1)+' pp';
+const pv=p=>p==null?'–':p<0.001?'<0.001':p.toFixed(3);
+const esc=s=>String(s??'').replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+function heat(r){if(r==null)return'transparent';return`color-mix(in oklab, var(--seq) ${Math.round(12+60*r)}%, transparent)`}
+function cell(o){if(!o||!o.n)return'<span class="mute">–</span>';return`<span class="cell" style="background:${heat(o.rate)}" title="${o.ok}/${o.n}">${pct(o.rate)}</span>`}
+// tooltip
+const tip=$('#tip');document.addEventListener('mousemove',e=>{const t=e.target.closest('[data-tip]');if(!t){tip.style.display='none';return}
+ tip.innerHTML=t.dataset.tip;tip.style.display='block';const w=tip.offsetWidth;tip.style.left=Math.min(innerWidth-w-8,e.clientX+14)+'px';tip.style.top=(e.clientY+14)+'px'});
+document.querySelectorAll('.tabs button').forEach(b=>b.onclick=()=>{TAB=b.dataset.tab;document.querySelectorAll('.tabs button').forEach(x=>x.setAttribute('aria-selected',x===b));draw()});
+$('#run').onchange=e=>{RUN=e.target.value;AN=null;draw()};
+let MON=null;
+async function tick(){try{MON=await (await fetch('/api/summary'+(RUN?'?run='+encodeURIComponent(RUN):''))).json();
+ const sel=$('#run');if(sel.options.length!==MON.runs.length){sel.innerHTML=MON.runs.map(r=>`<option>${r}</option>`).join('')} if(MON.run){sel.value=MON.run;RUN=RUN||MON.run}
+ $('#status').textContent=MON.active?'● en curso':(MON.done>=MON.total?'terminada':'detenida');$('#status').className='pill'+(MON.active?' live':'');
+ $('#upd').textContent='actualizado '+new Date().toLocaleTimeString(); if(TAB==='monitor')draw()}catch(e){$('#status').textContent='sin conexión'}}
+async function loadAnalysis(force){if(LOADING)return;if(AN&&ANRUN===RUN&&!force)return;LOADING=true;
+ try{const r=await fetch('/api/analysis'+(RUN?'?run='+encodeURIComponent(RUN):''));AN=await r.json();ANRUN=RUN}catch(e){AN={error:String(e)}}LOADING=false;if(TAB==='analisis')draw()}
+function draw(){if(TAB==='monitor')drawMonitor();else if(TAB==='analisis'){if(!AN||ANRUN!==RUN){$('#app').innerHTML='<section class="card wide"><p class="mute">Calculando análisis (bootstrap, pruebas pareadas, GEE)…</p></section>';loadAnalysis()}else drawAnalysis()}else drawMethod()}
+
+/* ============================ MONITOR ============================ */
+function drawMonitor(){const d=MON;if(!d){return}
+ const g=d.gold;let h='';
+ if(d.batch){const b=d.batch,st={running:'● corriendo',waiting_quota:'⏸ esperando reinicio de cuota',retry_wait:'⏸ reintento',finished:'✓ terminado',paused:'⏸ en pausa',gate_failed:'✗ control de calidad rechazado (sin gastar)'}[b.state]||b.state;
+  const G=b.gate;const gateHtml=G?`<p class="sub" style="margin-top:8px"><b class="${G.passed?'ok':'bad'}">Control de calidad de la prueba de humo: ${G.passed?'✓ aprobado':'✗ rechazado'}</b> · ${Object.entries(G.checks).map(([k,v])=>`<span class="${v.ok?'ok':'bad'}">${k.replace(/_/g,' ')}: ${esc(JSON.stringify(v.value))}</span>`).join(' · ')}</p>`:'';
+  h+=`<section class="card"><h2>Corredor por tandas</h2><div class="kpis"><div class="kpi"><b>${st}</b><span>fase ${esc(b.phase||'–')}${b.resume_at?' · reanuda a las '+new Date(b.resume_at*1000).toLocaleTimeString([], {hour:'2-digit',minute:'2-digit'}):''}</span></div></div>
+  <table style="margin-top:8px"><tr><th>Fase</th><th>bench</th><th>modelos</th><th>reps</th><th>estado</th></tr>${(b.phases||[]).map(p=>`<tr><td>${esc(p.name)}</td><td>${p.bench}</td><td>${p.n_models}</td><td>${p.repeats}</td><td class="${p.done?'ok':''}">${p.done?'✓ completa':(p.name===b.phase?'en curso':'pendiente')}</td></tr>`).join('')}</table>${gateHtml}</section>`}
+ h+=`<section class="card"><h2>Gold</h2><div class="kpis"><div class="kpi"><b>${g.done}/${g.total}</b><span>ítems con gold</span></div></div><div class="bar"><i style="width:${100*g.done/g.total}%"></i></div>${g.missing.length?`<p class="mute">Faltan: ${g.missing.join(', ')}</p>`:''}</section>`;
+ if(!d.run){$('#app').innerHTML=h;return}
+ h+=`<section class="card"><h2>Progreso · ${esc(d.run)}</h2><div class="kpis"><div class="kpi"><b>${d.done}/${d.total}</b><span>episodios válidos</span></div><div class="kpi"><b>${pct(d.overall.rate)}</b><span>éxito global</span></div>
+ <div class="kpi"><b>$${d.cost_total.toFixed(2)}</b><span>costo lista</span></div><div class="kpi"><b>${d.infra_errors}</b><span>caídas infra/cuota (se repiten)</span></div><div class="kpi"><b>${fmt(d.eta_s)}</b><span>ETA</span></div></div>
+ <div class="bar"><i style="width:${100*d.done/Math.max(1,d.total)}%"></i></div></section>`;
+ h+=`<section class="card wide"><h2>Éxito por modelo × arquitectura</h2><p class="sub">Tasa de éxito de punta a punta. Celda más oscura = mayor éxito.</p><div class="scroll"><table><tr><th>Modelo</th>${d.archs.map(a=>`<th>${a}</th>`).join('')}${d.archs.map(a=>`<th>costo ${a}</th>`).join('')}</tr>
+ ${d.models.map(m=>`<tr><td>${m}</td>${d.archs.map(a=>`<td>${cell(d.matrix[m+'|'+a])}</td>`).join('')}${d.archs.map(a=>`<td class="mute">$${(d.matrix[m+'|'+a].cost||0).toFixed(3)}</td>`).join('')}</tr>`).join('')}
+ <tr><td><b>Todas</b></td>${d.archs.map(a=>`<td>${cell(d.by_arch[a])}</td>`).join('')}</tr></table></div></section>`;
+ h+=`<section class="card"><h2>Fallos más comunes</h2><table>${d.errors.map(([k,n])=>`<tr><td>${esc(k)}</td><td>${n}</td></tr>`).join('')||'<tr><td class="mute">–</td></tr>'}</table></section>`;
+ h+=`<section class="card wide"><h2>Últimos episodios</h2><div class="scroll"><table><tr><th>Ítem</th><th>Modelo</th><th>Arq.</th><th>Idioma</th><th>Resultado</th><th>Objetivo</th><th>Herram.</th><th>Tiempo</th><th>Costo</th><th>Error</th></tr>
+ ${d.recent.map(r=>`<tr><td>${r.item}</td><td>${r.model}</td><td>${r.arch}</td><td>${r.lang}</td><td class="${r.ok?'ok':'bad'}">${r.ok?'✓ éxito':'✗ fallo'}</td><td>${esc(r.target||'–')}</td><td>${r.calls}</td><td>${fmt(r.t)}</td><td>$${(r.cost||0).toFixed(4)}</td><td class="mute">${esc((r.err||'').slice(0,50))}</td></tr>`).join('')}</table></div></section>`;
+ $('#app').innerHTML=h}
+
+/* ============================ ANÁLISIS ============================ */
+function legendArch(archs){return`<div class="legend">${archs.map(a=>`<span><i style="background:${ARCHC[a]}"></i>${ARCHN[a]||a}</span>`).join('')}</div>`}
+function groupedBars(rows,groupKey,groups,archs,{h=230,labels={}}={}){ // barras agrupadas con IC95
+ const W=Math.max(420,groups.length*archs.length*26+groups.length*30),H=h,ml=38,mb=26,mt=8,pw=W-ml-10,ph=H-mb-mt;
+ const gw=pw/groups.length,bw=Math.min(22,(gw-14)/archs.length-2);let s=`<svg viewBox="0 0 ${W} ${H}" width="100%" style="max-width:${W}px" role="img">`;
+ for(let t=0;t<=1.0001;t+=0.25){const y=mt+ph*(1-t);s+=`<line x1="${ml}" x2="${W-10}" y1="${y}" y2="${y}" stroke="var(--grid)"/><text x="${ml-6}" y="${y+4}" text-anchor="end">${t*100}%</text>`}
+ groups.forEach((gk,gi)=>{const x0=ml+gi*gw+(gw-(archs.length*(bw+2)))/2;s+=`<text class="lab" x="${ml+gi*gw+gw/2}" y="${H-8}" text-anchor="middle">${labels[gk]||gk}</text>`;
+  archs.forEach((a,ai)=>{const r=rows.find(r=>String(r[groupKey])===String(gk)&&r.arch===a);if(!r)return;const x=x0+ai*(bw+2),y=mt+ph*(1-r.success),hh=ph*r.success;
+   const tipt=`<b>${labels[gk]||gk} · ${a}</b><br>éxito ${pct(r.success,1)} (IC95 ${pct(r.ci_lo)}–${pct(r.ci_hi)})<br>tolerante ${pct(r.tolerant,1)} · plan correcto ${pct(r.plan_ok,1)} · n=${r.n}`;
+   s+=`<g data-tip="${esc(tipt)}"><rect x="${x-1}" y="${mt}" width="${bw+2}" height="${ph}" fill="transparent"/><path d="M${x},${mt+ph} V${y+3} q0,-3 3,-3 h${bw-6} q3,0 3,3 V${mt+ph} Z" fill="${ARCHC[a]}"/>`;
+   if(r.ci_lo!=null){const y1=mt+ph*(1-r.ci_hi),y2=mt+ph*(1-r.ci_lo),cx=x+bw/2;s+=`<line x1="${cx}" x2="${cx}" y1="${y1}" y2="${y2}" stroke="var(--fg)" stroke-width="1.2"/><line x1="${cx-3}" x2="${cx+3}" y1="${y1}" y2="${y1}" stroke="var(--fg)"/><line x1="${cx-3}" x2="${cx+3}" y1="${y2}" y2="${y2}" stroke="var(--fg)"/>`}
+   s+=`</g>`})});return s+'</svg>'}
+function paretoChart(pts,archs){const W=640,H=300,ml=44,mb=34,mt=10,mr=14,pw=W-ml-mr,ph=H-mb-mt;
+ const xs=pts.map(p=>Math.max(1e-4,p.cost)),lx0=Math.floor(Math.log10(Math.min(...xs))),lx1=Math.ceil(Math.log10(Math.max(...xs)));
+ const ymin=Math.max(0,Math.floor((Math.min(...pts.map(p=>p.success))-0.05)*10)/10);
+ const X=c=>ml+pw*(Math.log10(Math.max(1e-4,c))-lx0)/Math.max(1,(lx1-lx0)),Y=v=>mt+ph*(1-(v-ymin)/(1-ymin));
+ let s=`<svg viewBox="0 0 ${W} ${H}" width="100%" style="max-width:${W}px" role="img">`;
+ for(let e=lx0;e<=lx1;e++){const x=X(10**e);s+=`<line x1="${x}" x2="${x}" y1="${mt}" y2="${mt+ph}" stroke="var(--grid)"/><text x="${x}" y="${H-18}" text-anchor="middle">$${(10**e).toString()}</text>`}
+ for(let v=ymin;v<=1.0001;v+=0.1){const y=Y(v);s+=`<line x1="${ml}" x2="${W-mr}" y1="${y}" y2="${y}" stroke="var(--grid)"/><text x="${ml-6}" y="${y+4}" text-anchor="end">${Math.round(v*100)}%</text>`}
+ s+=`<text x="${ml+pw/2}" y="${H-2}" text-anchor="middle">costo de lista por 100 consultas (US$, escala log)</text>`;
+ const fr=pts.filter(p=>p.pareto).sort((a,b)=>a.cost-b.cost);if(fr.length>1)s+=`<polyline points="${fr.map(p=>X(p.cost)+','+Y(p.success)).join(' ')}" fill="none" stroke="var(--fg2)" stroke-width="1.5" stroke-dasharray="4 3"/>`;
+ pts.forEach(p=>{const t=`<b>${esc(p.model)} · ${p.arch}</b><br>éxito ${pct(p.success,1)} (IC95 ${pct(p.ci_lo)}–${pct(p.ci_hi)})<br>$${p.cost.toFixed(3)} / 100 consultas · t̃ ${fmt(p.wall)}${p.pareto?'<br><b>en la frontera de Pareto</b>':''}`;
+  s+=`<g data-tip="${esc(t)}"><circle cx="${X(p.cost)}" cy="${Y(p.success)}" r="12" fill="transparent"/><circle cx="${X(p.cost)}" cy="${Y(p.success)}" r="${p.pareto?6:5}" fill="${ARCHC[p.arch]}" stroke="var(--panel)" stroke-width="2"/></g>`;
+  if(p.pareto)s+=`<text class="lab" x="${X(p.cost)+8}" y="${Y(p.success)-8}">${esc(p.model)}</text>`});
+ return s+'</svg>'}
+function forest(coefs){const W=640,rowH=22,ml=250,mr=60,H=coefs.length*rowH+34,pw=W-ml-mr;
+ const lo=Math.min(0.05,...coefs.map(c=>c.lo)),hi=Math.max(20,...coefs.map(c=>c.hi));const L0=Math.log10(lo),L1=Math.log10(hi),X=v=>ml+pw*(Math.log10(Math.min(hi,Math.max(lo,v)))-L0)/(L1-L0);
+ let s=`<svg viewBox="0 0 ${W} ${H}" width="100%" style="max-width:${W}px" role="img">`;
+ [0.1,0.25,0.5,1,2,4,10].forEach(v=>{if(v<lo||v>hi)return;const x=X(v);s+=`<line x1="${x}" x2="${x}" y1="6" y2="${H-24}" stroke="${v===1?'var(--fg2)':'var(--grid)'}" ${v===1?'stroke-width="1.2"':''}/><text x="${x}" y="${H-8}" text-anchor="middle">${v}</text>`});
+ coefs.forEach((c,i)=>{const y=14+i*rowH,sig=c.p<0.05;const t=`<b>${esc(c.term)}</b><br>OR ${c.OR.toFixed(2)} (IC95 ${c.lo.toFixed(2)}–${c.hi.toFixed(2)})<br>p = ${pv(c.p)}`;
+  s+=`<g data-tip="${esc(t)}"><rect x="0" y="${y-10}" width="${W}" height="${rowH}" fill="transparent"/><text class="lab" x="${ml-10}" y="${y+4}" text-anchor="end">${esc(c.term.length>38?c.term.slice(0,37)+'…':c.term)}</text>
+  <line x1="${X(c.lo)}" x2="${X(c.hi)}" y1="${y}" y2="${y}" stroke="var(--seq)" stroke-width="2"/><circle cx="${X(c.OR)}" cy="${y}" r="${sig?5:4}" fill="${sig?'var(--seq)':'var(--panel)'}" stroke="var(--seq)" stroke-width="2"/>
+  <text x="${W-mr+8}" y="${y+4}">${c.OR.toFixed(2)}${sig?' *':''}</text></g>`});
+ return s+'</svg>'}
+function drawAnalysis(){const A=AN;if(A.error){$('#app').innerHTML=`<section class="card wide"><h2>Error</h2><pre>${esc(A.error)}\n${esc(A.tb||'')}</pre></section>`;return}
+ if(A.empty){$('#app').innerHTML='<section class="card wide"><p class="mute">Sin datos.</p></section>';return}
+ const M=A.meta,archs=M.archs;let h=`<div class="banner"><b>Preliminar.</b> ${M.n} episodios válidos: ${M.models.length} modelos × ${archs.length} arquitecturas × ${M.items} ítems × ${M.langs.length} idiomas × ${M.reps} rep. Unidad estadística = ítem (n=${M.items}). Excluidos por infraestructura/cuota: ${M.n_infra_excluded}. Semiancho medio del IC95 por celda: ±${pct(A.ci_halfwidth_mean,0)}. Métrica primaria: <b>éxito estricto basado en ejecución</b> (Spider/BIRD EX · ALeRCE PM).</div>`;
+ const ba=Object.fromEntries(A.by_arch.map(r=>[r.arch,r]));
+ h+=`<section class="card wide"><h2>Resultado principal · éxito estricto</h2><div class="kpis">${archs.map(a=>`<div class="kpi"><b><i style="display:inline-block;width:10px;height:10px;border-radius:2px;background:${ARCHC[a]};margin-right:6px"></i>${pct(ba[a].success)}</b><span>${ARCHN[a]||a} · IC95 ${pct(ba[a].ci_lo)}–${pct(ba[a].ci_hi)} · plan correcto ${pct(ba[a].plan_ok)}</span></div>`).join('')}
+ <div class="kpi"><b>$${M.cost_total.toFixed(2)}</b><span>costo total de lista</span></div></div></section>`;
+ const prots=['sia','scs','tap','ssa','none'].filter(p=>A.by_protocol.some(r=>r.protocol===p));
+ const PL={sia:'SIA2 imágenes',scs:'Cone search',tap:'TAP/ADQL',ssa:'SSA espectros',none:'Fuera de alcance'};
+ h+=`<section class="card wide"><h2>RQ1–RQ2 · Éxito por protocolo y arquitectura</h2><p class="sub">Éxito estricto con IC95% por bootstrap de clúster por ítem. Pasa el cursor sobre una barra para ver la variante tolerante y la corrección del plan.</p>${legendArch(archs)}<div class="scroll">${groupedBars(A.by_protocol,'protocol',prots,archs,{labels:PL})}</div></section>`;
+ h+=`<section class="card"><h2>RQ3 · Dificultad</h2><p class="sub">1 = explícita · 2 = requiere conocimiento · 3 = ambigua/compuesta</p>${legendArch(archs)}${groupedBars(A.by_difficulty,'difficulty',[1,2,3],archs,{h:200,labels:{1:'Dificultad 1',2:'Dificultad 2',3:'Dificultad 3'}})}</section>`;
+ h+=`<section class="card"><h2>RQ3 · Idioma</h2><p class="sub">Diferencia ES − EN pareada por ítem. Prueba de permutación por cambio de signo con corrección de Holm.</p>${legendArch(archs)}${groupedBars(A.by_lang,'lang',['en','es'],archs,{h:200,labels:{en:'Inglés',es:'Español'}})}
+  <table><tr><th>Arquitectura</th><th>ítems</th><th>EN</th><th>ES</th><th>Δ ES−EN [IC95]</th><th>p</th><th>p Holm</th></tr>${A.lang_tests.map(t=>`<tr><td>${t.arch}</td><td>${t.items}</td><td>${pct(t.en)}</td><td>${pct(t.es)}</td><td>${dpp(t.delta)} <span class="mute">[${dpp(t.lo)}, ${dpp(t.hi)}]</span></td><td>${pv(t.p)}</td><td class="${t.p_holm<0.05?'sig':''}">${pv(t.p_holm)}</td></tr>`).join('')}</table></section>`;
+ h+=`<section class="card wide"><h2>RQ4 · Costo vs. éxito (frontera de Pareto, Kapoor et al. 2025)</h2><p class="sub">Cada punto es un modelo con una arquitectura. La línea punteada une las configuraciones que ninguna otra supera en éxito a menor costo; esas llevan nombre.</p>${legendArch(archs)}${paretoChart(A.pareto,archs)}</section>`;
+ const mains=[...A.main].sort((a,b)=>a.model.localeCompare(b.model)||archs.indexOf(a.arch)-archs.indexOf(b.arch));
+ h+=`<section class="card wide"><h2>Tabla principal · modelo × arquitectura</h2><p class="sub">Formato propuesto para la tabla de resultados del paper. Entre paréntesis, la fuente de cada métrica: Spider/BIRD/ALeRCE, BFCL, MCP-Bench, Kapoor.</p><div class="scroll"><table><tr><th>Modelo</th><th>Arq.</th><th>n</th><th>Éxito estricto</th><th>IC95</th><th>Tolerante</th><th>Plan correcto (BFCL)</th><th>Protocolo</th><th>Coord ≤1′</th><th>Irrelevancia (BFCL)</th><th>Abst. indebida</th><th>URL alucinada</th><th>Validez herram. (MCP-Bench)</th><th>US$/100</th><th>US$/éxito</th><th>Pasos (éxitos)</th><th>Tokens salida</th><th>t̃ total</th><th>t̃ LLM</th><th>t̃ VO</th></tr>
+ ${mains.map(r=>`<tr><td>${esc(r.model)}</td><td><i style="display:inline-block;width:8px;height:8px;border-radius:2px;background:${ARCHC[r.arch]};margin-right:5px"></i>${r.arch}</td><td>${r.n}</td><td><span class="cell" style="background:${heat(r.success)}">${pct(r.success)}</span></td><td class="mute">${pct(r.ci_lo)}–${pct(r.ci_hi)}</td><td>${pct(r.tolerant)}</td><td>${pct(r.plan_ok)}</td><td>${pct(r.protocol_acc)}</td><td>${pct(r.coord_ok)}</td><td>${pct(r.irrelevance)}</td><td>${pct(r.false_abstain,1)}</td><td>${pct(r.hallucinated,1)}</td><td>${pct(r.tool_validity)}</td><td>$${r.cost_per_100.toFixed(3)}</td><td>${r.cost_per_success==null?'–':'$'+r.cost_per_success.toFixed(4)}</td><td>${r.steps_success==null?'–':r.steps_success.toFixed(1)}</td><td>${Math.round(r.tok_out_mean)}</td><td>${fmt(r.wall_med)}</td><td>${fmt(r.llm_med)}</td><td>${fmt(r.tool_med)}</td></tr>`).join('')}</table></div></section>`;
+ h+=`<section class="card"><h2>Sensibilidad (planificada antes de ver resultados) · estricto vs. tolerante</h2><p class="sub">La variante tolerante acepta otro centro dentro del tamaño del objeto, como el conjunto de "respuestas posibles" de BFCL. "Cambian" = episodios que solo son exitosos con tolerancia.</p><table><tr><th>Arq.</th><th>estricto</th><th>tolerante</th><th>cambian</th><th>n</th></tr>${A.sensitivity.map(s=>`<tr><td>${s.arch}</td><td>${pct(s.strict)}</td><td>${pct(s.tolerant)}</td><td>${s.flipped}</td><td>${s.n}</td></tr>`).join('')}</table></section>`;
+ h+=`<section class="card"><h2>Abstención (BFCL relevance / irrelevance)</h2><p class="sub">Irrelevancia = se abstiene en consultas fuera de alcance (más alto es mejor). Abstención indebida = se abstiene en consultas respondibles (más bajo es mejor).</p><table><tr><th>Arq.</th><th>irrelevancia</th><th>abst. indebida</th></tr>${A.abstention.map(s=>`<tr><td>${s.arch}</td><td>${pct(s.irrelevance)}</td><td>${pct(s.false_abstain,1)}</td></tr>`).join('')}</table></section>`;
+ const at=A.arch_tests.filter(t=>t.model==='(todos)'),atm=A.arch_tests.filter(t=>t.model!=='(todos)');
+ h+=`<section class="card wide"><h2>RQ2 · Efecto de la arquitectura</h2><p class="sub">Diferencia pareada por ítem (éxito medio B − A), con IC95 bootstrap y prueba de permutación por cambio de signo, corregida con Holm. Unidad = ítem (Miller 2024). En negrita, p Holm &lt; 0,05.</p><div class="scroll"><table><tr><th>Modelo</th><th>A</th><th>B</th><th>ítems</th><th>éxito A</th><th>éxito B</th><th>Δ [IC95]</th><th>ítems B mejor</th><th>ítems A mejor</th><th>p</th><th>p Holm</th></tr>
+ ${[...at,...atm].map(t=>`<tr><td>${t.model==='(todos)'?'<b>todos</b>':esc(t.model)}</td><td>${t.A}</td><td>${t.B}</td><td>${t.items}</td><td>${pct(t.succ_A)}</td><td>${pct(t.succ_B)}</td><td class="${t.delta>0?'ok':t.delta<0?'bad':''}">${dpp(t.delta)} <span class="mute">[${dpp(t.lo)}, ${dpp(t.hi)}]</span></td><td>${t.items_B_better}</td><td>${t.items_A_better}</td><td>${pv(t.p)}</td><td class="${t.p_holm<0.05?'sig':''}">${pv(t.p_holm)}</td></tr>`).join('')}</table></div></section>`;
+ h+=`<section class="card wide"><h2>RQ1 · Diferencias entre modelos</h2><p class="sub">Test de Friedman sobre el éxito medio por ítem y luego pares con permutación y Holm.</p><div class="scroll"><table><tr><th>Arquitectura</th><th>ítems</th><th>χ² Friedman</th><th>p</th><th>Ranking (éxito medio)</th><th>pares significativos (Holm &lt; 0,05)</th></tr>
+ ${A.model_tests.map(t=>{const sig=t.pairs.filter(p=>p.p_holm<0.05);return`<tr><td>${t.arch}</td><td>${t.items}</td><td>${t.chi2==null?'–':t.chi2.toFixed(1)}</td><td class="${t.p<0.05?'sig':''}">${pv(t.p)}</td><td style="text-align:left;white-space:normal">${t.ranking.map(r=>`${esc(r.model)} ${pct(r.success)}`).join(' › ')}</td><td style="text-align:left;white-space:normal">${sig.length?sig.map(p=>`${esc(p.m2)} − ${esc(p.m1)} = ${dpp(p.delta)}`).join('; '):'<span class="mute">ninguno</span>'}</td></tr>`}).join('')}</table></div></section>`;
+ if(A.gee&&A.gee.coefs){h+=`<section class="card wide"><h2>Modelo conjunto · regresión logística GEE (clúster por ítem)</h2><p class="sub">Odds ratio de éxito estricto de cada factor manteniendo los demás constantes. OR &gt; 1 mejora el éxito; si el intervalo cruza 1, el efecto no es significativo. Punto lleno y * = p &lt; 0,05. Modelo de referencia: ${esc(A.gee.ref_model)}.</p><div class="scroll">${forest(A.gee.coefs)}</div><details><summary>Fórmula</summary><code>${esc(A.gee.formula)}</code></details></section>`}
+ else h+=`<section class="card wide"><h2>GEE</h2><p class="mute">${esc(A.gee&&A.gee.error)}</p></section>`;
+ if(A.passk&&A.passk.length){const ks=Object.keys(A.passk[0]).filter(k=>k.startsWith('pass'));h+=`<section class="card wide"><h2>Fiabilidad · pass^k y pass@k (τ-bench; Codex)</h2><div class="scroll"><table><tr><th>Modelo</th><th>Arq.</th>${ks.map(k=>`<th>${k}</th>`).join('')}</tr>${A.passk.map(r=>`<tr><td>${esc(r.model)}</td><td>${r.arch}</td>${ks.map(k=>`<td>${pct(r[k])}</td>`).join('')}</tr>`).join('')}</table></div></section>`}
+ else h+=`<section class="card"><h2>Fiabilidad · pass^k (τ-bench)</h2><p class="sub">Requiere repeticiones. El piloto tiene 1; el experimento final, 5.</p></section>`;
+ const causes=[...new Set(A.taxonomy.map(t=>t.cause))];const tx=(a,c)=>A.taxonomy.find(t=>t.arch===a&&t.cause===c);const maxs=Math.max(...A.taxonomy.map(t=>t.share),0.01);
+ causes.sort((c1,c2)=>A.taxonomy.filter(t=>t.cause===c2).reduce((s,t)=>s+t.n,0)-A.taxonomy.filter(t=>t.cause===c1).reduce((s,t)=>s+t.n,0));
+ h+=`<section class="card wide"><h2>Taxonomía de fallos</h2><p class="sub">Primera causa de fallo de cada episodio, separando errores de ejecución de errores semánticos como ALeRCE. Porcentaje sobre todos los episodios de la arquitectura.</p><div class="scroll"><table><tr><th>Causa</th>${archs.map(a=>`<th>${a}</th>`).join('')}</tr>
+ ${causes.map(c=>`<tr><td>${esc(c)}</td>${archs.map(a=>{const t=tx(a,c);return`<td>${t?`<span style="display:inline-block;height:8px;width:${Math.round(60*t.share/maxs)}px;background:var(--seq);border-radius:0 4px 4px 0;margin-right:6px;vertical-align:0"></span>${pct(t.share,1)} <span class="mute">(${t.n})</span>`:'<span class="mute">–</span>'}</td>`}).join('')}</tr>`).join('')}</table></div></section>`;
+ h+=`<section class="card"><h2>Ítems más difíciles</h2><table><tr><th>Ítem</th><th>Protocolo</th><th>Estricto</th><th>Tolerante</th><th>n</th></tr>${A.items.slice(0,12).map(i=>`<tr><td>${i.item}</td><td>${i.protocol}</td><td><span class="cell" style="background:${heat(i.success)}">${pct(i.success)}</span></td><td>${pct(i.tolerant)}</td><td>${i.n}</td></tr>`).join('')}</table></section>`;
+ h+=`<section class="card"><h2>Planificación del experimento final</h2><p class="sub">Ítems necesarios para detectar una diferencia Δ entre arquitecturas (diferencia pareada por ítem, α = 0,05, potencia 80%; Miller 2024), según la desviación estándar observada de las diferencias por ítem.</p><table><tr><th>Comparación</th><th>DE dif. por ítem</th><th>ítems hoy</th><th>Δ = 3 pp</th><th>Δ = 5 pp</th><th>Δ = 10 pp</th></tr>${A.power_plan.map(p=>`<tr><td>${p.A} vs ${p.B}</td><td>${p.sd_item_diff.toFixed(2)}</td><td>${p.items_now}</td><td>${p.n_delta_3??'–'}</td><td>${p.n_delta_5??'–'}</td><td>${p.n_delta_10??'–'}</td></tr>`).join('')}</table>
+ <p class="sub" style="margin-top:8px">Las repeticiones y los modelos adicionales reducen el ruido dentro de cada ítem, pero no reemplazan a más ítems.</p></section>`;
+ $('#app').innerHTML=h}
+
+
+/* ============================ METODOLOGÍA ============================ */
+function drawMethod(){$('#app').innerHTML=`<section class="card wide method"><h2>Diseño experimental</h2>
+<p><b>Factores:</b> modelo × arquitectura (A0, A1, A2; ablaciones A2-noschema y A2-noresolve en el final) × idioma (EN/ES) × ítem (50: 22 SIA2, 8 SCS, 14 TAP/ADQL, 4 SSA, 2 fuera de alcance) × repetición (1 en el piloto; ≥3 en el final, como exige τ-bench para pass^k). Diseño cruzado y pareado. <b>Unidad estadística = ítem</b>: los episodios de un mismo ítem no son independientes (Miller 2024).</p>
+<p><b>Control de confusores:</b> catálogo cerrado de servicios estables; caché <i>record/replay</i> de las respuestas VO (evaluador "estático" de MCP-Universe); temperatura 0; mismos prompts; orden de ejecución aleatorio; las caídas de servicios o de cuota se excluyen y se repiten. Gold siempre no vacío (regla "valid result" de BIRD).</p>
+<p class="mute">Fuente: bib/metricas_estado_del_arte.md (17 artículos leídos en texto completo).</p></section>
+<section class="card method"><h2>Métrica primaria</h2>
+<p><b>Éxito estricto de punta a punta, basado en ejecución</b>, binario por episodio. Es la media sobre tareas, equivalente a pass^1 de τ-bench.</p><ul>
+<li><b>TAP/ADQL:</b> el conjunto de identificadores de fila devueltos es igual al del gold, sin importar orden ni duplicados (BIRD EX, <code>set()</code>; Spider EX; ALeRCE PM_rows). Se aceptan columnas extra y la columna identificadora puede estar en cualquier posición (ALeRCE PM_cols). En agregados, el valor debe coincidir (ALeRCE trata <code>count</code> como identificador).</li>
+<li><b>Cone search:</b> igualdad exacta del conjunto de fuentes. Precisión, recall y Jaccard quedan como diagnóstico.</li>
+<li><b>SIA2/SSA:</b> evaluador basado en ejecución (MCP-Universe/MCP-Bench). La URL debe estar en la traza, la huella debe contener el objetivo y el rango espectral debe solaparse con el pedido.</li>
+<li><b>Fuera de alcance:</b> el sistema debe abstenerse (BFCL <i>irrelevance</i>).</li></ul>
+<h3>Sensibilidad (planificada antes de ver resultados)</h3><p><b>Éxito tolerante:</b> acepta otro centro del objeto dentro de su tamaño (≈ "possible answers" de BFCL). Se reportan la diferencia pareada y cuántos episodios cambian de estado.</p></section>
+<section class="card method"><h2>Métricas secundarias</h2><ul>
+<li><b>Plan correcto sin ejecutar</b> (≈ BFCL AST): protocolo válido y argumentos dentro del conjunto aceptable.</li>
+<li><b>Exactitud de protocolo</b> (BFCL nombre de función; MCP-Bench <i>tool appropriateness</i>); <b>error angular</b> (mediana e IQR, % ≤ 1′).</li>
+<li><b>Abstención:</b> irrelevancia y abstención indebida en columnas separadas (BFCL relevance/irrelevance).</li>
+<li><b>URL alucinada</b> (MCP-Bench R_valid); <b>validez de llamadas a herramientas</b> (MCP-Bench <i>execution success rate</i>).</li>
+<li><b>Errores ADQL</b>: ejecución vs. semántica (ALeRCE, Fig. 10).</li>
+<li><b>Fiabilidad:</b> pass^k y pass@k con estimadores insesgados (τ-bench; Codex).</li>
+<li><b>Eficiencia:</b> US$ por tarea y por éxito con precios de lista fechados (ALeRCE; Kapoor); tokens de entrada, salida y razonamiento; latencia separada en LLM y VO (ningún trabajo astronómico la reporta); pasos en episodios exitosos (MCP-Universe).</li>
+<li><b>Energía</b> (pendiente): intervalo [E_min, E_max] con el método de Jegham et al. 2025 a partir de los tokens medidos; medición directa si se agregan modelos locales (Luccioni et al. 2024).</li></ul></section>
+<section class="card method"><h2>Pruebas estadísticas</h2><ul>
+<li><b>IC95%:</b> bootstrap de clúster por ítem (Miller 2024).</li>
+<li><b>Arquitecturas y idioma:</b> diferencia pareada por ítem con IC bootstrap y prueba de permutación por cambio de signo, más corrección de Holm. ALeRCE usa permutación con Holm.</li>
+<li><b>Modelos:</b> test de Friedman sobre el éxito medio por ítem y pares con permutación y Holm.</li>
+<li><b>Modelo conjunto:</b> regresión logística GEE (correlación intercambiable, clúster por ítem): éxito ~ arquitectura + modelo + idioma + protocolo + dificultad.</li>
+<li><b>Costo–beneficio:</b> frontera de Pareto (Kapoor et al. 2025).</li>
+<li><b>Tamaño muestral:</b> ítems necesarios para Δ = 3, 5 y 10 pp (Miller 2024, ec. 9).</li></ul></section>
+<section class="card method"><h2>Taxonomía de fallos (orden de precedencia)</h2><ol>
+<li>No se abstuvo en una consulta fuera de alcance</li><li>Sin respuesta o formato inválido</li><li>Abstención indebida</li><li>URL alucinada</li><li>ADQL no ejecuta: error de <b>ejecución</b> (sintaxis, dialecto o timeout)</li><li>Objetivo o coordenadas incorrectas</li><li>Centro distinto, válido solo con tolerancia</li><li>No encontró recurso</li><li>Banda o recurso incorrecto</li><li>Resultado de consulta incorrecto: error <b>semántico</b></li></ol></section>
+<section class="card method"><h2>Decisiones abiertas</h2><ol>
+<li><s>Métrica primaria</s> → <b>estricta, basada en ejecución</b>; la tolerante queda como sensibilidad (resuelto con la literatura).</li>
+<li><b>Ampliar el benchmark</b> con ítems difíciles: la tabla de potencia indica cuántos.</li>
+<li><b>Separar desarrollo y prueba:</b> no ajustar los prompts con los ítems de evaluación (Kapoor et al. 2025).</li>
+<li><b>Repeticiones:</b> ≥ 3 (τ-bench); se propone 5.</li>
+<li><b>Modelos finales</b>: frontera por API directa y, opcionalmente, AstroSage-8B.</li>
+<li><b>Esquema de herramientas:</b> documentar el campo <code>protocol</code> de <code>submit_answer</code>.</li>
+<li><b>Auditoría experta pequeña</b> (opcional): un astrónomo revisa una muestra de casos que el evaluador marcó como éxito.</li></ol></section>`}
+
+tick();setInterval(()=>{tick();if(TAB==='analisis')loadAnalysis()},10000);
+</script></body></html>

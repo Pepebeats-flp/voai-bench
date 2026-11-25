@@ -1,0 +1,41 @@
+# Tolerancia posicional por ítem (grados): radio dentro del cual un centro distinto al de Sesame
+# se considera una interpretación válida del "centro" del objeto (aprox. radio angular del objeto,
+# acotado). Valor por defecto: 1 arcmin (0.016667). Fuente de tamaños: dimensiones aparentes
+# típicas (SIMBAD/NED); se documenta en el paper como decisión de diseño.
+default: 0.016667
+items:
+  S01: 0.08   # M51
+  S02: 0.05   # NGC 1300
+  S03: 0.05   # M1
+  S04: 0.05
+  S05: 0.02   # Sgr A* / centro galáctico
+  S06: 0.25   # M42
+  S07: 1.0    # M31
+  S10: 0.05   # M87
+  S11: 1.0    # M45
+  S12: 0.1    # eta Car (nebulosa de Carina alrededor)
+  S13: 0.25   # 30 Dor
+  S14: 0.15   # Cen A
+  S15: 0.05   # Horsehead
+  S21: 0.05   # M104
+  S22: 0.01   # Betelgeuse
+  C01: 0.016667
+  C02: 0.01   # M57
+  C03: 0.05   # M13
+  C06: 0.016667
+  C07: 0.005  # Sgr A*
+  T01: 0.25   # M45 "centre"
+  T02: 0.1    # M67
+  T03: 0.01   # Vega
+  T04: 0.05   # M82
+  T05: 0.005
+  T06: 0.05   # M13
+  T07: 0.25   # M44
+  T09: 0.25   # M45
+  T10: 0.01
+  T12: 0.003  # Betelgeuse (30 arcsec cone)
+  T13: 0.02   # SGP
+  T14: 0.1    # omega Cen
+  P01: 0.1
+  P02: 0.07
+  P03: 0.05

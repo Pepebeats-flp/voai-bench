@@ -1,0 +1,2045 @@
+# VOAI-Bench v1 — conjunto de PRUEBA generado por bench/generate_v1.py (semilla 2026).
+# No usar para ajustar prompts. v0 (queries_v0.yaml) es el conjunto de desarrollo.
+items:
+- id: VS01
+  protocol: sia
+  category: named_object_band
+  difficulty: 2
+  en: Show me an ultraviolet image of the Triangulum Galaxy.
+  es: ¿Puedes encontrar una imagen ultravioleta de la galaxia del Triángulo?
+  gold:
+    target: M33
+    band_um: &id001
+    - 0.1
+    - 0.32
+    tol_deg: 0.3
+  split: test
+- id: VS02
+  protocol: sia
+  category: named_object_band
+  difficulty: 1
+  en: Get me an optical picture of Bode's Galaxy.
+  es: Consígueme una imagen óptica de la galaxia de Bode.
+  gold:
+    target: M81
+    band_um: &id002
+    - 0.35
+    - 1.0
+    tol_deg: 0.15
+  split: test
+- id: VS03
+  protocol: sia
+  category: named_object_band
+  difficulty: 2
+  en: Show me an X-ray image of the Cigar Galaxy.
+  es: Quisiera una imagen en rayos X de la galaxia del Cigarro.
+  gold:
+    target: M82
+    band_um: &id004
+    - 1.0e-05
+    - 0.0124
+    tol_deg: 0.07
+  split: test
+- id: VS04
+  protocol: sia
+  category: named_object_band
+  difficulty: 1
+  en: Get me a visible-light picture of the Pinwheel Galaxy.
+  es: Consígueme una imagen en luz visible de la galaxia del Molinete.
+  gold:
+    target: M101
+    band_um: &id003
+    - 0.35
+    - 1.0
+    tol_deg: 0.2
+  split: test
+- id: VS05
+  protocol: sia
+  category: named_object_band
+  difficulty: 2
+  en: Get me a 12 micron picture of the Sculptor Galaxy.
+  es: Recupera una imagen a 12 micrones de la galaxia del Escultor, por favor.
+  gold:
+    target: NGC 253
+    band_um: &id010
+    - 7.5
+    - 16.5
+    tol_deg: 0.2
+  split: test
+- id: VS06
+  protocol: sia
+  category: named_object_band
+  difficulty: 1
+  en: Get me a near-infrared picture of the Needle Galaxy.
+  es: Consígueme una imagen en el infrarrojo cercano de la galaxia de la Aguja.
+  gold:
+    target: NGC 4565
+    band_um: &id007
+    - 0.9
+    - 2.5
+    tol_deg: 0.1
+  split: test
+- id: VS07
+  protocol: sia
+  category: named_object_band
+  difficulty: 2
+  en: Retrieve an ultraviolet image of the Southern Pinwheel Galaxy, please.
+  es: Consígueme una imagen ultravioleta de la galaxia del Molinete Austral.
+  gold:
+    target: M83
+    band_um: *id001
+    tol_deg: 0.1
+  split: test
+- id: VS08
+  protocol: sia
+  category: named_object_band
+  difficulty: 2
+  en: Retrieve a K-band image of the Great Barred Spiral Galaxy NGC 1365, please.
+  es: Quisiera una imagen en banda K de la gran galaxia espiral barrada NGC 1365.
+  gold:
+    target: NGC 1365
+    band_um: &id008
+    - 1.9
+    - 2.5
+    tol_deg: 0.08
+  split: test
+- id: VS09
+  protocol: sia
+  category: named_object_band
+  difficulty: 1
+  en: Show me an optical image of the Black Eye Galaxy.
+  es: Consígueme una imagen óptica de la galaxia del Ojo Negro.
+  gold:
+    target: M64
+    band_um: *id002
+    tol_deg: 0.05
+  split: test
+- id: VS10
+  protocol: sia
+  category: named_object_band
+  difficulty: 2
+  en: Show me a 1.4 GHz radio image of Centaurus A.
+  es: Muéstrame una imagen en radio a 1,4 GHz de Centaurus A.
+  gold:
+    target: NGC 5128
+    band_um: &id005
+    - 150000
+    - 260000
+    tol_deg: 0.15
+  split: test
+- id: VS11
+  protocol: sia
+  category: named_object_band
+  difficulty: 2
+  en: Can you find an H-alpha image of the Lagoon Nebula?
+  es: Muéstrame una imagen en H-alfa de la nebulosa de la Laguna.
+  gold:
+    target: M8
+    band_um: &id006
+    - 0.64
+    - 0.67
+    tol_deg: 0.4
+  split: test
+- id: VS12
+  protocol: sia
+  category: named_object_band
+  difficulty: 2
+  en: Retrieve a 22 micron image of the Eagle Nebula, please.
+  es: Muéstrame una imagen a 22 micrones de la nebulosa del Águila.
+  gold:
+    target: M16
+    band_um: &id011
+    - 18.0
+    - 28.0
+    tol_deg: 0.1
+  split: test
+- id: VS13
+  protocol: sia
+  category: named_object_band
+  difficulty: 2
+  en: Retrieve a mid-infrared image of the Omega Nebula, please.
+  es: ¿Puedes encontrar una imagen en el infrarrojo medio de la nebulosa Omega?
+  gold:
+    target: M17
+    band_um: &id013
+    - 5.0
+    - 30.0
+    tol_deg: 0.1
+  split: test
+- id: VS14
+  protocol: sia
+  category: named_object_band
+  difficulty: 1
+  en: I'd like an optical image of the Trifid Nebula.
+  es: Recupera una imagen óptica de la nebulosa Trífida, por favor.
+  gold:
+    target: M20
+    band_um: *id002
+    tol_deg: 0.1
+  split: test
+- id: VS15
+  protocol: sia
+  category: named_object_band
+  difficulty: 1
+  en: Can you find a visible-light image of the Dumbbell Nebula?
+  es: ¿Puedes encontrar una imagen en luz visible de la nebulosa de la Haltera?
+  gold:
+    target: M27
+    band_um: *id003
+    tol_deg: 0.05
+  split: test
+- id: VS16
+  protocol: sia
+  category: named_object_band
+  difficulty: 2
+  en: Can you find an ultraviolet image of the Helix Nebula?
+  es: Recupera una imagen ultravioleta de la nebulosa de la Hélice, por favor.
+  gold:
+    target: NGC 7293
+    band_um: *id001
+    tol_deg: 0.2
+  split: test
+- id: VS17
+  protocol: sia
+  category: named_object_band
+  difficulty: 2
+  en: Get me an X-ray picture of the Cat's Eye Nebula.
+  es: Muéstrame una imagen en rayos X de la nebulosa Ojo de Gato.
+  gold:
+    target: NGC 6543
+    band_um: *id004
+    tol_deg: 0.01
+  split: test
+- id: VS18
+  protocol: sia
+  category: named_object_band
+  difficulty: 2
+  en: Can you find an X-ray image of Cassiopeia A?
+  es: Muéstrame una imagen en rayos X de Cassiopea A.
+  gold:
+    target: Cas A
+    band_um: *id004
+    tol_deg: 0.05
+  split: test
+- id: VS19
+  protocol: sia
+  category: named_object_band
+  difficulty: 2
+  en: Get me a 1.4 GHz radio picture of Cassiopeia A.
+  es: Consígueme una imagen en radio a 1,4 GHz de Cassiopea A.
+  gold:
+    target: Cas A
+    band_um: *id005
+    tol_deg: 0.05
+  split: test
+- id: VS20
+  protocol: sia
+  category: named_object_band
+  difficulty: 2
+  en: Can you find an H-alpha image of the Carina Nebula?
+  es: ¿Puedes encontrar una imagen en H-alfa de la nebulosa de Carina?
+  gold:
+    target: NGC 3372
+    band_um: *id006
+    tol_deg: 1.0
+  split: test
+- id: VS21
+  protocol: sia
+  category: named_object_band
+  difficulty: 1
+  en: Retrieve a near-infrared image of the globular cluster M3, please.
+  es: Quisiera una imagen en el infrarrojo cercano del cúmulo globular M3.
+  gold:
+    target: M3
+    band_um: *id007
+    tol_deg: 0.1
+  split: test
+- id: VS22
+  protocol: sia
+  category: named_object_band
+  difficulty: 2
+  en: Get me a J-band picture of 47 Tucanae.
+  es: ¿Puedes encontrar una imagen en banda J de 47 Tucanae?
+  gold:
+    target: NGC 104
+    band_um: &id009
+    - 1.1
+    - 1.4
+    tol_deg: 0.3
+  split: test
+- id: VS23
+  protocol: sia
+  category: named_object_band
+  difficulty: 1
+  en: Show me an optical image of the Beehive Cluster.
+  es: ¿Puedes encontrar una imagen óptica del cúmulo del Pesebre?
+  gold:
+    target: M44
+    band_um: *id002
+    tol_deg: 0.5
+  split: test
+- id: VS24
+  protocol: sia
+  category: named_object_band
+  difficulty: 2
+  en: Can you find a K-band image of the Wild Duck Cluster?
+  es: Recupera una imagen en banda K del cúmulo del Pato Salvaje, por favor.
+  gold:
+    target: M11
+    band_um: *id008
+    tol_deg: 0.1
+  split: test
+- id: VS25
+  protocol: sia
+  category: named_object_band
+  difficulty: 1
+  en: Retrieve a visible-light image of h Persei (NGC 869), please.
+  es: Muéstrame una imagen en luz visible de h Persei (NGC 869).
+  gold:
+    target: NGC 869
+    band_um: *id003
+    tol_deg: 0.2
+  split: test
+- id: VS26
+  protocol: sia
+  category: named_object_band
+  difficulty: 2
+  en: Retrieve a 3.4 micron image of Betelgeuse, please.
+  es: Consígueme una imagen a 3,4 micrones de Betelgeuse.
+  gold:
+    target: Betelgeuse
+    band_um:
+    - 2.8
+    - 3.8
+    tol_deg: 0.01
+  split: test
+- id: VS27
+  protocol: sia
+  category: named_object_band
+  difficulty: 2
+  en: Get me a J-band picture of Rigel.
+  es: Recupera una imagen en banda J de Rigel, por favor.
+  gold:
+    target: Rigel
+    band_um: *id009
+    tol_deg: 0.01
+  split: test
+- id: VS28
+  protocol: sia
+  category: named_object_band
+  difficulty: 2
+  en: Show me a far-infrared image of Antares.
+  es: Recupera una imagen en el infrarrojo lejano de Antares, por favor.
+  gold:
+    target: Antares
+    band_um: &id012
+    - 30.0
+    - 200.0
+    tol_deg: 0.01
+  split: test
+- id: VS29
+  protocol: sia
+  category: named_object_band
+  difficulty: 2
+  en: Get me a 12 micron picture of VY Canis Majoris.
+  es: Consígueme una imagen a 12 micrones de VY Canis Majoris.
+  gold:
+    target: VY CMa
+    band_um: *id010
+    tol_deg: 0.01
+  split: test
+- id: VS30
+  protocol: sia
+  category: named_object_band
+  difficulty: 2
+  en: Retrieve a 22 micron image of the carbon star IRC +10216, please.
+  es: Recupera una imagen a 22 micrones de la estrella de carbono IRC +10216, por favor.
+  gold:
+    target: IRC +10216
+    band_um: *id011
+    tol_deg: 0.01
+  split: test
+- id: VS31
+  protocol: sia
+  category: named_object_band
+  difficulty: 1
+  en: Get me a near-infrared picture of T Tauri.
+  es: ¿Puedes encontrar una imagen en el infrarrojo cercano de T Tauri?
+  gold:
+    target: T Tau
+    band_um: *id007
+    tol_deg: 0.005
+  split: test
+- id: VS32
+  protocol: sia
+  category: named_object_band
+  difficulty: 2
+  en: Retrieve an X-ray image of Cygnus X-1, please.
+  es: Consígueme una imagen en rayos X de Cygnus X-1.
+  gold:
+    target: Cyg X-1
+    band_um: *id004
+    tol_deg: 0.005
+  split: test
+- id: VS33
+  protocol: sia
+  category: named_object_band
+  difficulty: 2
+  en: Retrieve a 1.4 GHz radio image of the quasar 3C 273, please.
+  es: Consígueme una imagen en radio a 1,4 GHz del cuásar 3C 273.
+  gold:
+    target: 3C 273
+    band_um: *id005
+    tol_deg: 0.005
+  split: test
+- id: VS34
+  protocol: sia
+  category: named_object_band
+  difficulty: 2
+  en: Get me a far-infrared picture of Arp 220.
+  es: Muéstrame una imagen en el infrarrojo lejano de Arp 220.
+  gold:
+    target: Arp 220
+    band_um: *id012
+    tol_deg: 0.02
+  split: test
+- id: VS35
+  protocol: sia
+  category: named_object_band
+  difficulty: 2
+  en: Get me a mid-infrared picture of the Iris Nebula.
+  es: Quisiera una imagen en el infrarrojo medio de la nebulosa del Iris.
+  gold:
+    target: NGC 7023
+    band_um: *id013
+    tol_deg: 0.1
+  split: test
+- id: VS36
+  protocol: sia
+  category: named_object_band
+  difficulty: 2
+  en: I'd like a far-infrared image of the Orion Nebula.
+  es: Muéstrame una imagen en el infrarrojo lejano de la nebulosa de Orión.
+  gold:
+    target: M42
+    band_um: *id012
+    tol_deg: 0.25
+  split: test
+- id: VS37
+  protocol: sia
+  category: named_object_band
+  difficulty: 2
+  en: Get me a K-band picture of Polaris.
+  es: Muéstrame una imagen en banda K de la estrella Polar.
+  gold:
+    target: Polaris
+    band_um: *id008
+    tol_deg: 0.01
+  split: test
+- id: VS38
+  protocol: sia
+  category: named_object
+  difficulty: 1
+  en: Find any image of the Andromeda Galaxy.
+  es: Encuentra alguna imagen de la galaxia de Andrómeda.
+  gold:
+    target: M31
+    band_um: null
+    tol_deg: 1.0
+  split: test
+- id: VS39
+  protocol: sia
+  category: named_object
+  difficulty: 1
+  en: I want to see a picture of the Pleiades.
+  es: Quiero ver una imagen de las Pléyades.
+  gold:
+    target: M45
+    band_um: null
+    tol_deg: 1.0
+  split: test
+- id: VS40
+  protocol: sia
+  category: named_object
+  difficulty: 1
+  en: Show me an image of Omega Centauri.
+  es: Quiero ver una imagen de Omega Centauri.
+  gold:
+    target: NGC 5139
+    band_um: null
+    tol_deg: 0.3
+  split: test
+- id: VS41
+  protocol: sia
+  category: named_object
+  difficulty: 1
+  en: Show me an image of Vega.
+  es: Muéstrame una imagen de Vega.
+  gold:
+    target: Vega
+    band_um: null
+    tol_deg: 0.01
+  split: test
+- id: VS42
+  protocol: sia
+  category: coordinates_band
+  difficulty: 1
+  en: Get an optical image centred on RA = 83.6331, Dec = 22.0145.
+  es: Obtén una imagen óptica centrada en AR = 83,6331, Dec = 22,0145.
+  gold:
+    target: null
+    ra: 83.6331
+    dec: 22.0145
+    band_um: *id002
+  split: test
+- id: VS43
+  protocol: sia
+  category: coordinates_band
+  difficulty: 2
+  en: Get a K-band image centred on 17h45m40.0s -29d00m28s.
+  es: Obtén una imagen en banda K centrada en 17h45m40.0s -29d00m28s.
+  gold:
+    target: null
+    ra: 266.4168
+    dec: -29.0078
+    band_um: *id008
+  split: test
+- id: VS44
+  protocol: sia
+  category: coordinates_band
+  difficulty: 2
+  en: Get a 1.4 GHz radio image centred on 13h25m27.6s -43d01m09s.
+  es: Obtén una imagen en radio a 1,4 GHz centrada en 13h25m27.6s -43d01m09s.
+  gold:
+    target: null
+    ra: 201.3651
+    dec: -43.0191
+    band_um: *id005
+  split: test
+- id: VS45
+  protocol: sia
+  category: coordinates_band
+  difficulty: 2
+  en: Get an ultraviolet image centred on RA = 10.6847, Dec = 41.269.
+  es: Obtén una imagen ultravioleta centrada en AR = 10,6847, Dec = 41,269.
+  gold:
+    target: null
+    ra: 10.6847
+    dec: 41.269
+    band_um: *id001
+  split: test
+- id: VS46
+  protocol: sia
+  category: coordinates_band
+  difficulty: 1
+  en: Get a near-infrared image centred on RA = 56.75, Dec = 24.1167.
+  es: Obtén una imagen en el infrarrojo cercano centrada en AR = 56,75, Dec = 24,1167.
+  gold:
+    target: null
+    ra: 56.75
+    dec: 24.1167
+    band_um: *id007
+  split: test
+- id: VS47
+  protocol: sia
+  category: coordinates_band
+  difficulty: 3
+  en: Get a 22 micron image centred on Galactic longitude 284.0 deg, latitude 1.0 deg.
+  es: Obtén una imagen a 22 micrones centrada en longitud galáctica 284.0°, latitud 1.0°.
+  gold:
+    target: null
+    l: 284.0
+    b: 1.0
+    band_um: *id011
+  split: test
+- id: VS48
+  protocol: sia
+  category: object_class
+  difficulty: 3
+  en: I want to see an image of a Seyfert galaxy.
+  es: Quiero ver una imagen de una galaxia Seyfert.
+  gold:
+    target: null
+    accept_otypes:
+    - Sy1
+    - Sy2
+    - SyG
+    band_um: null
+  split: test
+- id: VS49
+  protocol: sia
+  category: object_class
+  difficulty: 3
+  en: I want to see an image of an open star cluster.
+  es: Quiero ver una imagen de un cúmulo estelar abierto.
+  gold:
+    target: null
+    accept_otypes:
+    - OpC
+    - Cl*
+    band_um: null
+  split: test
+- id: VS50
+  protocol: sia
+  category: object_class
+  difficulty: 3
+  en: I want to see an image of a quasar.
+  es: Quiero ver una imagen de un cuásar.
+  gold:
+    target: null
+    accept_otypes:
+    - QSO
+    - Bla
+    - BLL
+    band_um: null
+  split: test
+- id: VS51
+  protocol: sia
+  category: object_class_band
+  difficulty: 3
+  en: Show me a mid-infrared image of an H II region.
+  es: Muéstrame una imagen en el infrarrojo medio de una región H II.
+  gold:
+    target: null
+    accept_otypes:
+    - HII
+    band_um:
+    - 5.0
+    - 30.0
+  split: test
+- id: VS52
+  protocol: sia
+  category: object_class_band
+  difficulty: 3
+  en: Show me a near-infrared image of a Wolf-Rayet star.
+  es: Muéstrame una imagen en el infrarrojo cercano de una estrella Wolf-Rayet.
+  gold:
+    target: null
+    accept_otypes:
+    - WR*
+    band_um:
+    - 0.9
+    - 2.5
+  split: test
+- id: VS53
+  protocol: sia
+  category: object_class_band
+  difficulty: 3
+  en: Show me a near-infrared image of a carbon star.
+  es: Muéstrame una imagen en el infrarrojo cercano de una estrella de carbono.
+  gold:
+    target: null
+    accept_otypes:
+    - C*
+    band_um:
+    - 0.9
+    - 2.5
+  split: test
+- id: VS54
+  protocol: sia
+  category: object_class_band
+  difficulty: 3
+  en: Show me an X-ray image of a cluster of galaxies.
+  es: Muéstrame una imagen en rayos X de un cúmulo de galaxias.
+  gold:
+    target: null
+    accept_otypes:
+    - ClG
+    - GrG
+    - CGG
+    band_um:
+    - 1.0e-05
+    - 0.0124
+  split: test
+- id: VS55
+  protocol: sia
+  category: object_class_band
+  difficulty: 3
+  en: Show me an X-ray image of an X-ray binary.
+  es: Muéstrame una imagen en rayos X de una binaria de rayos X.
+  gold:
+    target: null
+    accept_otypes:
+    - XB
+    - HXB
+    - LXB
+    band_um:
+    - 1.0e-05
+    - 0.0124
+  split: test
+- id: VS56
+  protocol: sia
+  category: object_class
+  difficulty: 3
+  en: I want to see an image of a white dwarf.
+  es: Quiero ver una imagen de una enana blanca.
+  gold:
+    target: null
+    accept_otypes:
+    - WD*
+    band_um: null
+  split: test
+- id: VS57
+  protocol: sia
+  category: object_class
+  difficulty: 3
+  en: I want to see an image of a Be star.
+  es: Quiero ver una imagen de una estrella Be.
+  gold:
+    target: null
+    accept_otypes:
+    - Be*
+    band_um: null
+  split: test
+- id: VC01
+  protocol: scs
+  category: cone_named
+  difficulty: 2
+  en: Give me all AllWISE entries within 1 arcmin of Bode's Galaxy.
+  es: Dame todas las entradas de AllWISE a menos de 1 minutos de arco de la galaxia de Bode.
+  gold:
+    target: M81
+    catalog: allwise
+    radius_deg: 0.016667
+    service: irsa_tap
+    compare: set
+    tol_deg: 0.01
+    adql: SELECT designation FROM allwise_p3as_psd WHERE CONTAINS(POINT('ICRS',ra,dec),CIRCLE('ICRS',{ra},{dec},0.016667))=1
+  split: test
+- id: VC02
+  protocol: scs
+  category: cone_named
+  difficulty: 1
+  en: Do a cone search in 2MASS around the Pinwheel Galaxy with a radius of 1 arcmin.
+  es: Dame todas las entradas de 2MASS a menos de 1 minutos de arco de la galaxia del Molinete.
+  gold:
+    target: M101
+    catalog: 2mass_psc
+    radius_deg: 0.016667
+    service: irsa_tap
+    compare: set
+    tol_deg: 0.01
+    adql: SELECT designation FROM fp_psc WHERE CONTAINS(POINT('ICRS',ra,dec),CIRCLE('ICRS',{ra},{dec},0.016667))=1
+  split: test
+- id: VC03
+  protocol: scs
+  category: cone_named
+  difficulty: 2
+  en: Do a cone search in Gaia DR3 around the Sombrero Galaxy with a radius of 30 arcsec.
+  es: Dame todas las entradas de Gaia DR3 a menos de 30 segundos de arco de la galaxia del Sombrero.
+  gold:
+    target: M104
+    catalog: gaia_dr3
+    radius_deg: 0.008333
+    service: gaia_esa
+    compare: set
+    tol_deg: 0.01
+    adql: SELECT source_id FROM gaiadr3.gaia_source WHERE 1=CONTAINS(POINT('ICRS',ra,dec),CIRCLE('ICRS',{ra},{dec},0.008333))
+  split: test
+- id: VC04
+  protocol: scs
+  category: cone_named
+  difficulty: 2
+  en: Give me all AllWISE entries within 1 arcmin of the Needle Galaxy.
+  es: Dame todas las entradas de AllWISE a menos de 1 minutos de arco de la galaxia de la Aguja.
+  gold:
+    target: NGC 4565
+    catalog: allwise
+    radius_deg: 0.016667
+    service: irsa_tap
+    compare: set
+    tol_deg: 0.01
+    adql: SELECT designation FROM allwise_p3as_psd WHERE CONTAINS(POINT('ICRS',ra,dec),CIRCLE('ICRS',{ra},{dec},0.016667))=1
+  split: test
+- id: VC05
+  protocol: scs
+  category: cone_named
+  difficulty: 1
+  en: Which Gaia DR3 objects are within 1 arcmin of the Dumbbell Nebula?
+  es: Haz una búsqueda cónica en Gaia DR3 alrededor de la nebulosa de la Haltera con un radio de 1 minutos de arco.
+  gold:
+    target: M27
+    catalog: gaia_dr3
+    radius_deg: 0.016667
+    service: gaia_esa
+    compare: set
+    tol_deg: 0.01
+    adql: SELECT source_id FROM gaiadr3.gaia_source WHERE 1=CONTAINS(POINT('ICRS',ra,dec),CIRCLE('ICRS',{ra},{dec},0.016667))
+  split: test
+- id: VC06
+  protocol: scs
+  category: cone_named
+  difficulty: 2
+  en: Do a cone search in 2MASS around the Cat's Eye Nebula with a radius of 30 arcsec.
+  es: Lista las fuentes de 2MASS a menos de 30 segundos de arco de la nebulosa Ojo de Gato.
+  gold:
+    target: NGC 6543
+    catalog: 2mass_psc
+    radius_deg: 0.008333
+    service: irsa_tap
+    compare: set
+    tol_deg: 0.01
+    adql: SELECT designation FROM fp_psc WHERE CONTAINS(POINT('ICRS',ra,dec),CIRCLE('ICRS',{ra},{dec},0.008333))=1
+  split: test
+- id: VC07
+  protocol: scs
+  category: cone_named
+  difficulty: 2
+  en: List the Gaia DR3 sources within 30 arcsec of the globular cluster M3.
+  es: ¿Qué objetos de Gaia DR3 hay a menos de 30 segundos de arco del cúmulo globular M3?
+  gold:
+    target: M3
+    catalog: gaia_dr3
+    radius_deg: 0.008333
+    service: gaia_esa
+    compare: set
+    tol_deg: 0.01
+    adql: SELECT source_id FROM gaiadr3.gaia_source WHERE 1=CONTAINS(POINT('ICRS',ra,dec),CIRCLE('ICRS',{ra},{dec},0.008333))
+  split: test
+- id: VC08
+  protocol: scs
+  category: cone_named
+  difficulty: 1
+  en: Give me all Gaia DR3 entries within 1 arcmin of the open cluster M67.
+  es: Dame todas las entradas de Gaia DR3 a menos de 1 minutos de arco del cúmulo abierto M67.
+  gold:
+    target: M67
+    catalog: gaia_dr3
+    radius_deg: 0.016667
+    service: gaia_esa
+    compare: set
+    tol_deg: 0.01
+    adql: SELECT source_id FROM gaiadr3.gaia_source WHERE 1=CONTAINS(POINT('ICRS',ra,dec),CIRCLE('ICRS',{ra},{dec},0.016667))
+  split: test
+- id: VC09
+  protocol: scs
+  category: cone_named
+  difficulty: 1
+  en: Do a cone search in 2MASS around Rigel with a radius of 1 arcmin.
+  es: ¿Qué objetos de 2MASS hay a menos de 1 minutos de arco de Rigel?
+  gold:
+    target: Rigel
+    catalog: 2mass_psc
+    radius_deg: 0.016667
+    service: irsa_tap
+    compare: set
+    tol_deg: 0.01
+    adql: SELECT designation FROM fp_psc WHERE CONTAINS(POINT('ICRS',ra,dec),CIRCLE('ICRS',{ra},{dec},0.016667))=1
+  split: test
+- id: VC10
+  protocol: scs
+  category: cone_named
+  difficulty: 1
+  en: Do a cone search in Gaia DR3 around Vega with a radius of 2 arcmin.
+  es: Dame todas las entradas de Gaia DR3 a menos de 2 minutos de arco de Vega.
+  gold:
+    target: Vega
+    catalog: gaia_dr3
+    radius_deg: 0.033333
+    service: gaia_esa
+    compare: set
+    tol_deg: 0.01
+    adql: SELECT source_id FROM gaiadr3.gaia_source WHERE 1=CONTAINS(POINT('ICRS',ra,dec),CIRCLE('ICRS',{ra},{dec},0.033333))
+  split: test
+- id: VC11
+  protocol: scs
+  category: cone_named
+  difficulty: 2
+  en: Give me all AllWISE entries within 1 arcmin of Polaris.
+  es: Dame todas las entradas de AllWISE a menos de 1 minutos de arco de la estrella Polar.
+  gold:
+    target: Polaris
+    catalog: allwise
+    radius_deg: 0.016667
+    service: irsa_tap
+    compare: set
+    tol_deg: 0.01
+    adql: SELECT designation FROM allwise_p3as_psd WHERE CONTAINS(POINT('ICRS',ra,dec),CIRCLE('ICRS',{ra},{dec},0.016667))=1
+  split: test
+- id: VC12
+  protocol: scs
+  category: cone_named
+  difficulty: 1
+  en: Give me all Gaia DR3 entries within 1 arcmin of Sirius.
+  es: Lista las fuentes de Gaia DR3 a menos de 1 minutos de arco de Sirio.
+  gold:
+    target: Sirius
+    catalog: gaia_dr3
+    radius_deg: 0.016667
+    service: gaia_esa
+    compare: set
+    tol_deg: 0.01
+    adql: SELECT source_id FROM gaiadr3.gaia_source WHERE 1=CONTAINS(POINT('ICRS',ra,dec),CIRCLE('ICRS',{ra},{dec},0.016667))
+  split: test
+- id: VC13
+  protocol: scs
+  category: cone_named
+  difficulty: 2
+  en: Do a cone search in AllWISE around the quasar 3C 273 with a radius of 30 arcsec.
+  es: Haz una búsqueda cónica en AllWISE alrededor del cuásar 3C 273 con un radio de 30 segundos de arco.
+  gold:
+    target: 3C 273
+    catalog: allwise
+    radius_deg: 0.008333
+    service: irsa_tap
+    compare: set
+    tol_deg: 0.005
+    adql: SELECT designation FROM allwise_p3as_psd WHERE CONTAINS(POINT('ICRS',ra,dec),CIRCLE('ICRS',{ra},{dec},0.008333))=1
+  split: test
+- id: VC14
+  protocol: scs
+  category: cone_named
+  difficulty: 2
+  en: Give me all Gaia DR3 entries within 20 arcsec of the quasar 3C 273.
+  es: Lista las fuentes de Gaia DR3 a menos de 20 segundos de arco del cuásar 3C 273.
+  gold:
+    target: 3C 273
+    catalog: gaia_dr3
+    radius_deg: 0.005556
+    service: gaia_esa
+    compare: set
+    tol_deg: 0.005
+    adql: SELECT source_id FROM gaiadr3.gaia_source WHERE 1=CONTAINS(POINT('ICRS',ra,dec),CIRCLE('ICRS',{ra},{dec},0.005556))
+  split: test
+- id: VC15
+  protocol: scs
+  category: cone_named
+  difficulty: 1
+  en: Give me all 2MASS entries within 1 arcmin of T Tauri.
+  es: Haz una búsqueda cónica en 2MASS alrededor de T Tauri con un radio de 1 minutos de arco.
+  gold:
+    target: T Tau
+    catalog: 2mass_psc
+    radius_deg: 0.016667
+    service: irsa_tap
+    compare: set
+    tol_deg: 0.005
+    adql: SELECT designation FROM fp_psc WHERE CONTAINS(POINT('ICRS',ra,dec),CIRCLE('ICRS',{ra},{dec},0.016667))=1
+  split: test
+- id: VC16
+  protocol: scs
+  category: cone_named
+  difficulty: 2
+  en: Give me all Gaia DR3 entries within 30 arcsec of Tabby's Star.
+  es: ¿Qué objetos de Gaia DR3 hay a menos de 30 segundos de arco de la estrella de Tabby?
+  gold:
+    target: KIC 8462852
+    catalog: gaia_dr3
+    radius_deg: 0.008333
+    service: gaia_esa
+    compare: set
+    tol_deg: 0.005
+    adql: SELECT source_id FROM gaiadr3.gaia_source WHERE 1=CONTAINS(POINT('ICRS',ra,dec),CIRCLE('ICRS',{ra},{dec},0.008333))
+  split: test
+- id: VC17
+  protocol: scs
+  category: cone_named
+  difficulty: 2
+  en: Give me all AllWISE entries within 20 arcsec of Cygnus X-1.
+  es: Dame todas las entradas de AllWISE a menos de 20 segundos de arco de Cygnus X-1.
+  gold:
+    target: Cyg X-1
+    catalog: allwise
+    radius_deg: 0.005556
+    service: irsa_tap
+    compare: set
+    tol_deg: 0.005
+    adql: SELECT designation FROM allwise_p3as_psd WHERE CONTAINS(POINT('ICRS',ra,dec),CIRCLE('ICRS',{ra},{dec},0.005556))=1
+  split: test
+- id: VC18
+  protocol: scs
+  category: cone_named
+  difficulty: 1
+  en: List the 2MASS sources within 1 arcmin of Arp 220.
+  es: Haz una búsqueda cónica en 2MASS alrededor de Arp 220 con un radio de 1 minutos de arco.
+  gold:
+    target: Arp 220
+    catalog: 2mass_psc
+    radius_deg: 0.016667
+    service: irsa_tap
+    compare: set
+    tol_deg: 0.01
+    adql: SELECT designation FROM fp_psc WHERE CONTAINS(POINT('ICRS',ra,dec),CIRCLE('ICRS',{ra},{dec},0.016667))=1
+  split: test
+- id: VC19
+  protocol: scs
+  category: cone_named
+  difficulty: 1
+  en: Give me all Gaia DR3 entries within 1 arcmin of the Black Eye Galaxy.
+  es: Haz una búsqueda cónica en Gaia DR3 alrededor de la galaxia del Ojo Negro con un radio de 1 minutos de arco.
+  gold:
+    target: M64
+    catalog: gaia_dr3
+    radius_deg: 0.016667
+    service: gaia_esa
+    compare: set
+    tol_deg: 0.01
+    adql: SELECT source_id FROM gaiadr3.gaia_source WHERE 1=CONTAINS(POINT('ICRS',ra,dec),CIRCLE('ICRS',{ra},{dec},0.016667))
+  split: test
+- id: VC20
+  protocol: scs
+  category: cone_named
+  difficulty: 2
+  en: List the AllWISE sources within 2 arcmin of the Helix Nebula.
+  es: ¿Qué objetos de AllWISE hay a menos de 2 minutos de arco de la nebulosa de la Hélice?
+  gold:
+    target: NGC 7293
+    catalog: allwise
+    radius_deg: 0.033333
+    service: irsa_tap
+    compare: set
+    tol_deg: 0.01
+    adql: SELECT designation FROM allwise_p3as_psd WHERE CONTAINS(POINT('ICRS',ra,dec),CIRCLE('ICRS',{ra},{dec},0.033333))=1
+  split: test
+- id: VC21
+  protocol: scs
+  category: cone_named
+  difficulty: 1
+  en: Give me all 2MASS entries within 1 arcmin of the carbon star IRC +10216.
+  es: ¿Qué objetos de 2MASS hay a menos de 1 minutos de arco de la estrella de carbono IRC +10216?
+  gold:
+    target: IRC +10216
+    catalog: 2mass_psc
+    radius_deg: 0.016667
+    service: irsa_tap
+    compare: set
+    tol_deg: 0.01
+    adql: SELECT designation FROM fp_psc WHERE CONTAINS(POINT('ICRS',ra,dec),CIRCLE('ICRS',{ra},{dec},0.016667))=1
+  split: test
+- id: VC22
+  protocol: scs
+  category: cone_named
+  difficulty: 1
+  en: Give me all 2MASS entries within 1 arcmin of the Beehive Cluster.
+  es: Lista las fuentes de 2MASS a menos de 1 minutos de arco del cúmulo del Pesebre.
+  gold:
+    target: M44
+    catalog: 2mass_psc
+    radius_deg: 0.016667
+    service: irsa_tap
+    compare: set
+    tol_deg: 0.01
+    adql: SELECT designation FROM fp_psc WHERE CONTAINS(POINT('ICRS',ra,dec),CIRCLE('ICRS',{ra},{dec},0.016667))=1
+  split: test
+- id: VC23
+  protocol: scs
+  category: cone_coordinates
+  difficulty: 1
+  en: Cone search Gaia DR3 at RA 83.8221, Dec -5.3911 with radius 20 arcsec.
+  es: Búsqueda cónica en Gaia DR3 en AR 83,8221, Dec -5,3911 con radio de 20 segundos de arco.
+  gold:
+    target: null
+    ra: 83.8221
+    dec: -5.3911
+    catalog: gaia_dr3
+    radius_deg: 0.005556
+    service: gaia_esa
+    compare: set
+    adql: SELECT source_id FROM gaiadr3.gaia_source WHERE 1=CONTAINS(POINT('ICRS',ra,dec),CIRCLE('ICRS',{ra},{dec},0.005556))
+  split: test
+- id: VC24
+  protocol: scs
+  category: cone_coordinates
+  difficulty: 1
+  en: Cone search AllWISE at RA 202.4696, Dec 47.1953 with radius 1 arcmin.
+  es: Búsqueda cónica en AllWISE en AR 202,4696, Dec 47,1953 con radio de 1 minutos de arco.
+  gold:
+    target: null
+    ra: 202.4696
+    dec: 47.1953
+    catalog: allwise
+    radius_deg: 0.016667
+    service: irsa_tap
+    compare: set
+    adql: SELECT designation FROM allwise_p3as_psd WHERE CONTAINS(POINT('ICRS',ra,dec),CIRCLE('ICRS',{ra},{dec},0.016667))=1
+  split: test
+- id: VT01
+  protocol: tap
+  category: tap_count_mag
+  difficulty: 2
+  en: How many Gaia DR3 sources brighter than G = 17 lie within 3 arcmin of the globular cluster M3?
+  es: ¿Cuántas fuentes de Gaia DR3 más brillantes que G = 17 hay a menos de 3 minutos de arco del cúmulo globular M3?
+  gold:
+    target: M3
+    service: gaia_esa
+    compare: scalar
+    adql: SELECT COUNT(*) FROM gaiadr3.gaia_source WHERE 1=CONTAINS(POINT('ICRS',ra,dec),CIRCLE('ICRS',{ra},{dec},0.05)) AND phot_g_mean_mag < 17
+    tol_deg: 0.1
+  split: test
+- id: VT02
+  protocol: tap
+  category: tap_count_mag
+  difficulty: 2
+  en: How many Gaia DR3 sources brighter than G = 15 lie within 6 arcmin of 47 Tucanae?
+  es: ¿Cuántas fuentes de Gaia DR3 más brillantes que G = 15 hay a menos de 6 minutos de arco de 47 Tucanae?
+  gold:
+    target: NGC 104
+    service: gaia_esa
+    compare: scalar
+    adql: SELECT COUNT(*) FROM gaiadr3.gaia_source WHERE 1=CONTAINS(POINT('ICRS',ra,dec),CIRCLE('ICRS',{ra},{dec},0.1)) AND phot_g_mean_mag < 15
+    tol_deg: 0.3
+  split: test
+- id: VT03
+  protocol: tap
+  category: tap_count_mag
+  difficulty: 2
+  en: How many Gaia DR3 sources brighter than G = 14 lie within 12 arcmin of the open cluster M67?
+  es: ¿Cuántas fuentes de Gaia DR3 más brillantes que G = 14 hay a menos de 12 minutos de arco del cúmulo abierto M67?
+  gold:
+    target: M67
+    service: gaia_esa
+    compare: scalar
+    adql: SELECT COUNT(*) FROM gaiadr3.gaia_source WHERE 1=CONTAINS(POINT('ICRS',ra,dec),CIRCLE('ICRS',{ra},{dec},0.2)) AND phot_g_mean_mag < 14
+    tol_deg: 0.25
+  split: test
+- id: VT04
+  protocol: tap
+  category: tap_count_mag
+  difficulty: 2
+  en: How many Gaia DR3 sources brighter than G = 15 lie within 3 arcmin of the Wild Duck Cluster?
+  es: ¿Cuántas fuentes de Gaia DR3 más brillantes que G = 15 hay a menos de 3 minutos de arco del cúmulo del Pato Salvaje?
+  gold:
+    target: M11
+    service: gaia_esa
+    compare: scalar
+    adql: SELECT COUNT(*) FROM gaiadr3.gaia_source WHERE 1=CONTAINS(POINT('ICRS',ra,dec),CIRCLE('ICRS',{ra},{dec},0.05)) AND phot_g_mean_mag < 15
+    tol_deg: 0.1
+  split: test
+- id: VT05
+  protocol: tap
+  category: tap_count_mag
+  difficulty: 2
+  en: How many Gaia DR3 sources brighter than G = 12 lie within 6 arcmin of h Persei (NGC 869)?
+  es: ¿Cuántas fuentes de Gaia DR3 más brillantes que G = 12 hay a menos de 6 minutos de arco de h Persei (NGC 869)?
+  gold:
+    target: NGC 869
+    service: gaia_esa
+    compare: scalar
+    adql: SELECT COUNT(*) FROM gaiadr3.gaia_source WHERE 1=CONTAINS(POINT('ICRS',ra,dec),CIRCLE('ICRS',{ra},{dec},0.1)) AND phot_g_mean_mag < 12
+    tol_deg: 0.2
+  split: test
+- id: VT06
+  protocol: tap
+  category: tap_count_mag
+  difficulty: 2
+  en: How many Gaia DR3 sources brighter than G = 10 lie within 30 arcmin of the Pleiades?
+  es: ¿Cuántas fuentes de Gaia DR3 más brillantes que G = 10 hay a menos de 30 minutos de arco de las Pléyades?
+  gold:
+    target: M45
+    service: gaia_esa
+    compare: scalar
+    adql: SELECT COUNT(*) FROM gaiadr3.gaia_source WHERE 1=CONTAINS(POINT('ICRS',ra,dec),CIRCLE('ICRS',{ra},{dec},0.5)) AND phot_g_mean_mag < 10
+    tol_deg: 1.0
+  split: test
+- id: VT07
+  protocol: tap
+  category: tap_count_mag
+  difficulty: 2
+  en: How many Gaia DR3 sources brighter than G = 16 lie within 3 arcmin of the globular cluster M4?
+  es: ¿Cuántas fuentes de Gaia DR3 más brillantes que G = 16 hay a menos de 3 minutos de arco del cúmulo globular M4?
+  gold:
+    target: M4
+    service: gaia_esa
+    compare: scalar
+    adql: SELECT COUNT(*) FROM gaiadr3.gaia_source WHERE 1=CONTAINS(POINT('ICRS',ra,dec),CIRCLE('ICRS',{ra},{dec},0.05)) AND phot_g_mean_mag < 16
+    tol_deg: 0.2
+  split: test
+- id: VT08
+  protocol: tap
+  category: tap_topn_bright
+  difficulty: 2
+  en: List the 5 brightest Gaia DR3 stars within 18 arcmin of the Beehive Cluster.
+  es: Lista las 5 estrellas de Gaia DR3 más brillantes a menos de 18 minutos de arco del cúmulo del Pesebre.
+  gold:
+    target: M44
+    service: gaia_esa
+    compare: set
+    adql: SELECT TOP 5 source_id FROM gaiadr3.gaia_source WHERE 1=CONTAINS(POINT('ICRS',ra,dec),CIRCLE('ICRS',{ra},{dec},0.3)) AND phot_g_mean_mag IS NOT NULL ORDER BY phot_g_mean_mag ASC
+    tol_deg: 0.5
+  split: test
+- id: VT09
+  protocol: tap
+  category: tap_topn_bright
+  difficulty: 2
+  en: List the 10 brightest Gaia DR3 stars within 9 arcmin of the open cluster M67.
+  es: Lista las 10 estrellas de Gaia DR3 más brillantes a menos de 9 minutos de arco del cúmulo abierto M67.
+  gold:
+    target: M67
+    service: gaia_esa
+    compare: set
+    adql: SELECT TOP 10 source_id FROM gaiadr3.gaia_source WHERE 1=CONTAINS(POINT('ICRS',ra,dec),CIRCLE('ICRS',{ra},{dec},0.15)) AND phot_g_mean_mag IS NOT NULL ORDER BY phot_g_mean_mag ASC
+    tol_deg: 0.25
+  split: test
+- id: VT10
+  protocol: tap
+  category: tap_topn_bright
+  difficulty: 2
+  en: List the 5 brightest Gaia DR3 stars within 6 arcmin of h Persei (NGC 869).
+  es: Lista las 5 estrellas de Gaia DR3 más brillantes a menos de 6 minutos de arco de h Persei (NGC 869).
+  gold:
+    target: NGC 869
+    service: gaia_esa
+    compare: set
+    adql: SELECT TOP 5 source_id FROM gaiadr3.gaia_source WHERE 1=CONTAINS(POINT('ICRS',ra,dec),CIRCLE('ICRS',{ra},{dec},0.1)) AND phot_g_mean_mag IS NOT NULL ORDER BY phot_g_mean_mag ASC
+    tol_deg: 0.2
+  split: test
+- id: VT11
+  protocol: tap
+  category: tap_topn_bright
+  difficulty: 2
+  en: List the 5 brightest Gaia DR3 stars within 3 arcmin of the Hercules Globular Cluster.
+  es: Lista las 5 estrellas de Gaia DR3 más brillantes a menos de 3 minutos de arco del cúmulo globular de Hércules.
+  gold:
+    target: M13
+    service: gaia_esa
+    compare: set
+    adql: SELECT TOP 5 source_id FROM gaiadr3.gaia_source WHERE 1=CONTAINS(POINT('ICRS',ra,dec),CIRCLE('ICRS',{ra},{dec},0.05)) AND phot_g_mean_mag IS NOT NULL ORDER BY phot_g_mean_mag ASC
+    tol_deg: 0.1
+  split: test
+- id: VT12
+  protocol: tap
+  category: tap_topn_bright
+  difficulty: 2
+  en: List the 10 brightest Gaia DR3 stars within 6 arcmin of 47 Tucanae.
+  es: Lista las 10 estrellas de Gaia DR3 más brillantes a menos de 6 minutos de arco de 47 Tucanae.
+  gold:
+    target: NGC 104
+    service: gaia_esa
+    compare: set
+    adql: SELECT TOP 10 source_id FROM gaiadr3.gaia_source WHERE 1=CONTAINS(POINT('ICRS',ra,dec),CIRCLE('ICRS',{ra},{dec},0.1)) AND phot_g_mean_mag IS NOT NULL ORDER BY phot_g_mean_mag ASC
+    tol_deg: 0.3
+  split: test
+- id: VT13
+  protocol: tap
+  category: tap_topn_pm
+  difficulty: 2
+  en: Which 5 Gaia DR3 stars within 30 arcmin of Sirius have the highest total proper motion?
+  es: ¿Qué 5 estrellas de Gaia DR3 a menos de 30 minutos de arco de Sirio tienen el mayor movimiento propio total?
+  gold:
+    target: Sirius
+    service: gaia_esa
+    compare: set
+    adql: SELECT TOP 5 source_id FROM gaiadr3.gaia_source WHERE 1=CONTAINS(POINT('ICRS',ra,dec),CIRCLE('ICRS',{ra},{dec},0.5)) AND pm IS NOT NULL ORDER BY pm DESC
+    tol_deg: 0.01
+  split: test
+- id: VT14
+  protocol: tap
+  category: tap_topn_pm
+  difficulty: 2
+  en: Which 5 Gaia DR3 stars within 30 arcmin of Polaris have the highest total proper motion?
+  es: ¿Qué 5 estrellas de Gaia DR3 a menos de 30 minutos de arco de la estrella Polar tienen el mayor movimiento propio total?
+  gold:
+    target: Polaris
+    service: gaia_esa
+    compare: set
+    adql: SELECT TOP 5 source_id FROM gaiadr3.gaia_source WHERE 1=CONTAINS(POINT('ICRS',ra,dec),CIRCLE('ICRS',{ra},{dec},0.5)) AND pm IS NOT NULL ORDER BY pm DESC
+    tol_deg: 0.01
+  split: test
+- id: VT15
+  protocol: tap
+  category: tap_topn_pm
+  difficulty: 2
+  en: Which 3 Gaia DR3 stars within 30 arcmin of Rigel have the highest total proper motion?
+  es: ¿Qué 3 estrellas de Gaia DR3 a menos de 30 minutos de arco de Rigel tienen el mayor movimiento propio total?
+  gold:
+    target: Rigel
+    service: gaia_esa
+    compare: set
+    adql: SELECT TOP 3 source_id FROM gaiadr3.gaia_source WHERE 1=CONTAINS(POINT('ICRS',ra,dec),CIRCLE('ICRS',{ra},{dec},0.5)) AND pm IS NOT NULL ORDER BY pm DESC
+    tol_deg: 0.01
+  split: test
+- id: VT16
+  protocol: tap
+  category: tap_topn_pm
+  difficulty: 2
+  en: Which 5 Gaia DR3 stars within 30 arcmin of the Beehive Cluster have the highest total proper motion?
+  es: ¿Qué 5 estrellas de Gaia DR3 a menos de 30 minutos de arco del cúmulo del Pesebre tienen el mayor movimiento propio total?
+  gold:
+    target: M44
+    service: gaia_esa
+    compare: set
+    adql: SELECT TOP 5 source_id FROM gaiadr3.gaia_source WHERE 1=CONTAINS(POINT('ICRS',ra,dec),CIRCLE('ICRS',{ra},{dec},0.5)) AND pm IS NOT NULL ORDER BY pm DESC
+    tol_deg: 0.5
+  split: test
+- id: VT17
+  protocol: tap
+  category: tap_members_parallax
+  difficulty: 3
+  en: Count the probable members of the Pleiades in Gaia DR3 within 30 arcmin, using parallaxes between 6.5 and 8.0 mas.
+  es: Cuenta los miembros probables de las Pléyades en Gaia DR3 a menos de 30 minutos de arco, usando paralajes entre 6,5 y 8,0 mas.
+  gold:
+    target: M45
+    service: gaia_esa
+    compare: scalar
+    adql: SELECT COUNT(*) FROM gaiadr3.gaia_source WHERE 1=CONTAINS(POINT('ICRS',ra,dec),CIRCLE('ICRS',{ra},{dec},0.5)) AND parallax BETWEEN 6.5 AND 8.0
+    tol_deg: 1.0
+  split: test
+- id: VT18
+  protocol: tap
+  category: tap_members_parallax
+  difficulty: 3
+  en: Count the probable members of the open cluster M67 in Gaia DR3 within 12 arcmin, using parallaxes between 1.0 and 1.4 mas.
+  es: Cuenta los miembros probables del cúmulo abierto M67 en Gaia DR3 a menos de 12 minutos de arco, usando paralajes entre 1,0 y 1,4 mas.
+  gold:
+    target: M67
+    service: gaia_esa
+    compare: scalar
+    adql: SELECT COUNT(*) FROM gaiadr3.gaia_source WHERE 1=CONTAINS(POINT('ICRS',ra,dec),CIRCLE('ICRS',{ra},{dec},0.2)) AND parallax BETWEEN 1.0 AND 1.4
+    tol_deg: 0.25
+  split: test
+- id: VT19
+  protocol: tap
+  category: tap_members_parallax
+  difficulty: 3
+  en: Count the probable members of h Persei (NGC 869) in Gaia DR3 within 9 arcmin, using parallaxes between 0.3 and 0.5 mas.
+  es: Cuenta los miembros probables de h Persei (NGC 869) en Gaia DR3 a menos de 9 minutos de arco, usando paralajes entre 0,3 y 0,5 mas.
+  gold:
+    target: NGC 869
+    service: gaia_esa
+    compare: scalar
+    adql: SELECT COUNT(*) FROM gaiadr3.gaia_source WHERE 1=CONTAINS(POINT('ICRS',ra,dec),CIRCLE('ICRS',{ra},{dec},0.15)) AND parallax BETWEEN 0.3 AND 0.5
+    tol_deg: 0.2
+  split: test
+- id: VT20
+  protocol: tap
+  category: tap_members_parallax
+  difficulty: 3
+  en: Count the probable members of the Wild Duck Cluster in Gaia DR3 within 6 arcmin, using parallaxes between 0.4 and 0.6 mas.
+  es: Cuenta los miembros probables del cúmulo del Pato Salvaje en Gaia DR3 a menos de 6 minutos de arco, usando paralajes entre 0,4 y 0,6 mas.
+  gold:
+    target: M11
+    service: gaia_esa
+    compare: scalar
+    adql: SELECT COUNT(*) FROM gaiadr3.gaia_source WHERE 1=CONTAINS(POINT('ICRS',ra,dec),CIRCLE('ICRS',{ra},{dec},0.1)) AND parallax BETWEEN 0.4 AND 0.6
+    tol_deg: 0.1
+  split: test
+- id: VT21
+  protocol: tap
+  category: tap_avg
+  difficulty: 2
+  en: What is the mean Gaia G magnitude of the sources within 1.8 arcmin of the globular cluster M3?
+  es: ¿Cuál es la magnitud G media de Gaia de las fuentes a menos de 1,8 minutos de arco del cúmulo globular M3?
+  gold:
+    target: M3
+    service: gaia_esa
+    compare: scalar
+    adql: SELECT AVG(phot_g_mean_mag) FROM gaiadr3.gaia_source WHERE 1=CONTAINS(POINT('ICRS',ra,dec),CIRCLE('ICRS',{ra},{dec},0.03))
+    tol_deg: 0.1
+    rtol: 0.001
+  split: test
+- id: VT22
+  protocol: tap
+  category: tap_avg
+  difficulty: 2
+  en: What is the mean Gaia G magnitude of the sources within 6 arcmin of the open cluster M67?
+  es: ¿Cuál es la magnitud G media de Gaia de las fuentes a menos de 6 minutos de arco del cúmulo abierto M67?
+  gold:
+    target: M67
+    service: gaia_esa
+    compare: scalar
+    adql: SELECT AVG(phot_g_mean_mag) FROM gaiadr3.gaia_source WHERE 1=CONTAINS(POINT('ICRS',ra,dec),CIRCLE('ICRS',{ra},{dec},0.1))
+    tol_deg: 0.25
+    rtol: 0.001
+  split: test
+- id: VT23
+  protocol: tap
+  category: tap_avg
+  difficulty: 2
+  en: What is the mean Gaia G magnitude of the sources within 3 arcmin of h Persei (NGC 869)?
+  es: ¿Cuál es la magnitud G media de Gaia de las fuentes a menos de 3 minutos de arco de h Persei (NGC 869)?
+  gold:
+    target: NGC 869
+    service: gaia_esa
+    compare: scalar
+    adql: SELECT AVG(phot_g_mean_mag) FROM gaiadr3.gaia_source WHERE 1=CONTAINS(POINT('ICRS',ra,dec),CIRCLE('ICRS',{ra},{dec},0.05))
+    tol_deg: 0.2
+    rtol: 0.001
+  split: test
+- id: VT24
+  protocol: tap
+  category: tap_count_rv
+  difficulty: 2
+  en: How many Gaia DR3 stars within 18 arcmin of the Beehive Cluster have a measured radial velocity?
+  es: ¿Cuántas estrellas de Gaia DR3 a menos de 18 minutos de arco del cúmulo del Pesebre tienen velocidad radial medida?
+  gold:
+    target: M44
+    service: gaia_esa
+    compare: scalar
+    adql: SELECT COUNT(*) FROM gaiadr3.gaia_source WHERE 1=CONTAINS(POINT('ICRS',ra,dec),CIRCLE('ICRS',{ra},{dec},0.3)) AND radial_velocity IS NOT NULL
+    tol_deg: 0.5
+  split: test
+- id: VT25
+  protocol: tap
+  category: tap_count_rv
+  difficulty: 2
+  en: How many Gaia DR3 stars within 12 arcmin of the open cluster M67 have a measured radial velocity?
+  es: ¿Cuántas estrellas de Gaia DR3 a menos de 12 minutos de arco del cúmulo abierto M67 tienen velocidad radial medida?
+  gold:
+    target: M67
+    service: gaia_esa
+    compare: scalar
+    adql: SELECT COUNT(*) FROM gaiadr3.gaia_source WHERE 1=CONTAINS(POINT('ICRS',ra,dec),CIRCLE('ICRS',{ra},{dec},0.2)) AND radial_velocity IS NOT NULL
+    tol_deg: 0.25
+  split: test
+- id: VT26
+  protocol: tap
+  category: tap_count_rv
+  difficulty: 2
+  en: How many Gaia DR3 stars within 6 arcmin of 47 Tucanae have a measured radial velocity?
+  es: ¿Cuántas estrellas de Gaia DR3 a menos de 6 minutos de arco de 47 Tucanae tienen velocidad radial medida?
+  gold:
+    target: NGC 104
+    service: gaia_esa
+    compare: scalar
+    adql: SELECT COUNT(*) FROM gaiadr3.gaia_source WHERE 1=CONTAINS(POINT('ICRS',ra,dec),CIRCLE('ICRS',{ra},{dec},0.1)) AND radial_velocity IS NOT NULL
+    tol_deg: 0.3
+  split: test
+- id: VT27
+  protocol: tap
+  category: tap_colour
+  difficulty: 3
+  en: How many Gaia DR3 sources within 6 arcmin of the open cluster M67 have a BP−RP colour redder than 1.5?
+  es: ¿Cuántas fuentes de Gaia DR3 a menos de 6 minutos de arco del cúmulo abierto M67 tienen un color BP−RP más rojo que 1,5?
+  gold:
+    target: M67
+    service: gaia_esa
+    compare: scalar
+    adql: SELECT COUNT(*) FROM gaiadr3.gaia_source WHERE 1=CONTAINS(POINT('ICRS',ra,dec),CIRCLE('ICRS',{ra},{dec},0.1)) AND bp_rp > 1.5
+    tol_deg: 0.25
+  split: test
+- id: VT28
+  protocol: tap
+  category: tap_colour
+  difficulty: 3
+  en: How many Gaia DR3 sources within 3 arcmin of 47 Tucanae have a BP−RP colour redder than 1.2?
+  es: ¿Cuántas fuentes de Gaia DR3 a menos de 3 minutos de arco de 47 Tucanae tienen un color BP−RP más rojo que 1,2?
+  gold:
+    target: NGC 104
+    service: gaia_esa
+    compare: scalar
+    adql: SELECT COUNT(*) FROM gaiadr3.gaia_source WHERE 1=CONTAINS(POINT('ICRS',ra,dec),CIRCLE('ICRS',{ra},{dec},0.05)) AND bp_rp > 1.2
+    tol_deg: 0.3
+  split: test
+- id: VT29
+  protocol: tap
+  category: tap_colour
+  difficulty: 3
+  en: How many Gaia DR3 sources within 3 arcmin of the globular cluster M3 have a BP−RP colour redder than 1.0?
+  es: ¿Cuántas fuentes de Gaia DR3 a menos de 3 minutos de arco del cúmulo globular M3 tienen un color BP−RP más rojo que 1,0?
+  gold:
+    target: M3
+    service: gaia_esa
+    compare: scalar
+    adql: SELECT COUNT(*) FROM gaiadr3.gaia_source WHERE 1=CONTAINS(POINT('ICRS',ra,dec),CIRCLE('ICRS',{ra},{dec},0.05)) AND bp_rp > 1.0
+    tol_deg: 0.1
+  split: test
+- id: VT30
+  protocol: tap
+  category: tap_ruwe
+  difficulty: 3
+  en: How many Gaia DR3 sources within 18 arcmin of the Beehive Cluster have RUWE above 1.4 (possible binaries)?
+  es: ¿Cuántas fuentes de Gaia DR3 a menos de 18 minutos de arco del cúmulo del Pesebre tienen RUWE mayor que 1,4 (posibles binarias)?
+  gold:
+    target: M44
+    service: gaia_esa
+    compare: scalar
+    adql: SELECT COUNT(*) FROM gaiadr3.gaia_source WHERE 1=CONTAINS(POINT('ICRS',ra,dec),CIRCLE('ICRS',{ra},{dec},0.3)) AND ruwe > 1.4
+    tol_deg: 0.5
+  split: test
+- id: VT31
+  protocol: tap
+  category: tap_ruwe
+  difficulty: 3
+  en: How many Gaia DR3 sources within 18 arcmin of the Pleiades have RUWE above 1.4 (possible binaries)?
+  es: ¿Cuántas fuentes de Gaia DR3 a menos de 18 minutos de arco de las Pléyades tienen RUWE mayor que 1,4 (posibles binarias)?
+  gold:
+    target: M45
+    service: gaia_esa
+    compare: scalar
+    adql: SELECT COUNT(*) FROM gaiadr3.gaia_source WHERE 1=CONTAINS(POINT('ICRS',ra,dec),CIRCLE('ICRS',{ra},{dec},0.3)) AND ruwe > 1.4
+    tol_deg: 1.0
+  split: test
+- id: VT32
+  protocol: tap
+  category: tap_join_teff
+  difficulty: 3
+  en: Using Gaia DR3 astrophysical parameters, how many stars within 18 arcmin of the Pleiades have GSP-Phot effective temperatures above 7000 K?
+  es: Usando los parámetros astrofísicos de Gaia DR3, ¿cuántas estrellas a menos de 18 minutos de arco de las Pléyades tienen temperatura efectiva GSP-Phot mayor que 7000 K?
+  gold:
+    target: M45
+    service: gaia_esa
+    compare: scalar
+    adql: SELECT COUNT(*) FROM gaiadr3.gaia_source AS g JOIN gaiadr3.astrophysical_parameters AS ap ON g.source_id = ap.source_id WHERE 1=CONTAINS(POINT('ICRS',g.ra,g.dec),CIRCLE('ICRS',{ra},{dec},0.3))
+      AND ap.teff_gspphot > 7000
+    tol_deg: 1.0
+  split: test
+- id: VT33
+  protocol: tap
+  category: tap_join_teff
+  difficulty: 3
+  en: Using Gaia DR3 astrophysical parameters, how many stars within 18 arcmin of the Beehive Cluster have GSP-Phot effective temperatures above 6500 K?
+  es: Usando los parámetros astrofísicos de Gaia DR3, ¿cuántas estrellas a menos de 18 minutos de arco del cúmulo del Pesebre tienen temperatura efectiva GSP-Phot mayor que 6500 K?
+  gold:
+    target: M44
+    service: gaia_esa
+    compare: scalar
+    adql: SELECT COUNT(*) FROM gaiadr3.gaia_source AS g JOIN gaiadr3.astrophysical_parameters AS ap ON g.source_id = ap.source_id WHERE 1=CONTAINS(POINT('ICRS',g.ra,g.dec),CIRCLE('ICRS',{ra},{dec},0.3))
+      AND ap.teff_gspphot > 6500
+    tol_deg: 0.5
+  split: test
+- id: VT34
+  protocol: tap
+  category: tap_join_teff
+  difficulty: 3
+  en: Using Gaia DR3 astrophysical parameters, how many stars within 12 arcmin of the open cluster M67 have GSP-Phot effective temperatures above 6000 K?
+  es: Usando los parámetros astrofísicos de Gaia DR3, ¿cuántas estrellas a menos de 12 minutos de arco del cúmulo abierto M67 tienen temperatura efectiva GSP-Phot mayor que 6000 K?
+  gold:
+    target: M67
+    service: gaia_esa
+    compare: scalar
+    adql: SELECT COUNT(*) FROM gaiadr3.gaia_source AS g JOIN gaiadr3.astrophysical_parameters AS ap ON g.source_id = ap.source_id WHERE 1=CONTAINS(POINT('ICRS',g.ra,g.dec),CIRCLE('ICRS',{ra},{dec},0.2))
+      AND ap.teff_gspphot > 6000
+    tol_deg: 0.25
+  split: test
+- id: VT35
+  protocol: tap
+  category: tap_nearest
+  difficulty: 2
+  en: Which Gaia DR3 star within 12 arcmin of Sirius has the largest parallax? Give its source_id.
+  es: ¿Qué estrella de Gaia DR3 a menos de 12 minutos de arco de Sirio tiene la mayor paralaje? Dame su source_id.
+  gold:
+    target: Sirius
+    service: gaia_esa
+    compare: set
+    adql: SELECT TOP 1 source_id FROM gaiadr3.gaia_source WHERE 1=CONTAINS(POINT('ICRS',ra,dec),CIRCLE('ICRS',{ra},{dec},0.2)) AND parallax IS NOT NULL ORDER BY parallax DESC
+    tol_deg: 0.01
+  split: test
+- id: VT36
+  protocol: tap
+  category: tap_nearest
+  difficulty: 2
+  en: Which Gaia DR3 star within 12 arcmin of Vega has the largest parallax? Give its source_id.
+  es: ¿Qué estrella de Gaia DR3 a menos de 12 minutos de arco de Vega tiene la mayor paralaje? Dame su source_id.
+  gold:
+    target: Vega
+    service: gaia_esa
+    compare: set
+    adql: SELECT TOP 1 source_id FROM gaiadr3.gaia_source WHERE 1=CONTAINS(POINT('ICRS',ra,dec),CIRCLE('ICRS',{ra},{dec},0.2)) AND parallax IS NOT NULL ORDER BY parallax DESC
+    tol_deg: 0.01
+  split: test
+- id: VT37
+  protocol: tap
+  category: tap_nearest
+  difficulty: 2
+  en: Which Gaia DR3 star within 30 arcmin of the Pleiades has the largest parallax? Give its source_id.
+  es: ¿Qué estrella de Gaia DR3 a menos de 30 minutos de arco de las Pléyades tiene la mayor paralaje? Dame su source_id.
+  gold:
+    target: M45
+    service: gaia_esa
+    compare: set
+    adql: SELECT TOP 1 source_id FROM gaiadr3.gaia_source WHERE 1=CONTAINS(POINT('ICRS',ra,dec),CIRCLE('ICRS',{ra},{dec},0.5)) AND parallax IS NOT NULL ORDER BY parallax DESC
+    tol_deg: 1.0
+  split: test
+- id: VT38
+  protocol: tap
+  category: tap_allwise_colour
+  difficulty: 3
+  en: Count the AllWISE sources within 6 arcmin of Bode's Galaxy with W1−W2 > 0.8.
+  es: Cuenta las fuentes de AllWISE a menos de 6 minutos de arco de la galaxia de Bode con W1−W2 > 0,8.
+  gold:
+    target: M81
+    service: irsa_tap
+    compare: scalar
+    adql: SELECT COUNT(*) FROM allwise_p3as_psd WHERE CONTAINS(POINT('ICRS',ra,dec),CIRCLE('ICRS',{ra},{dec},0.1))=1 AND (w1mpro - w2mpro) > 0.8
+    tol_deg: 0.15
+  split: test
+- id: VT39
+  protocol: tap
+  category: tap_allwise_colour
+  difficulty: 3
+  en: Count the AllWISE sources within 6 arcmin of the Sculptor Galaxy with W1−W2 > 0.8.
+  es: Cuenta las fuentes de AllWISE a menos de 6 minutos de arco de la galaxia del Escultor con W1−W2 > 0,8.
+  gold:
+    target: NGC 253
+    service: irsa_tap
+    compare: scalar
+    adql: SELECT COUNT(*) FROM allwise_p3as_psd WHERE CONTAINS(POINT('ICRS',ra,dec),CIRCLE('ICRS',{ra},{dec},0.1))=1 AND (w1mpro - w2mpro) > 0.8
+    tol_deg: 0.2
+  split: test
+- id: VT40
+  protocol: tap
+  category: tap_allwise_colour
+  difficulty: 3
+  en: Count the AllWISE sources within 6 arcmin of Arp 220 with W1−W2 > 0.8.
+  es: Cuenta las fuentes de AllWISE a menos de 6 minutos de arco de Arp 220 con W1−W2 > 0,8.
+  gold:
+    target: Arp 220
+    service: irsa_tap
+    compare: scalar
+    adql: SELECT COUNT(*) FROM allwise_p3as_psd WHERE CONTAINS(POINT('ICRS',ra,dec),CIRCLE('ICRS',{ra},{dec},0.1))=1 AND (w1mpro - w2mpro) > 0.8
+    tol_deg: 0.02
+  split: test
+- id: VT41
+  protocol: tap
+  category: tap_allwise_colour
+  difficulty: 3
+  en: Count the AllWISE sources within 6 arcmin of M87 with W1−W2 > 0.8.
+  es: Cuenta las fuentes de AllWISE a menos de 6 minutos de arco de M87 con W1−W2 > 0,8.
+  gold:
+    target: M87
+    service: irsa_tap
+    compare: scalar
+    adql: SELECT COUNT(*) FROM allwise_p3as_psd WHERE CONTAINS(POINT('ICRS',ra,dec),CIRCLE('ICRS',{ra},{dec},0.1))=1 AND (w1mpro - w2mpro) > 0.8
+    tol_deg: 0.05
+  split: test
+- id: VT42
+  protocol: tap
+  category: tap_2mass_count
+  difficulty: 2
+  en: How many 2MASS point sources brighter than Ks = 9 are within 3 arcmin of the Orion Nebula?
+  es: ¿Cuántas fuentes puntuales de 2MASS más brillantes que Ks = 9 hay a menos de 3 minutos de arco de la nebulosa de Orión?
+  gold:
+    target: M42
+    service: irsa_tap
+    compare: scalar
+    adql: SELECT COUNT(*) FROM fp_psc WHERE CONTAINS(POINT('ICRS',ra,dec),CIRCLE('ICRS',{ra},{dec},0.05))=1 AND k_m < 9
+    tol_deg: 0.25
+  split: test
+- id: VT43
+  protocol: tap
+  category: tap_2mass_count
+  difficulty: 2
+  en: How many 2MASS point sources brighter than Ks = 10 are within 3 arcmin of the Omega Nebula?
+  es: ¿Cuántas fuentes puntuales de 2MASS más brillantes que Ks = 10 hay a menos de 3 minutos de arco de la nebulosa Omega?
+  gold:
+    target: M17
+    service: irsa_tap
+    compare: scalar
+    adql: SELECT COUNT(*) FROM fp_psc WHERE CONTAINS(POINT('ICRS',ra,dec),CIRCLE('ICRS',{ra},{dec},0.05))=1 AND k_m < 10
+    tol_deg: 0.1
+  split: test
+- id: VT44
+  protocol: tap
+  category: tap_2mass_count
+  difficulty: 2
+  en: How many 2MASS point sources brighter than Ks = 11 are within 3 arcmin of 47 Tucanae?
+  es: ¿Cuántas fuentes puntuales de 2MASS más brillantes que Ks = 11 hay a menos de 3 minutos de arco de 47 Tucanae?
+  gold:
+    target: NGC 104
+    service: irsa_tap
+    compare: scalar
+    adql: SELECT COUNT(*) FROM fp_psc WHERE CONTAINS(POINT('ICRS',ra,dec),CIRCLE('ICRS',{ra},{dec},0.05))=1 AND k_m < 11
+    tol_deg: 0.3
+  split: test
+- id: VT45
+  protocol: tap
+  category: tap_2mass_brightest
+  difficulty: 2
+  en: What is the J magnitude of the brightest (in J) 2MASS source within 30 arcsec of Antares?
+  es: ¿Cuál es la magnitud J de la fuente 2MASS más brillante (en J) a menos de 30 segundos de arco de Antares?
+  gold:
+    target: Antares
+    service: irsa_tap
+    compare: scalar
+    adql: SELECT TOP 1 j_m FROM fp_psc WHERE CONTAINS(POINT('ICRS',ra,dec),CIRCLE('ICRS',{ra},{dec},0.008333))=1 AND j_m IS NOT NULL ORDER BY j_m ASC
+    tol_deg: 0.01
+    rtol: 0.001
+  split: test
+- id: VT46
+  protocol: tap
+  category: tap_2mass_brightest
+  difficulty: 2
+  en: What is the J magnitude of the brightest (in J) 2MASS source within 30 arcsec of VY Canis Majoris?
+  es: ¿Cuál es la magnitud J de la fuente 2MASS más brillante (en J) a menos de 30 segundos de arco de VY Canis Majoris?
+  gold:
+    target: VY CMa
+    service: irsa_tap
+    compare: scalar
+    adql: SELECT TOP 1 j_m FROM fp_psc WHERE CONTAINS(POINT('ICRS',ra,dec),CIRCLE('ICRS',{ra},{dec},0.008333))=1 AND j_m IS NOT NULL ORDER BY j_m ASC
+    tol_deg: 0.01
+    rtol: 0.001
+  split: test
+- id: VT47
+  protocol: tap
+  category: tap_2mass_brightest
+  difficulty: 2
+  en: What is the J magnitude of the brightest (in J) 2MASS source within 30 arcsec of the carbon star IRC +10216?
+  es: ¿Cuál es la magnitud J de la fuente 2MASS más brillante (en J) a menos de 30 segundos de arco de la estrella de carbono IRC +10216?
+  gold:
+    target: IRC +10216
+    service: irsa_tap
+    compare: scalar
+    adql: SELECT TOP 1 j_m FROM fp_psc WHERE CONTAINS(POINT('ICRS',ra,dec),CIRCLE('ICRS',{ra},{dec},0.008333))=1 AND j_m IS NOT NULL ORDER BY j_m ASC
+    tol_deg: 0.01
+    rtol: 0.001
+  split: test
+- id: VT48
+  protocol: tap
+  category: tap_obscore
+  difficulty: 3
+  en: Which IRSA data collections have images covering the Pinwheel Galaxy?
+  es: ¿Qué colecciones de datos de IRSA tienen imágenes que cubren la galaxia del Molinete?
+  gold:
+    target: M101
+    service: irsa_tap
+    compare: set
+    adql: SELECT DISTINCT obs_collection FROM ivoa.obscore WHERE CONTAINS(POINT('ICRS',{ra},{dec}),s_region)=1 AND dataproduct_type = 'image'
+    tol_deg: 0.2
+  split: test
+- id: VT49
+  protocol: tap
+  category: tap_obscore
+  difficulty: 3
+  en: Which IRSA data collections have images covering the Southern Pinwheel Galaxy?
+  es: ¿Qué colecciones de datos de IRSA tienen imágenes que cubren la galaxia del Molinete Austral?
+  gold:
+    target: M83
+    service: irsa_tap
+    compare: set
+    adql: SELECT DISTINCT obs_collection FROM ivoa.obscore WHERE CONTAINS(POINT('ICRS',{ra},{dec}),s_region)=1 AND dataproduct_type = 'image'
+    tol_deg: 0.1
+  split: test
+- id: VT50
+  protocol: tap
+  category: tap_obscore
+  difficulty: 3
+  en: Which IRSA data collections have images covering the Great Barred Spiral Galaxy NGC 1365?
+  es: ¿Qué colecciones de datos de IRSA tienen imágenes que cubren la gran galaxia espiral barrada NGC 1365?
+  gold:
+    target: NGC 1365
+    service: irsa_tap
+    compare: set
+    adql: SELECT DISTINCT obs_collection FROM ivoa.obscore WHERE CONTAINS(POINT('ICRS',{ra},{dec}),s_region)=1 AND dataproduct_type = 'image'
+    tol_deg: 0.08
+  split: test
+- id: VP01
+  protocol: ssa
+  category: spectra_named
+  difficulty: 2
+  en: Find an infrared spectrum of the planetary nebula NGC 7027.
+  es: Encuentra un espectro infrarrojo de la nebulosa planetaria NGC 7027.
+  gold:
+    target: NGC 7027
+    band_um:
+    - 1.0
+    - 200.0
+    radius_deg: 0.05
+    tol_deg: 0.02
+  split: test
+- id: VP02
+  protocol: ssa
+  category: spectra_named
+  difficulty: 2
+  en: Find an infrared spectrum of the Sculptor Galaxy.
+  es: Encuentra un espectro infrarrojo de la galaxia del Escultor.
+  gold:
+    target: NGC 253
+    band_um:
+    - 1.0
+    - 200.0
+    radius_deg: 0.05
+    tol_deg: 0.2
+  split: test
+- id: VP03
+  protocol: ssa
+  category: spectra_named
+  difficulty: 2
+  en: I need a mid-infrared spectrum of Eta Carinae.
+  es: Necesito un espectro en el infrarrojo medio de Eta Carinae.
+  gold:
+    target: eta Car
+    band_um:
+    - 5.0
+    - 40.0
+    radius_deg: 0.05
+    tol_deg: 0.05
+  split: test
+- id: VP04
+  protocol: ssa
+  category: spectra_named
+  difficulty: 2
+  en: Find an infrared spectrum of Betelgeuse.
+  es: Encuentra un espectro infrarrojo de Betelgeuse.
+  gold:
+    target: Betelgeuse
+    band_um:
+    - 1.0
+    - 200.0
+    radius_deg: 0.05
+    tol_deg: 0.02
+  split: test
+- id: VP05
+  protocol: ssa
+  category: spectra_named
+  difficulty: 2
+  en: Are there infrared spectra of VY Canis Majoris? Retrieve one.
+  es: ¿Hay espectros infrarrojos de VY Canis Majoris? Recupera uno.
+  gold:
+    target: VY CMa
+    band_um:
+    - 1.0
+    - 200.0
+    radius_deg: 0.05
+    tol_deg: 0.02
+  split: test
+- id: VP06
+  protocol: ssa
+  category: spectra_named
+  difficulty: 2
+  en: Are there infrared spectra of the carbon star IRC +10216? Retrieve one.
+  es: ¿Hay espectros infrarrojos de la estrella de carbono IRC +10216? Recupera uno.
+  gold:
+    target: IRC +10216
+    band_um:
+    - 1.0
+    - 200.0
+    radius_deg: 0.05
+    tol_deg: 0.02
+  split: test
+- id: VP07
+  protocol: ssa
+  category: spectra_named
+  difficulty: 2
+  en: Find an infrared spectrum of Arp 220.
+  es: Encuentra un espectro infrarrojo de Arp 220.
+  gold:
+    target: Arp 220
+    band_um:
+    - 1.0
+    - 200.0
+    radius_deg: 0.05
+    tol_deg: 0.02
+  split: test
+- id: VP08
+  protocol: ssa
+  category: spectra_named
+  difficulty: 2
+  en: Find an infrared spectrum of the Cat's Eye Nebula.
+  es: Encuentra un espectro infrarrojo de la nebulosa Ojo de Gato.
+  gold:
+    target: NGC 6543
+    band_um:
+    - 1.0
+    - 200.0
+    radius_deg: 0.05
+    tol_deg: 0.02
+  split: test
+- id: VP09
+  protocol: ssa
+  category: spectra_named
+  difficulty: 2
+  en: Get me a spectrum of Cassiopeia A from ISO or Herschel.
+  es: Consígueme un espectro de Cassiopea A de ISO o Herschel.
+  gold:
+    target: Cas A
+    band_um:
+    - 1.0
+    - 200.0
+    radius_deg: 0.05
+    tol_deg: 0.05
+  split: test
+- id: VP10
+  protocol: ssa
+  category: spectra_named
+  difficulty: 2
+  en: Get me a spectrum of the Omega Nebula from ISO or Herschel.
+  es: Consígueme un espectro de la nebulosa Omega de ISO o Herschel.
+  gold:
+    target: M17
+    band_um:
+    - 1.0
+    - 200.0
+    radius_deg: 0.05
+    tol_deg: 0.1
+  split: test
+- id: VP11
+  protocol: ssa
+  category: spectra_named
+  difficulty: 2
+  en: Are there infrared spectra of Antares? Retrieve one.
+  es: ¿Hay espectros infrarrojos de Antares? Recupera uno.
+  gold:
+    target: Antares
+    band_um:
+    - 1.0
+    - 200.0
+    radius_deg: 0.05
+    tol_deg: 0.02
+  split: test
+- id: VP12
+  protocol: ssa
+  category: spectra_named
+  difficulty: 2
+  en: Find an infrared spectrum of the Orion Nebula.
+  es: Encuentra un espectro infrarrojo de la nebulosa de Orión.
+  gold:
+    target: M42
+    band_um:
+    - 1.0
+    - 200.0
+    radius_deg: 0.05
+    tol_deg: 0.25
+  split: test
+- id: VP13
+  protocol: ssa
+  category: spectra_named
+  difficulty: 2
+  en: Get me a spectrum of the Iris Nebula from ISO or Herschel.
+  es: Consígueme un espectro de la nebulosa del Iris de ISO o Herschel.
+  gold:
+    target: NGC 7023
+    band_um:
+    - 1.0
+    - 200.0
+    radius_deg: 0.05
+    tol_deg: 0.1
+  split: test
+- id: VP14
+  protocol: ssa
+  category: spectra_named
+  difficulty: 2
+  en: I need a mid-infrared spectrum of the Lagoon Nebula.
+  es: Necesito un espectro en el infrarrojo medio de la nebulosa de la Laguna.
+  gold:
+    target: M8
+    band_um:
+    - 5.0
+    - 40.0
+    radius_deg: 0.05
+    tol_deg: 0.4
+  split: test
+- id: VO01
+  protocol: none
+  category: out_of_scope
+  difficulty: 2
+  en: What will the sky be like over La Silla tonight, will it be cloudy?
+  es: ¿Cómo estará el cielo esta noche en La Silla, habrá nubes?
+  gold:
+    abstain: true
+  split: test
+- id: VO02
+  protocol: none
+  category: out_of_scope
+  difficulty: 2
+  en: Show me a photograph of the surface of exoplanet TRAPPIST-1e.
+  es: Muéstrame una fotografía de la superficie del exoplaneta TRAPPIST-1e.
+  gold:
+    abstain: true
+  split: test
+- id: VO03
+  protocol: none
+  category: out_of_scope
+  difficulty: 2
+  en: Give me an image of the total solar eclipse of 2045.
+  es: Dame una imagen del eclipse solar total de 2045.
+  gold:
+    abstain: true
+  split: test
+- id: VO04
+  protocol: none
+  category: out_of_scope
+  difficulty: 2
+  en: Write me a poem about the Andromeda Galaxy.
+  es: Escríbeme un poema sobre la galaxia de Andrómeda.
+  gold:
+    abstain: true
+  split: test
+- id: VO05
+  protocol: none
+  category: out_of_scope
+  difficulty: 2
+  en: What is my horoscope for Scorpio this week?
+  es: ¿Cuál es mi horóscopo de Escorpio esta semana?
+  gold:
+    abstain: true
+  split: test
+- id: VO06
+  protocol: none
+  category: out_of_scope
+  difficulty: 2
+  en: Which telescope should I buy for my backyard under 500 dollars?
+  es: ¿Qué telescopio debería comprar para mi patio por menos de 500 dólares?
+  gold:
+    abstain: true
+  split: test
+- id: VO07
+  protocol: none
+  category: out_of_scope
+  difficulty: 2
+  en: Retrieve the James Webb image that will be taken of Betelgeuse next year.
+  es: Recupera la imagen de James Webb que se tomará de Betelgeuse el próximo año.
+  gold:
+    abstain: true
+  split: test
+- id: VO08
+  protocol: none
+  category: out_of_scope
+  difficulty: 2
+  en: Show me a picture of the inside of the black hole Sagittarius A*.
+  es: Muéstrame una imagen del interior del agujero negro Sagitario A*.
+  gold:
+    abstain: true
+  split: test
+- id: VO09
+  protocol: none
+  category: out_of_scope
+  difficulty: 2
+  en: What is the stock price of the company that built the Hubble telescope?
+  es: ¿Cuál es el precio de la acción de la empresa que construyó el telescopio Hubble?
+  gold:
+    abstain: true
+  split: test
+- id: VO10
+  protocol: none
+  category: out_of_scope
+  difficulty: 2
+  en: Translate 'nebula' into French.
+  es: Traduce 'nebulosa' al francés.
+  gold:
+    abstain: true
+  split: test
+- id: VO11
+  protocol: none
+  category: out_of_scope
+  difficulty: 2
+  en: Book me an observing night at the Paranal Observatory.
+  es: Resérvame una noche de observación en el Observatorio Paranal.
+  gold:
+    abstain: true
+  split: test
+- id: VO12
+  protocol: none
+  category: out_of_scope
+  difficulty: 2
+  en: Send me the raw data of my own observation proposal 2026A-0042.
+  es: Envíame los datos crudos de mi propuesta de observación 2026A-0042.
+  gold:
+    abstain: true
+  split: test
+- id: VO13
+  protocol: none
+  category: out_of_scope
+  difficulty: 2
+  en: Show me a photo of the Big Bang.
+  es: Muéstrame una foto del Big Bang.
+  gold:
+    abstain: true
+  split: test
+- id: VO14
+  protocol: none
+  category: out_of_scope
+  difficulty: 2
+  en: What did the astronaut eat for breakfast on the ISS today?
+  es: ¿Qué desayunó hoy el astronauta en la ISS?
+  gold:
+    abstain: true
+  split: test
+- id: VO15
+  protocol: none
+  category: out_of_scope
+  difficulty: 2
+  en: Give me an image of an alien civilisation near Proxima Centauri.
+  es: Dame una imagen de una civilización extraterrestre cerca de Próxima Centauri.
+  gold:
+    abstain: true
+  split: test

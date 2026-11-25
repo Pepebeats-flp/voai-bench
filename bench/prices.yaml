@@ -1,0 +1,9 @@
+# Precios de lista oficiales (USD por 1M tokens) consultados el 2026-11-24 (ver bib/modelos_evaluados.md).
+# El costo de cada episodio se recalcula como tok_entrada*p_in + tok_salida*p_out (los tokens de
+# razonamiento se facturan como salida). Se ignoran descuentos por caché y tarifas fuera de horario.
+date: "2026-11-24"
+models:
+  deepseek-v4-pro:  {in: 1.32, out: 3.96, source: "DeepSeek API pricing (peak rate, from 2026-08-16)", cite: deepseek2026pricing}
+  qwen3.8-flash:    {in: 0.16, out: 0.47, source: "Alibaba Cloud Model Studio (1 / 3 RMB per 1M tokens)", cite: alibaba2026qwen38flash}
+  claude-haiku-5-5: {in: 0.10, out: 0.50, source: "Anthropic API pricing (prompts <=100K tokens)", cite: anthropic2026haiku55}
+  gpt-6-luna:       {in: 0.10, out: 0.50, source: "OpenAI API pricing", cite: openai2026gpt6lunadocs}

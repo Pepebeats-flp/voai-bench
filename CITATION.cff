@@ -1,0 +1,15 @@
+cff-version: 1.2.0
+message: "If you use VOAI-Bench, please cite it as below."
+title: "VOAI-Bench: an execution-grounded benchmark of LLM systems operating the Virtual Observatory"
+authors:
+  - family-names: "Pinto-Muñoz"
+    given-names: "José"
+    orcid: "https://orcid.org/0009-0004-2656-0724"
+    affiliation: "Universidad Técnica Federico Santa María, Valparaíso, Chile"
+  - family-names: "Solar"
+    given-names: "Mauricio"
+    orcid: "https://orcid.org/0000-0002-4433-4622"
+    affiliation: "Universidad Técnica Federico Santa María, Valparaíso, Chile"
+version: "1.0.0"
+date-released: "2026-11-25"
+license: MIT

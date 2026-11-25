@@ -1,0 +1,41 @@
+# Fichas verificadas de los modelos evaluados (fuente y salvedades: bib/modelos_evaluados.md; consulta 2026-11-24).
+deepseek-v4-pro:
+  name: "DeepSeek V4 Pro"
+  developer: "DeepSeek (China)"
+  release: "2026-08-13 (stable; preview 2026-04-24)"
+  weights: "open (MIT)"
+  architecture: "Mixture-of-Experts, 1.6T total / 49B active parameters"
+  context: "1M tokens"
+  reasoning: "thinking and non-thinking modes"
+  input: "text"
+  cite: [deepseekai2026v4, deepseekai2024v3]
+qwen3.8-flash:
+  name: "Qwen 3.8 Flash"
+  developer: "Alibaba, Qwen team (China)"
+  release: "2026-08 (late August)"
+  weights: "open (Qwen3.8-Flash-Next, qwen-community-1.0)"
+  architecture: "Mixture-of-Experts, 125B total / about 6B active parameters"
+  context: "262K tokens (extensible to 1M)"
+  reasoning: "thinking mode by default"
+  input: "text, image, video"
+  cite: [qiu2026qwen38next, yang2025qwen3]
+claude-haiku-5-5:
+  name: "Claude Haiku 5.5"
+  developer: "Anthropic (USA)"
+  release: "2026-10-07"
+  weights: "proprietary"
+  architecture: "not disclosed"
+  context: "1M tokens"
+  reasoning: "adaptive thinking with effort control"
+  input: "text, image"
+  cite: [anthropic2026haiku55card]
+gpt-6-luna:
+  name: "GPT-6 Luna"
+  developer: "OpenAI (USA)"
+  release: "2026-09-22"
+  weights: "proprietary"
+  architecture: "not disclosed (smallest tier of the GPT-6 family)"
+  context: "1.05M tokens"
+  reasoning: "configurable reasoning effort"
+  input: "text, image"
+  cite: [openai2026gpt6astracard, openai2026gpt6lunadocs]
