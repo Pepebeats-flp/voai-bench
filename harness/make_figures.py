@@ -19,6 +19,7 @@ sys.path.insert(0, str(ROOT / "harness"))
 import analysis  # noqa: E402
 
 OUT = ROOT / "paper/figures"
+INK = "#222222"
 PALETTE = {"blue_main": "#0F4D92", "blue_secondary": "#3775BA", "green_3": "#8BCF8B", "red_strong": "#B64342",
            "red_2": "#E9A6A1", "neutral": "#CFCECE", "teal": "#42949E", "violet": "#9A4D8E"}
 # Semántica: A0 = línea base (rojo), A1 = intermedio (teal), A2 = propuesto (azul); ablaciones violeta/neutral.
@@ -180,6 +181,153 @@ def fig_sensitivity(A):
     save(fig, "fig_strict_vs_tolerant")
 
 
+# ------------------------------------------------------------------ figuras adicionales
+PROT_COLOR = {"sia": PALETTE["blue_main"], "scs": PALETTE["teal"], "tap": PALETTE["red_strong"],
+              "ssa": PALETTE["violet"], "none": PALETTE["neutral"]}
+PROT_SHORT = {"sia": "Images (SIA2)", "scs": "Cone search (SCS)", "tap": "ADQL (TAP)", "ssa": "Spectra (SSA)",
+              "none": "Out of scope"}
+
+
+def fig_benchmark():
+    """Panorama de VOAI-Bench v1 (157 tareas válidas): posiciones en el cielo y tareas por protocolo y dificultad."""
+    import json
+    import yaml
+    from astropy.coordinates import SkyCoord
+    gold = json.loads((ROOT / "bench/gold_v1.json").read_text())
+    qs = yaml.safe_load((ROOT / "bench/queries_v1.yaml").read_text())
+    qs = qs if isinstance(qs, list) else (qs.get("items") or qs.get("queries"))
+    diff = {q["id"]: q["difficulty"] for q in qs}
+    valid = {k: v for k, v in gold.items() if not v.get("invalid")}
+    fig = plt.figure(figsize=(7.4, 3.0))
+    ax = fig.add_axes([0.0, 0.08, 0.6, 0.84], projection="aitoff")
+    ax.grid(True, color="#DDDDDD", lw=0.6)
+    for p in ["sia", "scs", "tap", "ssa"]:
+        pts = [(v["ra"], v["dec"]) for v in valid.values() if v["protocol"] == p and "ra" in v]
+        if not pts:
+            continue
+        c = SkyCoord([a for a, _ in pts], [d for _, d in pts], unit="deg").galactic
+        lon = -c.l.wrap_at("180d").radian  # longitud galáctica creciendo hacia la izquierda
+        ax.scatter(lon, c.b.radian, s=16, color=PROT_COLOR[p], edgecolor="white", lw=0.4, label=PROT_SHORT[p],
+                   zorder=3, alpha=0.9)
+    ax.set_xticklabels([f"{x}°" for x in (150, 120, 90, 60, 30, 0, 330, 300, 270, 240, 210)], fontsize=6.5,
+                       color="#666666")
+    ax.tick_params(axis="y", labelsize=7)
+    ax.set_title("(a) Task targets, Galactic coordinates", fontsize=9.5, pad=8)
+    ax.legend(loc="upper center", bbox_to_anchor=(0.5, -0.04), ncol=4, fontsize=7.2, handletextpad=0.2,
+              columnspacing=0.8)
+    ax2 = fig.add_axes([0.76, 0.20, 0.23, 0.66])
+    prots = ["sia", "tap", "scs", "ssa", "none"]
+    shades = {1: "#C9D9EC", 2: "#6E9AC9", 3: "#0F4D92"}
+    left = np.zeros(len(prots))
+    for dlev in (1, 2, 3):
+        vals = np.array([sum(1 for k, v in valid.items() if v["protocol"] == p and diff[k] == dlev) for p in prots])
+        ax2.barh(np.arange(len(prots)), vals, left=left, color=shades[dlev], edgecolor="white", lw=0.6,
+                 label=f"Difficulty {dlev}")
+        for i, (l0, v) in enumerate(zip(left, vals)):
+            if v >= 6:
+                ax2.text(l0 + v / 2, i, str(v), ha="center", va="center", fontsize=7,
+                         color="white" if dlev > 1 else INK)
+        left += vals
+    for i, t in enumerate(left):
+        ax2.text(t + 0.8, i, f"{int(t)}", va="center", fontsize=7.5, fontweight="bold")
+    ax2.set_yticks(np.arange(len(prots)), [PROT_SHORT[p] for p in prots], fontsize=7.8)
+    ax2.invert_yaxis()
+    ax2.set_xlabel("Tasks (each in EN and ES)", fontsize=8.5)
+    ax2.grid(axis="x", color="#E6E6E6"); ax2.grid(axis="y", visible=False)
+    ax2.set_xlim(0, max(left) * 1.15)
+    ax2.tick_params(axis="x", labelsize=7.5)
+    ax2.set_title("(b) Tasks by protocol\nand difficulty", fontsize=9.5)
+    ax2.legend(loc="lower right", fontsize=6.8, handlelength=1.0)
+    save(fig, "fig_benchmark")
+
+
+def fig_models_lang(A, R0):
+    """(a) éxito por modelo en A0→A1→A2; (b) inglés vs. español por sistema, con la línea base de reglas."""
+    fig, (ax, ax2) = plt.subplots(1, 2, figsize=(7.4, 3.0), gridspec_kw={"width_ratios": [1.15, 1]})
+    archs = ["A0", "A1", "A2"]
+    mk = {"gpt-6-luna": "o", "claude-haiku-5-5": "s", "deepseek-v4-pro": "D", "qwen3.8-flash": "^"}
+    shade = {"gpt-6-luna": "#222222", "claude-haiku-5-5": "#555555", "deepseek-v4-pro": "#888888",
+             "qwen3.8-flash": "#AAAAAA"}
+    main = {(r["model"], r["arch"]): r for r in A["main"]}
+    for m in A["meta"]["models"]:
+        ys = [100 * main[(m, a)]["success"] for a in archs]
+        ax.plot(range(3), ys, marker=mk.get(m, "o"), color=shade.get(m, "#444444"), lw=1.3, ms=5.5,
+                label=MODEL_NAME.get(m, m))
+    for i, a in enumerate(archs):
+        ax.axvspan(i - 0.18, i + 0.18, color=ARCH_COLOR[a], alpha=0.10, lw=0)
+    r0 = 100 * R0["by_arch"][0]["success"]
+    ax.axhline(r0, color=PALETTE["neutral"], ls="--", lw=1.2)
+    ax.text(-0.3, r0 + 1.5, "rule-based R0 (all languages)", fontsize=7.5, color="#777777", ha="left")
+    ax.set_xticks(range(3), [ARCH_LABEL[a].replace(" ", "\n", 1) for a in archs], fontsize=8.5)
+    ax.set_xlim(-0.35, 2.35); ax.set_ylim(30, 100)
+    ax.set_ylabel("Strict success (%)")
+    ax.set_title("(a) Per model", fontsize=10)
+    ax.legend(fontsize=7.2, loc="lower right")
+    systems = [("R0", R0), ("A0", A), ("A1", A), ("A2", A)]
+    x = np.arange(len(systems))
+    for j, (lang, hatch) in enumerate((("en", None), ("es", "////"))):
+        vals = []
+        for s_, src in systems:
+            row = next(r for r in src["by_lang"] if r["lang"] == lang and r["arch"] == s_)
+            vals.append(100 * row["success"])
+        cols = [PALETTE["neutral"] if s_ == "R0" else ARCH_COLOR[s_] for s_, _ in systems]
+        ax2.bar(x + (j - 0.5) * 0.38, vals, 0.36, color=cols if j == 0 else "white", edgecolor=cols, hatch=hatch,
+                lw=1.0, label="English" if j == 0 else "Spanish")
+        for xi, v in zip(x + (j - 0.5) * 0.38, vals):
+            ax2.text(xi, v + 1.2, f"{v:.0f}", ha="center", fontsize=6.8)
+    ax2.set_xticks(x, ["R0\nrules", "A0\nPlan", "A1\nGround", "A2\nAgent"], fontsize=8.5)
+    ax2.set_ylim(0, 108)
+    ax2.set_ylabel("Strict success (%)")
+    ax2.set_title("(b) English vs. Spanish", fontsize=10)
+    from matplotlib.patches import Patch
+    ax2.legend(handles=[Patch(fc="#777777", ec="#777777", label="English"),
+                        Patch(fc="white", ec="#777777", hatch="////", label="Spanish")], fontsize=7.2,
+               loc="upper left", ncol=2)
+    fig.tight_layout(w_pad=1.5)
+    save(fig, "fig_models_lang")
+
+
+def fig_ablation_protocol(ABL):
+    prots = ["sia", "scs", "tap", "ssa", "none"]
+    archs = ["A2", "A2-noschema", "A2-nores"]
+    cols = {"A2": PALETTE["blue_main"], "A2-noschema": PALETTE["violet"], "A2-nores": PALETTE["neutral"]}
+    fig, ax = plt.subplots(figsize=(7.2, 2.9))
+    w = 0.26
+    for i, a in enumerate(archs):
+        rows = {r["protocol"]: r for r in ABL["by_protocol"] if r["arch"] == a}
+        y = np.array([100 * rows[p]["success"] for p in prots])
+        lo = np.array([100 * rows[p]["ci_lo"] for p in prots]); hi = np.array([100 * rows[p]["ci_hi"] for p in prots])
+        xs = np.arange(len(prots)) + (i - 1) * w
+        ax.bar(xs, y, w * 0.92, color=cols[a], edgecolor="white", lw=0.6, label=ARCH_LABEL[a])
+        ax.errorbar(xs, y, yerr=[y - lo, hi - y], fmt="none", ecolor="#333333", elinewidth=0.8, capsize=2)
+    ax.set_xticks(np.arange(len(prots)), [PROT_LABEL[p] for p in prots], fontsize=9)
+    ax.set_ylim(0, 105)
+    ax.set_ylabel("Strict success (%)")
+    ax.legend(ncol=3, fontsize=8.5, loc="upper center", bbox_to_anchor=(0.5, 1.15))
+    save(fig, "fig_ablation_protocol")
+
+
+def fig_passk(REL):
+    archs = ["A0", "A1", "A2"]
+    fig, axes = plt.subplots(1, 2, figsize=(7.2, 2.7), sharey=True)
+    for ax, m in zip(axes, ["gpt-6-luna", "claude-haiku-5-5"]):
+        for a in archs:
+            r = next(x for x in REL["passk"] if x["model"] == m and x["arch"] == a)
+            ks = list(range(1, r["n_reps"] + 1))
+            ax.plot(ks, [100 * r[f"pass^{k}"] for k in ks], "-o", color=ARCH_COLOR[a], ms=5, lw=1.6,
+                    label=ARCH_LABEL[a])
+            ax.plot(ks[-1], 100 * r[f"pass@{ks[-1]}"], marker="*", ms=8, color=ARCH_COLOR[a], ls="none")
+        ax.set_xticks(ks, [f"k = {k}" for k in ks])
+        ax.set_xlim(0.7, ks[-1] + 0.3)
+        ax.set_title(MODEL_NAME[m], fontsize=10)
+    axes[0].set_ylabel("pass^k (%)")
+    axes[0].set_ylim(60, 100)
+    axes[1].legend(fontsize=8, loc="lower left")
+    axes[1].plot([], [], "*", color="#555555", label="pass@3"); axes[1].legend(fontsize=8, loc="lower left")
+    fig.tight_layout()
+    save(fig, "fig_passk")
+
+
 def main():
     jsonl = sys.argv[1] if len(sys.argv) > 1 else str(ROOT / "results/test.jsonl")
     style()
@@ -189,6 +337,14 @@ def main():
     fig_pareto(A)
     fig_forest(A)
     fig_taxonomy(A)
+    fig_benchmark()
+    R0 = analysis.analyze(jsonl, reps=[0], archs_keep=["R0"])
+    fig_models_lang(A, R0)
+    ABL = analysis.analyze(jsonl, reps=[0], archs_keep=["A2", "A2-noschema", "A2-nores"],
+                           models_keep=["gpt-6-luna", "qwen3.8-flash"])
+    fig_ablation_protocol(ABL)
+    REL = analysis.analyze(jsonl, archs_keep=["A0", "A1", "A2"], models_keep=["gpt-6-luna", "claude-haiku-5-5"])
+    fig_passk(REL)
 
 
 if __name__ == "__main__":

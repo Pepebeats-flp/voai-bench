@@ -1,0 +1,10 @@
+{
+ "VS20_A0_gpt-6-luna.fits": "https://skyview.gsfc.nasa.gov/cgi-bin/images?position=161.25%2C-59.87&survey=DSS2+Red&pixels=300%2C300&sampler=LI&size=0.25%2C0.25&projection=Tan&coordinates=J2000.0&requestID=skv1795551087752&return=FITS",
+ "VS20_A2_gpt-6-luna.fits": "https://skyview.gsfc.nasa.gov/cgi-bin/images?position=161.25929%2C-59.69994&survey=SHASSA+H&pixels=300%2C300&sampler=LI&size=1.0%2C1.0&projection=Tan&coordinates=J2000.0&requestID=skv1795551152550&return=FITS",
+ "VS20_A2_claude-haiku-5-5.fits": "https://skyview.gsfc.nasa.gov/cgi-bin/images?position=161.25929%2C-59.69994&survey=SHASSA+H&pixels=300%2C300&sampler=LI&size=3.0%2C3.0&projection=Tan&coordinates=J2000.0&requestID=skv1795552264581&return=FITS",
+ "VS20_A0_claude-haiku-5-5.fits": "https://skyview.gsfc.nasa.gov/cgi-bin/images?position=161.265%2C-59.87&survey=DSS2+Red&pixels=300%2C300&sampler=LI&size=0.25%2C0.25&projection=Tan&coordinates=J2000.0&requestID=skv1795552189866&return=FITS",
+ "VS20_A0_deepseek-v4-pro.fits": "https://skyview.gsfc.nasa.gov/cgi-bin/images?position=161.2854%2C-59.8678&survey=DSS2+Red&pixels=300%2C300&sampler=LI&size=0.25%2C0.25&projection=Tan&coordinates=J2000.0&requestID=skv1795552397706&return=FITS",
+ "VS20_A0_qwen3.8-flash.fits": "https://skyview.gsfc.nasa.gov/cgi-bin/images?position=10.752361%2C-59.867778&survey=DSS2+Red&pixels=300%2C300&sampler=LI&size=0.25%2C0.25&projection=Tan&coordinates=J2000.0&requestID=skv1795553089717&return=FITS",
+ "VS20_A2_qwen3.8-flash.fits": "https://skyview.gsfc.nasa.gov/cgi-bin/images?position=161.25929%2C-59.69994&survey=SHASSA+H&pixels=300%2C300&sampler=LI&size=3.0%2C3.0&projection=Tan&coordinates=J2000.0&requestID=skv1795552264581&return=FITS",
+ "VS20_A2_deepseek-v4-pro.fits": "https://skyview.gsfc.nasa.gov/cgi-bin/images?position=161.25929%2C-59.69994&survey=SHASSA+H&pixels=300%2C300&sampler=LI&size=5.0%2C5.0&projection=Tan&coordinates=J2000.0&requestID=skv1795554002184&return=FITS"
+}
