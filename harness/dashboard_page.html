@@ -39,7 +39,7 @@ details summary{cursor:pointer;color:var(--fg2);font-size:13px;margin-top:8px}
 <script>
 const $=s=>document.querySelector(s);let RUN=null,TAB='monitor',AN=null,ANRUN=null,LOADING=false;
 const ARCHC={'A0':'var(--s1)','A1':'var(--s2)','A2':'var(--s3)','A2-noschema':'var(--s4)','A2-noresolve':'var(--s5)'};
-const ARCHN={'A0':'A0 · plan en un paso','A1':'A1 · plan + resolver','A2':'A2 · agente con herramientas','A2-noschema':'A2 sin esquema','A2-noresolve':'A2 sin resolver'};
+const ARCHN={'A0':'A0 · VOAI-Plan','A1':'A1 · VOAI-Ground','A2':'A2 · VOAI-Agent','A2-noschema':'A2 sin esquema','A2-noresolve':'A2 sin resolver'};
 const pct=(x,d=0)=>x==null?'–':(100*x).toFixed(d)+'%';const fmt=s=>s==null?'–':s<90?s.toFixed(0)+' s':s<5400?(s/60).toFixed(0)+' min':(s/3600).toFixed(1)+' h';
 const dpp=x=>x==null?'–':(x>0?'+':'')+(100*x).toFixed(1)+' pp';
 const pv=p=>p==null?'–':p<0.001?'<0.001':p.toFixed(3);

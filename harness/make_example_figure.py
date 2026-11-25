@@ -29,7 +29,7 @@ VERDICT = {("VS20", "A0"): (False, "approximate centre (10′ off), broadband"),
            ("VS32", "A0"): (False, "wrong band; no data at target"),
            ("VS32", "A1"): (True, "X-ray"),
            ("VS32", "A2"): (True, "X-ray")}
-ARCH = {"A0": "A0 single-shot", "A1": "A1 + resolver", "A2": "A2 tool agent"}
+ARCH = {"A0": "A0 VOAI-Plan", "A1": "A1 VOAI-Ground", "A2": "A2 VOAI-Agent"}
 
 plt.rcParams.update({"font.family": "sans-serif", "font.size": 9, "pdf.fonttype": 42})
 fig, axes = plt.subplots(2, 3, figsize=(7.2, 5.4))

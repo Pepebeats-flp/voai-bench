@@ -2,9 +2,8 @@
 
 **An execution-grounded, bilingual benchmark of LLM systems operating IVOA Virtual Observatory services.**
 
-Companion repository of: J. Pinto-Muñoz & M. Solar, *Can large language models operate the Virtual
-Observatory? An execution-grounded, multi-protocol benchmark of tool-using LLM agents* (submitted to
-Astronomy and Computing). Repository: https://github.com/Pepebeats-flp/voai-bench. It extends the conference study Pinto-Muñoz & Solar (2026), Proc. SPIE,
+Companion repository of: J. Pinto-Muñoz & M. Solar, *Single-shot, grounded or agentic? Three LLM architectures for natural-language access to the
+Virtual Observatory, compared on an execution-grounded benchmark* (submitted to Astronomy and Computing). Repository: https://github.com/Pepebeats-flp/voai-bench. It extends the conference study Pinto-Muñoz & Solar (2026), Proc. SPIE,
 doi:10.1117/12.3104988.
 
 ## Contents
@@ -14,7 +13,7 @@ doi:10.1117/12.3104988.
 | `bench/queries_v0.yaml`, `bench/gold_v0.json` | Development set (50 tasks) used to build the harness |
 | `bench/generate_v1.py`, `bench/build_gold.py` | Reproducible test-set generator (seed 2026) and gold builder (queries live services) |
 | `harness/vo_tools.py` | Closed catalogue of VO tools (IRSA SIA2, SkyView, Gaia/IRSA TAP, ESA ISO/Herschel SSA, Sesame) with a record/replay cache |
-| `harness/agents.py` | Architectures A0 (single-shot plan), A1 (+ name resolution), A2 (tool-calling agent) and ablations |
+| `harness/agents.py` | The three proposed architectures: A0 VOAI-Plan (single-shot plan), A1 VOAI-Ground (+ deterministic name resolution), A2 VOAI-Agent (tool-calling agent with execution feedback), and ablations |
 | `harness/rules_baseline.py` | Rule-based baseline R0 (no LLM) |
 | `harness/score.py` | Execution-grounded scorer (strict and target-tolerant success) |
 | `harness/analysis.py` | Statistics: task-clustered bootstrap CIs, paired sign-flip tests with Holm, Friedman, GEE, Pareto, pass^k |

@@ -24,7 +24,7 @@ PALETTE = {"blue_main": "#0F4D92", "blue_secondary": "#3775BA", "green_3": "#8BC
 # Semántica: A0 = línea base (rojo), A1 = intermedio (teal), A2 = propuesto (azul); ablaciones violeta/neutral.
 ARCH_COLOR = {"A0": PALETTE["red_strong"], "A1": PALETTE["teal"], "A2": PALETTE["blue_main"],
               "A2-noschema": PALETTE["violet"], "A2-nores": PALETTE["neutral"], "A2-noresolve": PALETTE["neutral"]}
-ARCH_LABEL = {"A0": "A0 single-shot", "A1": "A1 + resolver", "A2": "A2 tool agent",
+ARCH_LABEL = {"A0": "A0 VOAI-Plan", "A1": "A1 VOAI-Ground", "A2": "A2 VOAI-Agent",
               "A2-noschema": "A2 w/o schema", "A2-nores": "A2 w/o resolver", "A2-noresolve": "A2 w/o resolver (unadapted prompt)"}
 PROT_LABEL = {"sia": "Images\n(SIA2)", "scs": "Cone search\n(SCS)", "tap": "ADQL\n(TAP)", "ssa": "Spectra\n(SSA)",
               "none": "Out of\nscope"}
