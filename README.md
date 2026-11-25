@@ -4,7 +4,7 @@
 
 Companion repository of: J. Pinto-Muñoz & M. Solar, *Can large language models operate the Virtual
 Observatory? An execution-grounded, multi-protocol benchmark of tool-using LLM agents* (submitted to
-Astronomy and Computing). It extends the conference study Pinto-Muñoz & Solar (2026), Proc. SPIE,
+Astronomy and Computing). Repository: https://github.com/Pepebeats-flp/voai-bench. It extends the conference study Pinto-Muñoz & Solar (2026), Proc. SPIE,
 doi:10.1117/12.3104988.
 
 ## Contents
@@ -20,13 +20,14 @@ doi:10.1117/12.3104988.
 | `harness/analysis.py` | Statistics: task-clustered bootstrap CIs, paired sign-flip tests with Holm, Friedman, GEE, Pareto, pass^k |
 | `harness/run.py`, `harness/batch_runner.py` | Resumable experiment runner; batch runner with budget caps |
 | `harness/dashboard.py` | Local live dashboard (`http://localhost:8765`) |
-| `results/` | Analysis summaries (JSON). Full episode logs and the service cache are in the Zenodo data package |
+| `results/` | Analysis summaries (JSON) |
+| `data/voai-bench-data-v1.0.0.tar.xz` | Full episode logs (test and development) and the recorded VO service responses (cache) |
 
 ## Quick start
 ```bash
 python3 -m venv .venv && .venv/bin/pip install -r requirements.txt
-# 1) Get the data package (episodes + cache) from Zenodo and unpack it at the repository root
-#    (it creates results/test.jsonl, results/pilot.jsonl and cache/).
+# 1) Unpack the data package at the repository root (creates results/test.jsonl, results/pilot.jsonl and cache/):
+tar -xJf data/voai-bench-data-v1.0.0.tar.xz
 # 2) Reproduce all statistics offline (no API calls):
 .venv/bin/python -I -c "import sys; sys.path.insert(0,'harness'); import analysis, json; \
   print(json.dumps(analysis.analyze('results/test.jsonl', reps=[0], archs_keep=['A0','A1','A2'])['by_arch'], indent=1))"
