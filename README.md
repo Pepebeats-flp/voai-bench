@@ -2,8 +2,8 @@
 
 **An execution-grounded, bilingual benchmark of LLM systems operating IVOA Virtual Observatory services.**
 
-Companion repository of: J. Pinto-Muñoz & M. Solar, *Single-shot, grounded or agentic? Three LLM architectures for natural-language access to the
-Virtual Observatory, compared on an execution-grounded benchmark* (submitted to Astronomy and Computing). Repository: https://github.com/Pepebeats-flp/voai-bench. It extends the conference study Pinto-Muñoz & Solar (2026), Proc. SPIE,
+Companion repository of: J. Pinto-Muñoz & M. Solar, *Large language model agents for natural-language access to the Virtual Observatory: an
+execution-grounded comparison of three architectures* (submitted to Astronomy and Computing). Repository: https://github.com/Pepebeats-flp/voai-bench. It extends the conference study Pinto-Muñoz & Solar (2026), Proc. SPIE,
 doi:10.1117/12.3104988.
 
 ## Contents
