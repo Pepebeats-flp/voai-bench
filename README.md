@@ -14,6 +14,7 @@ doi:10.1117/12.3104988.
 | `bench/generate_v1.py`, `bench/build_gold.py` | Reproducible test-set generator (seed 2026) and gold builder (queries live services) |
 | `harness/vo_tools.py` | Closed catalogue of VO tools (IRSA SIA2, SkyView, Gaia/IRSA TAP, ESA ISO/Herschel SSA, Sesame) with a record/replay cache |
 | `harness/agents.py` | The three proposed architectures: A0 VOAI-Plan (single-shot plan), A1 VOAI-Ground (+ deterministic name resolution), A2 VOAI-Agent (tool-calling agent with execution feedback), and ablations |
+| `docs/PROMPTS.md` | Prompts, tool schemas and inference settings of the three architectures (supplementary material of the paper) |
 | `harness/rules_baseline.py` | Rule-based baseline R0 (no LLM) |
 | `harness/score.py` | Execution-grounded scorer (strict and target-tolerant success) |
 | `harness/analysis.py` | Statistics: task-clustered bootstrap CIs, paired sign-flip tests with Holm, Friedman, GEE, Pareto, pass^k |
